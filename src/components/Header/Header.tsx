@@ -1,16 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import "./styles.module.sass";
 import React from "react";
-import { Input } from "../ui/input";
+import { Input } from "../ui/inputSearch";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { Container } from "../Container";
 
 const Header = () => {
   return (
-    <>
+    <Container>
       <div className="flex justify-between items-center py-5">
         <div className="flex items-center">
-          <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
+          <Link href="/">
+            <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
+          </Link>
           <button className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
             <img src="/location.svg" alt="" className="mr-2 w-[20px]" /> Астана
             <ChevronDown />
@@ -54,7 +57,7 @@ const Header = () => {
 
       <div className="mt-8 flex justify-between items-center py-5">
         <div className="flex items-center">
-          <button className="flex items-center font-bold">
+          <button className="flex items-center font-bold uppercase text-[14px]">
             <img
               src="/catalog.svg"
               alt=""
@@ -78,17 +81,25 @@ const Header = () => {
         </div>
         <div className="flex items-center">
           <div className="flex">
-            <button className="ml-5 text-[14px] font-bold">Преимущества</button>
-            <button className="ml-5 text-[14px] font-bold">Продукция</button>
-            <button className="ml-5 text-[14px] font-bold">Вопросы</button>
-            <button className="ml-5 text-[14px] font-bold">Контакты</button>
-            <button className="ml-5 text-[14px] font-bold">
-              <img src="/cart.svg" alt="" className="mr-2 w-[30]" />
+            <button className="ml-5 text-[14px] uppercase font-bold">
+              Преимущества
+            </button>
+            <button className="ml-5 text-[14px] uppercase font-bold">
+              Продукция
+            </button>
+            <button className="ml-5 text-[14px] uppercase font-bold">
+              Вопросы
+            </button>
+            <button className="ml-5 text-[14px] uppercase font-bold">
+              Контакты
+            </button>
+            <button className="ml-5 text-[14px] uppercase font-bold">
+              <img src="/cart.svg" alt="" className="mr-2 w-[30px]" />
             </button>
           </div>
         </div>
       </div>
-    </>
+    </Container>
   );
 };
 

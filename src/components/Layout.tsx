@@ -1,16 +1,15 @@
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from "react";
 
-import Header from './Header/Header';
-import { Container } from './Container';
+import Header from "./Header/Header";
 // import Footer from './Footer/Footer';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Container className=''>
+    <>
       <Header />
       <main>{children}</main>
       {/* <Footer /> */}
-    </Container>
+    </>
   );
 };
 
