@@ -12,7 +12,7 @@ const config = {
   prefix: '',
   theme: {
   	container: {
-  		center: true,
+  		center: 'true',
   		padding: '2rem',
   		screens: {
   			'2xl': '1280px'
@@ -84,9 +84,9 @@ const config = {
   				}
   			}
   		},
-		  fontFamily: {
-			'inter-bold': ['"Inter"', 'sans-serif'],
-		  },
+  		fontFamily: {
+  			'inter-bold': ['Inter"', 'sans-serif']
+  		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
