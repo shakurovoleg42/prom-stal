@@ -3,6 +3,8 @@ import Hero from "../blocks/home/Hero/Hero";
 import Categories from "../blocks/home/Categories/Categories";
 import About from "../blocks/home/About/About";
 import Regards from "../blocks/home/Regards/Regards";
+import Form from "../components/Form/Form";
+import Parts from "../components/Parts/Parts";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Categories />
       <About />
       <Regards />
+      <Form />
+      <Parts />
     </>
   );
 }
