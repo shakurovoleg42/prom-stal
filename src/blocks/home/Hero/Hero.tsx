@@ -1,10 +1,12 @@
 import React from "react";
 import { Input } from "@/src/components/ui/inputForm";
 import { Label } from "@/src/components/ui/label";
+import { Button } from "@/src/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className=" flex w-full h-screen bg-[url('/Banner.png')] bg-cover bg-center justify-center items-center text-white">
+    <div className=" flex w-full h-max-[589px] bg-[url('/Banner.png')] bg-cover bg-center justify-center items-center text-white mt-5">
       <div className="flex p-[100px] justify-between items-center ">
         <div className="max-w-[1073px]">
           <h1 className="text-white text-[3.6rem] leading-normal font-bold">
@@ -14,32 +16,32 @@ export default function Hero() {
               Казахстана
             </span>
           </h1>
-          <form className="form flex gap-[41px] mt-5">
+          <form className="form flex gap-[41px] mt-5 items-center">
             <div className="grid w-full max-w-sm items-center gap-1.5">
               <Label htmlFor="email">Поиск</Label>
-              <Input type="email" id="email" />
+              <Input type="text" defaultValue="" />
             </div>
-            <Input
-              type="text"
-              name="contacts"
-              required
-              placeholder="Ваши контакты"
-              className="max-w-[294px] max-h-[45px]"
-            />
-            <button type="submit">Оставить заявку! &#8594;</button>
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor="email">Контакты</Label>
+              <Input type="text" defaultValue="" />
+            </div>
+            <Button type="submit" variant="contact" className="items-center flex flex-row text-[14px]">
+              <b>Оставить заявку!</b>
+              <ArrowRight size={20} className="ml-[10px]"/>
+            </Button>
           </form>
         </div>
-        <div className="contact-info">
-          <h3>Наши контакты</h3>
-          <p>
-            <img src="/phone-icon.svg" alt="Телефон" /> 8(708)001-68-68
-          </p>
-          <p>
-            <img src="/whatsapp-icon.svg" alt="WhatsApp" /> WhatsApp
-          </p>
-          <p>
-            <img src="/email-icon.svg" alt="Email" /> APS168@yandex.kz
-          </p>
+        <div className="bg-white p-5 rounded-[10px] text-left text-black">
+          <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
+          <div className="flex items-center mb-[13px] flex-row">
+            <img src="/phone-icon.svg" alt="Телефон"  className="mr-[10px]"/> <b>8(708)001-68-68</b>
+          </div>
+          <div className="flex items-center mb-[13px] flex-row">
+            <img src="/whatsapp-icon.svg" alt="WhatsApp"  className="mr-[10px]"/> <b>WhatsApp</b>
+          </div>
+          <div className="flex items-center mb-[13px] flex-row">
+            <img src="/email-icon.svg" alt="Email"  className="mr-[10px]"/> <b>APS168@yandex.kz</b>
+          </div>
         </div>
       </div>
     </div>
