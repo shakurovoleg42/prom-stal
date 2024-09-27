@@ -42,18 +42,19 @@ const accordionItems = [
 
 export default function Faq() {
   return (
-    <Container>
-      <Accordion type="single" collapsible>
+    <Container className="mt-20">
+      <h2 className="text-[40px] font-[700] text-[#FFBC01] text-center mb-4">Часто задаваемые вопросы</h2>
+      <Accordion type="single" collapsible className="my-16">
         {accordionItems.map((item, index) => (
           <AccordionItem
-            key={index} // Уникальный индекс
+            key={index}
             value={`item-${item.id}`}
-            className="border-[2px] border-black p-2 rounded-2xl my-2"
+            className="bg-[#0A8C99] p-2 rounded-2xl my-2"
           >
-            <AccordionTrigger className="text-xl font-bold">
+            <AccordionTrigger className="text-xl font-[600] text-white text-[19px]">
               {item.title}
             </AccordionTrigger>
-            <AccordionContent>{item.text}</AccordionContent>
+            <AccordionContent className="max-w-[750px] text-white text-[17px] font-[500] mt-6">{item.text}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
