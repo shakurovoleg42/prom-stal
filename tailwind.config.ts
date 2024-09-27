@@ -85,7 +85,7 @@ const config = {
   			}
   		},
   		fontFamily: {
-  			'inter-bold': ['Inter"', 'sans-serif']
+  			'inter-bold': ['Inter', 'sans-serif']
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
