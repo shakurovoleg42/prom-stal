@@ -8,9 +8,9 @@ export default function Form() {
     <div className="flex w-full h-[589px] bg-[url('/fon1.png')] bg-cover bg-center justify-center items-center text-white mt-5">
       <Container className="">
         <div className="flex flex-col bg-[#FFFFFF] p-8 rounded-[10px] max-w-[540px] h-auto text-left items-start">
-          <h1 className="text-[#182F43] font-bold text-[29px] mb-3">
+          <h3 className="text-[#182F43] font-bold text-[29px] mb-3">
             Заинтересовались продукцией компании А-ПРОМСТАЛЬ?
-          </h1>
+          </h3>
           <p className="mb-5 text-[#182F43] text-[19px]">
             Заполните форму и получите бесплатную консультацию менеджера, а
             также полный прайс цен в удобной для Вас форме!

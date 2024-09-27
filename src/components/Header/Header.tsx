@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import "./styles.module.sass";
 import React from "react";
 import { Input } from "../ui/inputSearch";
 import Link from "next/link";
@@ -43,7 +42,7 @@ const Header = () => {
             </Link>
           </div>
           <Link href="#">
-            <button className="mr-[50px] text-[12px] flex items-center font-bold">
+            <button className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]">
               <img src="/request.svg" alt="" className="mr-2 w-[20px]" />
               Оставить заявку
             </button>

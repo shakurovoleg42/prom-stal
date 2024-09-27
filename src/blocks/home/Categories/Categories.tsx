@@ -134,7 +134,7 @@ export default function Categories() {
             </div>
             <div className="text-left text-[10px] leading-[10px]">
                <h3 className="text-[14px] font-bold mb-2 leading-[15px]">Металл Китайский</h3>
-              <p className="mb-2"></p>
+              <p className="mb-2">Цирконий</p>
               <a href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
               </a>

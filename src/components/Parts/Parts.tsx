@@ -6,7 +6,7 @@ export default function Parts() {
   return (
     <Container className="mt-20 text-center items-center">
       <div className=" flex flex-col items-center">
-        <h1 className="font-bold text-[60px] text-[#FFBC01]">Этапы работы</h1>
+        <h3 className="font-bold text-[60px] text-[#FFBC01]">Этапы работы</h3>
         <div className="flex flex-row mt-24 max-w-[857px]" >
           <img src="step01.png" alt="" />
           <div className="ml-12 text-left">

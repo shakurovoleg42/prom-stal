@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import { Container } from "@/src/components/Container";
-import React from "react";
+import React from 'react'
+import { Container } from './Container'
 
 export default function Regards() {
   return (
@@ -55,5 +54,5 @@ export default function Regards() {
         </div>
       </div>
     </Container>
-  );
+  )
 }
