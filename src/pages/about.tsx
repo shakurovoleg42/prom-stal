@@ -5,6 +5,7 @@ import Image from "next/image";
 import Regards from "../components/Regards";
 import Parts from "../blocks/about/Parts/Parts";
 import Partners from "../components/Partners";
+import ContactForm from "../components/ContactForm";
 
 export default function about() {
   return (
@@ -42,7 +43,7 @@ export default function about() {
     <Regards/>
     <Parts/>
     <Partners />
-    
+    <ContactForm />
     </>
     
     

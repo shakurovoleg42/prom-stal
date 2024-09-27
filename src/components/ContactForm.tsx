@@ -1,0 +1,89 @@
+import React from "react";
+import { Container } from "./Container";
+import { Button } from "./ui/button";
+import Image from "next/image";
+
+export default function ContactForm() {
+  return (
+    <Container className="items-center mb-24">
+      <div className="p-5 flex flex-col items-center">
+        <div className="text-center max-w-[560px] items-center">
+          <h1 className="text-[60px] font-[700] text-[#FFBC01]">Контакты</h1>
+          <p className="text-[19px] font-[600]">
+            Пожалуйста, оставьте свои контактные данные, чтобы мы могли
+            связаться с вами.
+          </p>
+        </div>
+        <div className="flex justify-between mt-16">
+          <div className="mt-[10px] flex flex-col w-[50%]">
+            <p className="text-[26px] font-[600] text-black">Телефон:</p>
+
+            <p className="text-[26px] font-[600] text-black">8(708)001-68-68</p>
+
+            <p className="text-[26px] font-[600] text-black mt-6">Email:</p>
+
+            <p className="text-[26px] font-[600] text-black">APS168@yandex.kz </p>
+
+            <div className="flex flex-row mt-5 gap-5">
+              <Image
+                className=""
+                src="Button Icon.svg"
+                width={62.25}
+                height={62.25}
+                alt=""
+              />
+              <Image
+                className=""
+                src="Button Icon (1).svg"
+                width={62.25}
+                height={62.25}
+                alt=""
+              />
+              <Image
+                className=""
+                src="Button Icon (2).svg"
+                width={62.25}
+                height={62.25}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col width-[45%] border border-1-black py-[52px] pl-[51px] pr-[82px] ml-64">
+            <form className="flex flex-col">
+              <div className="flex flex-row">
+                <input
+                className="mr-10 border border-1-gray p-4"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                className="border border-1-gray p-4"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Нормер телефона"
+                  required
+                />
+              </div>
+
+              <textarea
+                className="mt-9 border border-1-gray p-4"
+                id="comment"
+                name="comment"
+                placeholder="Комментарий"
+                required
+              ></textarea>
+
+              <Button type="submit" variant="contact" className="mt-8">
+                Отправить заявку
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
+}
