@@ -6,7 +6,7 @@ export default function About() {
   return (
     <Container className="mt-20 flex flex-row items-center">
       <div className="">
-        <Image src="/guy.png" width={561} height={565} alt="guy" />
+        <Image src="/guy.png" width={561} height={565} alt="guy" className="hidden xl:block"/>
       </div>
       <div className="flex flex-col max-w-[545px] ml-[54px] text-left h-auto">
         <h2 className="text-[60px] font-[700] leading-[109px] text-[#FFBC01]">

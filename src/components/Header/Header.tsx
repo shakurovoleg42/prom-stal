@@ -22,7 +22,7 @@ const Header = () => {
             <ChevronDown />
           </button>
         </div>
-        <div className="flex items-center">
+        <div className="hidden xl:flex items-center">
           <div>
             <Link
               href="tel:87080016868"
@@ -69,7 +69,7 @@ const Header = () => {
               type="text"
               placeholder="Найти товар"
               defaultValue=""
-              className="ml-5 border-none outline-none"
+              className="ml-5 border-none outline-none w-auto"
             />
             <img
               src="/search-icon.svg"
@@ -78,7 +78,7 @@ const Header = () => {
             />
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="hidden xl:flex items-center ">
           <div className="flex">
             <button className="ml-5 text-[14px] uppercase font-bold">
               Преимущества

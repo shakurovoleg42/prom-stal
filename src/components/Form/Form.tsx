@@ -20,18 +20,18 @@ export default function Form() {
               type="text"
               placeholder="Телефон"
               required
-              className="text-black border border-1-[#000] w-[444px]"
+              className="text-black border border-1-[#000] max-w-[444px]"
             />
             <Input
               type="text"
               placeholder="Имя"
               required
-              className="text-black border border-1-[#000] w-[444px] mt-4"
+              className="text-black border border-1-[#000] max-w-[444px] mt-4"
             />
             <Button
               type="submit"
               variant="contact"
-              className="mt-4 border border-1-[#000] w-[444px] text-[16.59px]"
+              className="mt-4 border border-1-[#000] max-w-[444px] text-[16.59px]"
             >
               Оставить заявку
             </Button>

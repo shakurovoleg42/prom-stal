@@ -15,14 +15,14 @@ export default function ContactForm() {
           </p>
         </div>
         <div className="flex justify-between mt-16">
-          <div className="mt-[10px] flex flex-col w-[50%]">
-            <p className="text-[26px] font-[600] text-black">Телефон:</p>
+          <div className="mt-[10px] flex flex-col w-[50%] text-[26px] font-[600] text-black">
+            <p>Телефон:</p>
 
-            <p className="text-[26px] font-[600] text-black">8(708)001-68-68</p>
+            <p>8(708)001-68-68</p>
 
-            <p className="text-[26px] font-[600] text-black mt-6">Email:</p>
+            <p>Email:</p>
 
-            <p className="text-[26px] font-[600] text-black">APS168@yandex.kz </p>
+            <p>APS168@yandex.kz </p>
 
             <div className="flex flex-row mt-5 gap-5">
               <Image
@@ -77,7 +77,7 @@ export default function ContactForm() {
                 required
               ></textarea>
 
-              <Button type="submit" variant="contact" className="mt-8">
+              <Button type="submit" variant="contact" className="mt-8 w-44">
                 Отправить заявку
               </Button>
             </form>
