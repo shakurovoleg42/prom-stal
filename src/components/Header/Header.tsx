@@ -86,7 +86,7 @@ const Header = () => {
           </Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
-              <img src="/location.svg" alt="" className="mr-2 w-[20px]" />
+              <img src="/location.svg" alt="" className="mr-2 w-[20px] " />
               Астана
               <ChevronDown />
             </DropdownMenuTrigger>
@@ -157,7 +157,7 @@ const Header = () => {
               <img
                 src="/catalog.svg"
                 alt=""
-                className="mr-2 w-[20px] text-[14px]"
+                className="mr-2 w-[20px] text-[14px] border-1-black bg-white p-1 rounded-[5px]"
               />
               Каталог
             </PopoverTrigger>
