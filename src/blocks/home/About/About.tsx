@@ -13,13 +13,13 @@ export default function About() {
           О нас
         </h2>
         <div className="mt-5">
-          <p className="text-[#284F52] text-[22px] font-[700] leading-7">
+          <p className="text-[#284F52] text-[16px] font-[700] leading-7 sm:text-[22px]">
             Компания А-ПРОМСТАЛЬ специализируется на продаже металлопроката
             различных видов и размеров
           </p>
         </div>
         <div className="mt-9">
-          <p className="text-black leading-7">
+          <p className="text-black text-[12px] leading-7 sm:text-[18px]">
             Мы предлагаем широкий ассортимент металлических изделий, в форме
             листов, прутков, труб и профилей. Наша продукция отличается высоким
             качеством и соответствием всем стандартам безопасности и нормам

@@ -4,8 +4,79 @@ import { Input } from "../ui/inputSearch";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/src/components/ui/popover";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+import Image from "next/image";
 
 const Header = () => {
+
+  const langs = [
+    {
+      name: "Русский",
+      code: "ru",
+    },
+    {
+      name: "English",
+      code: "en",
+    },
+    {
+      name: "Қазақ",
+      code: "kk",
+    }
+  ];
+
+  const cities = [
+    {
+      name: "Алматы",
+      code: "almaty",
+    },
+    {
+      name: "Астана",
+      code: "astana",
+    },
+    {
+      name: "Актау",
+      code: "Aktau",
+    },
+  ];
+
+  const pages = [
+    {
+      name: "Главная",
+      href: "/",
+    },
+    {
+      name: "О компании",
+      href: "/about",
+    },
+    {
+      name: "Преимущества",
+      href: "/",
+    },
+    {
+      name: "Продукция",
+      href: "/",
+    },
+    {
+      name: "Вопросы",
+      href: "/",
+    },
+    {
+      name: "Контакты",
+      href: "/",
+    },
+  ];
+
   return (
     <Container>
       <div className="flex flex-col justify-between items-center py-5 lg:flex-row">
@@ -13,14 +84,39 @@ const Header = () => {
           <Link href="/">
             <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
           </Link>
-          <button className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
-            <img src="/location.svg" alt="" className="mr-2 w-[20px]" /> Астана
-            <ChevronDown />
-          </button>
-          <button className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
+              <img src="/location.svg" alt="" className="mr-2 w-[20px]" />
+              Астана
+              <ChevronDown />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuSeparator />
+              {cities.map((cities) => (
+                <DropdownMenuItem key={cities.code}>
+                <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
+                  {cities.name}
+                </b>
+              </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
             <img src="/ru.svg" alt="" className="mr-2 w-[20px]" /> RU
             <ChevronDown />
-          </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuSeparator />
+              {langs.map((lang) => (
+                <DropdownMenuItem key={lang.code}>
+                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
+                    {lang.name}
+                  </b>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         <div className="hidden sm:flex items-center sm:mt-5 lg:mt-0">
           <div>
@@ -56,14 +152,33 @@ const Header = () => {
 
       <div className="mt-8 flex justify-between items-center py-5">
         <div className="flex flex-col sm:items-center sm:flex-row">
-          <button className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
-            <img
-              src="/catalog.svg"
-              alt=""
-              className="mr-2 w-[20px] text-[14px]"
-            />
-            Каталог
-          </button>
+          <Popover>
+            <PopoverTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
+              <img
+                src="/catalog.svg"
+                alt=""
+                className="mr-2 w-[20px] text-[14px]"
+              />
+              Каталог
+            </PopoverTrigger>
+            <PopoverContent className="flex flex-col">
+              <span className="border-b border-[#cbccce] pb-3 text-center">
+                Перейти к
+              </span>
+              <div className="flex flex-col mt-2 gap-2">
+                {pages.map((page) => (
+                  <Link
+                    key={page.name}
+                    href={page.href}
+                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[14px]"
+                  >
+                    <b>{page.name}</b>
+                  </Link>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
+
           <div className="relative flex items-center bg-[#F5F7F8] py-3 pr-[8px] pl-[25px] rounded-[8px] ml-12">
             <Input
               type="text"
@@ -71,10 +186,12 @@ const Header = () => {
               defaultValue=""
               className="ml-5 border-none outline-none w-auto"
             />
-            <img
+            <Image
               src="/search-icon.svg"
               alt="Лупа"
-              className="mr-2 absolute left-[15px] h-[16px] w-[16px] text-[14px]"
+              width={16}
+              height={16}
+              className="mr-2 absolute left-[15px] text-[14px]"
             />
           </div>
         </div>

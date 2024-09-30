@@ -43,7 +43,7 @@ const accordionItems = [
 export default function Faq() {
   return (
     <Container className="mt-20">
-      <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Часто задаваемые вопросы</h2>
+      <h2 className="text-[#FFBC01] text-center text-[2rem] leading-[60px] font-bold sm:text-[60px]">Часто задаваемые вопросы</h2>
       <Accordion type="single" collapsible className="my-16">
         {accordionItems.map((item, index) => (
           <AccordionItem
