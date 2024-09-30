@@ -9,7 +9,7 @@ export default function Parts() {
       <div className=" flex flex-col items-center">
         <h3 className="font-bold text-[60px] text-[#FFBC01]">Этапы работы</h3>
         <div className="flex flex-row mt-24 max-w-[857px]" >
-          <Image width={240} height={163} className="hidden xl:display:block" src="/step01.png" alt="" />
+          <Image width={240} height={163} className="hidden xl:block" src="/step01.png" alt="" />
           <div className="ml-5 text-left">
             <h2 className="font-bold text-[32px]">Заявка</h2>
             <p>
@@ -32,10 +32,10 @@ export default function Parts() {
               соответствии с требованиями клиента
             </p>
           </div>
-          <Image width={240} height={163} className="hidden xl:display:block" src="/step02.png" alt="" />
+          <Image width={240} height={163} className="hidden xl:block" src="/step02.png" alt="" />
         </div>
         <div className="flex flex-row mt-[90px] max-w-[857px]">
-          <Image width={240} height={163} className="hidden xl:display:block" src="/step03.png" alt="" />
+          <Image width={240} height={163} className="hidden xl:block" src="/step03.png" alt="" />
 
           <div className="ml-5 text-left">
             <h2 className="font-bold text-[32px] ">
@@ -60,10 +60,10 @@ export default function Parts() {
               обеспечивая сохранность и своевременную поставку
             </p>
           </div>
-          <Image width={240} height={163} className="hidden xl:display:block" src="/step04.png" alt="" />
+          <Image width={240} height={163} className="hidden xl:block" src="/step04.png" alt="" />
         </div>
         <div className="flex flex-row mt-[90px] max-w-[857px]">
-          <Image width={240} height={163} className="hidden xl:display:block" src="/step05.png" alt="" />
+          <Image width={240} height={163} className="hidden xl:block" src="/step05.png" alt="" />
 
           <div className="ml-5 text-left">
             <h2 className="font-bold text-[32px] ">

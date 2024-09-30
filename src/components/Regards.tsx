@@ -4,7 +4,7 @@ import { Container } from './Container'
 export default function Regards() {
   return (
     <Container>
-      <div className="mt-16 text-center px-5">
+      <div id="regards" className="mt-16 text-center px-5">
         <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Наши преимущества</h2>
         <div className="flex justify-around flex-wrap mt-14">
           <div className="bg-[#0A8C99] border border-1-[#ccc] rounded-[8px] w-[260px] h-auto p-5 m-[10px] text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-white items-center">

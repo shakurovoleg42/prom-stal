@@ -6,22 +6,17 @@ import Regards from "../components/Regards";
 import Parts from "../blocks/about/Parts/Parts";
 import Partners from "../components/Partners";
 import ContactForm from "../components/ContactForm";
+import Banner from "../components/Banner";
 
 export default function about() {
   return (
     <>
-      <div className="flex w-full max-h-[589px] bg-[url('/Banner.png')] bg-cover bg-center text-white mt-5">
-        <Container className="text-left items-left py-[100px] justify-left">
-          <h1 className="text-white text-[2rem] text-left leading-normal font-[700] lg:text-[85px]">
-            О компании
-          </h1>
-        </Container>
-      </div>
+      <Banner />
       <Container className="mt-20 flex">
         <div className="flex flex-col text-left h-auto">
           <div className="mt-5 max-w-[987px]">
             <p className="text-[#FFBC01] text-[1.7rem] font-[700] leading-[40.95px] md:text-[35px]">
-              Компания  <span className="text-[#284F52]">А-ПРОМСТАЛЬ</span>{" "}
+              Компания  <span className="text-[#284F52]">А-ПРОМСТАЛЬ</span>
                специализируется на продаже металлопроката различных видов и
               размеров
             </p>

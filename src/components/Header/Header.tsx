@@ -61,19 +61,19 @@ const Header = () => {
     },
     {
       name: "Преимущества",
-      href: "/",
+      href: "/#regards",
     },
     {
       name: "Продукция",
-      href: "/",
+      href: "/products",
     },
     {
       name: "Вопросы",
-      href: "/",
+      href: "/#faq",
     },
     {
       name: "Контакты",
-      href: "/",
+      href: "/contacts",
     },
   ];
 
@@ -197,18 +197,18 @@ const Header = () => {
         </div>
         <div className="hidden xl:flex items-center ">
           <div className="flex">
-            <button className="ml-5 text-[14px] uppercase font-bold">
+            <Link href="/#regards" className="ml-5 text-[14px] uppercase font-bold">
               Преимущества
-            </button>
-            <button className="ml-5 text-[14px] uppercase font-bold">
+            </Link>
+            <Link href="/products" className="ml-5 text-[14px] uppercase font-bold">
               Продукция
-            </button>
-            <button className="ml-5 text-[14px] uppercase font-bold">
+            </Link>
+            <Link href="/#faq" className="ml-5 text-[14px] uppercase font-bold">
               Вопросы
-            </button>
-            <button className="ml-5 text-[14px] uppercase font-bold">
+            </Link>
+            <Link href="/contacts" className="ml-5 text-[14px] uppercase font-bold">
               Контакты
-            </button>
+            </Link>
             <button className="ml-5 text-[14px] uppercase font-bold">
               <img src="/cart.svg" alt="" className="mr-2 w-[30px]" />
             </button>

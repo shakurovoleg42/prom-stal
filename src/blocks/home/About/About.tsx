@@ -1,6 +1,7 @@
 import { Container } from "@/src/components/Container";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 export default function About() {
   return (
@@ -30,7 +31,7 @@ export default function About() {
             резке металлопроката по индивидуальным потребностям клиента.
           </p>
         </div>
-        <Button variant="contact" className="w-[141px] mt-9">Подробнее</Button>
+        <Button variant="contact" className="w-[141px] mt-9"><Link href="/about">Подробнее</Link></Button>
       </div>
     </Container>
   );

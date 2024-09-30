@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href="#" className="mb-1 underline">
+            <a href="/contacts" className="mb-1 underline">
               Контакты
             </a>
           </li>
