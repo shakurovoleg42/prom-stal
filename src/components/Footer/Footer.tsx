@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -28,29 +29,29 @@ export default function Footer() {
         <h4 className="text-[19px] mb-3 font-[600]">Меню сайта</h4>
         <ul className="style-none p-0 m-0">
           <li>
-            <a href="#" className="mb-1 underline">
+            <Link href="/" className="mb-1 underline">
               Главная
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="mb-1 underline">
+            <Link href="/#regards" className="mb-1 underline">
               Преимущества
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="mb-1 underline">
+            <Link href="/products" className="mb-1 underline">
               Продукция
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="mb-1 underline">
+            <Link href="/#faq" className="mb-1 underline">
               Вопросы
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contacts" className="mb-1 underline">
+            <Link href="/contacts" className="mb-1 underline">
               Контакты
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

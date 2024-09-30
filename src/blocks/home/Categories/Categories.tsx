@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container } from "@/src/components/Container";
+import Link from "next/link";
 import React from "react";
 
 export default function Categories() {
@@ -18,9 +19,9 @@ export default function Categories() {
               <p className="mb-2">Плоский прокат</p>
               <p className="mb-2">Фасонный прокат</p>
               <p className="mb-2">Сортовой прокат</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -33,9 +34,9 @@ export default function Categories() {
               <p className="mb-2">Кислотостойкие стали</p>
               <p className="mb-2">Пищевые стали</p>
               <p className="mb-2">Конструкционные стали</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -48,9 +49,9 @@ export default function Categories() {
               <p className="mb-2">Плоский нержавеющий прокат</p>
               <p className="mb-2">Фасонный нержавеющий прокат</p>
               <p className="mb-2">Сортовой нержавеющий прокат</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -63,9 +64,9 @@ export default function Categories() {
               <p className="mb-2">Бериллиевый прокат</p>
               <p className="mb-2">Бронзовый прокат</p>
               <p className="mb-2">Ванадиевый прокат</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -78,9 +79,9 @@ export default function Categories() {
               <p className="mb-2">Серебро</p>
               <p className="mb-2">Платина</p>
               <p className="mb-2">Палладий</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -93,9 +94,9 @@ export default function Categories() {
               <p className="mb-2">Скандий</p>
               <p className="mb-2">Лантан</p>
               <p className="mb-2">Церий</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -108,9 +109,9 @@ export default function Categories() {
               <p className="mb-2">Провода</p>
               <p className="mb-2">СИП</p>
               <p className="mb-2">Витая пара</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -123,9 +124,9 @@ export default function Categories() {
               <p className="mb-2">Электроды сварочные</p>
               <p className="mb-2">Флюс сварочный</p>
               <p className="mb-2">Присадочные прутки</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex w-auto items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
@@ -135,9 +136,9 @@ export default function Categories() {
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Металл Китайский</h3>
               <p className="mb-2">Цирконий</p>
-              <a href="#" className="text-[#ddc124] decoration-none font-bold">
+              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
                 Показать еще
-              </a>
+              </Link>
             </div>
           </div>
         </div>
