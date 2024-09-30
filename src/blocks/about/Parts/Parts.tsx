@@ -1,15 +1,16 @@
 import { Container } from "@/src/components/Container";
+import Image from "next/image";
 import React from "react";
 
 export default function Parts() {
   return (
-    <Container className="my-16 text-center items-center">
-      <div className=" flex flex-col items-center px-20 ">
+    <Container className="mt-20 text-center items-center">
+      <div className=" flex flex-col items-center ">
         <h3 className="text-[#FFBC01] text-[1rem] leading-[60px] font-bold sm:text-[60px]">Этапы работы</h3>
-        <div className="bg-[#0A8C99] py-4 px-20 my-7 rounded-[35px]">
-          <div className="my-7 flex flex-row max-w-[857px]">
-            <img src="01white.png" alt="" />
-            <div className="ml-12 text-left text-white">
+        <div className="bg-[#0A8C99] py-4  my-7 rounded-[35px]">
+          <div className="flex flex-row mt-24 max-w-[857px]">
+            <Image width={240} height={163} className="hidden lg:block" src="/01white.png" alt="" />
+            <div className="ml-5  text-left text-white">
               <h2 className="font-bold text-[32px]">Заявка</h2>
               <p>
                 Клиент отправляет запрос на приобретение металлопроката через
@@ -31,10 +32,10 @@ export default function Parts() {
                 в соответствии с требованиями клиента
               </p>
             </div>
-            <img src="02white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/02white.png" alt="" />
           </div>
           <div className="flex flex-row mt-[90px] max-w-[857px]">
-            <img src="03white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/03white.png" alt="" />
 
             <div className="ml-5 text-left text-white">
               <h2 className="font-bold text-[32px] ">
@@ -59,10 +60,10 @@ export default function Parts() {
                 адресу, обеспечивая сохранность и своевременную поставку
               </p>
             </div>
-            <img src="04white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/04white.png" alt="" />
           </div>
           <div className="flex flex-row mt-[90px] max-w-[857px] mb-7">
-            <img src="05white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/05white.png" alt="" />
 
             <div className="ml-5 text-left text-white">
               <h2 className="font-bold text-[32px] ">

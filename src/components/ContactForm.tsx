@@ -14,7 +14,7 @@ export default function ContactForm() {
             связаться с вами.
           </p>
         </div>
-        <div className="flex justify-between mt-16">
+        <div className="flex flex-col items-center justify-between mt-16 lg:flex-row">
           <div className="mt-[10px] flex flex-col w-[50%] text-[26px] font-[600] text-black">
             <p>Телефон:</p>
 
@@ -48,11 +48,11 @@ export default function ContactForm() {
               />
             </div>
           </div>
-          <div className="flex flex-col width-[45%] border border-1-black py-[52px] pl-[51px] pr-[82px] ml-64">
+          <div className="flex flex-col w-auto border border-1-black shadow-custom py-[12px] pl-[15px] pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-64">
             <form className="flex flex-col">
-              <div className="flex flex-row">
+              <div className="flex flex-col gap-10 lg:flex-row">
                 <input
-                className="mr-10 border border-1-gray p-4"
+                className=" border border-1-gray p-4"
                   type="text"
                   id="name"
                   name="name"
