@@ -55,7 +55,7 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="mb-5 px-9">
+      <div className="mb-5 sm:px-9">
         <h4 className="mb-3 text-[19px] font-[600]">Подписка на рассылку</h4>
         <form className="flex flex-row items-center rounded-[25px] overflow-hidden bg-white  text-black max-w-[360px]">
           <input

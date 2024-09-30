@@ -5,7 +5,7 @@ export default function Parts() {
   return (
     <Container className="my-16 text-center items-center">
       <div className=" flex flex-col items-center px-20 ">
-        <h3 className="font-bold text-[60px] text-[#FFBC01]">Этапы работы</h3>
+        <h3 className="text-[#FFBC01] text-[1rem] leading-[60px] font-bold sm:text-[60px]">Этапы работы</h3>
         <div className="bg-[#0A8C99] py-4 px-20 my-7 rounded-[35px]">
           <div className="my-7 flex flex-row max-w-[857px]">
             <img src="01white.png" alt="" />

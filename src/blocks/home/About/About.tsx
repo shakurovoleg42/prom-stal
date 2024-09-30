@@ -8,8 +8,8 @@ export default function About() {
       <div className="">
         <Image src="/guy.png" width={561} height={565} alt="guy" className="hidden xl:block"/>
       </div>
-      <div className="flex flex-col max-w-[545px] ml-[54px] text-left h-auto">
-        <h2 className="text-[60px] font-[700] leading-[109px] text-[#FFBC01]">
+      <div className="flex flex-col max-w-[545px] text-left h-auto md:ml-[54px] px-2 sm:px-0">
+        <h2 className="text-[2rem] font-[700] leading-[60px] text-[#FFBC01] sm:text-[60px]">
           О нас
         </h2>
         <div className="mt-5">

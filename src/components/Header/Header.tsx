@@ -8,7 +8,7 @@ import { Container } from "../Container";
 const Header = () => {
   return (
     <Container>
-      <div className="flex justify-between items-center py-5">
+      <div className="flex flex-col justify-between items-center py-5 lg:flex-row">
         <div className="flex items-center">
           <Link href="/">
             <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
@@ -22,7 +22,7 @@ const Header = () => {
             <ChevronDown />
           </button>
         </div>
-        <div className="hidden xl:flex items-center">
+        <div className="hidden sm:flex items-center sm:mt-5 lg:mt-0">
           <div>
             <Link
               href="tel:87080016868"
@@ -55,8 +55,8 @@ const Header = () => {
       </div>
 
       <div className="mt-8 flex justify-between items-center py-5">
-        <div className="flex items-center">
-          <button className="flex items-center font-bold uppercase text-[14px]">
+        <div className="flex flex-col sm:items-center sm:flex-row">
+          <button className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
             <img
               src="/catalog.svg"
               alt=""

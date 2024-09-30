@@ -10,10 +10,10 @@ export default function Hero() {
     <div className=" flex w-full h-auto bg-[url('/Banner.png')] bg-cover bg-center justify-center items-center text-white mt-5">
       <div className="flex py-[100px] justify-between items-center ">
         <div className="max-w-[1073px]">
-          <h1 className="text-white text-left px-5 text-[1.6rem] leading-normal font-bold xl:text-[3.6rem]  lg:text-[2.3rem] md:text-[2rem] sm:text-[1.6rem]  ">
+          <h1 className="text-white text-left text-[1.6rem] leading-normal font-bold xl:text-[3.6rem]  lg:text-[2.3rem] md:text-[2rem] sm:text-[1.6rem]  ">
             Организуем доставку металла в кратчайшие сроки в любую точку
             <br />
-            <span className="text-[#FFD66C] text-[4rem] font-bold">
+            <span className="text-[#FFD66C] text-[3.8rem] font-bold">
               Казахстана
             </span>
           </h1>
@@ -32,7 +32,7 @@ export default function Hero() {
             </Button>
           </form>
         </div>
-        <div className="hidden xl:bg-white p-5 rounded-[10px] text-left text-black">
+        <div className="hidden xl:block bg-white p-5 rounded-[10px] text-left text-black">
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
           <div className="flex items-center mb-[13px] flex-row">
             <img src="/phone-icon.svg" alt="Телефон"  className="mr-[10px]"/> <b>8(708)001-68-68</b>
