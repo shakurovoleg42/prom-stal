@@ -9,11 +9,14 @@ import { Container } from "../components/Container";
 import Form from "../components/Form/Form";
 import Banner from "../components/Banner";
 import Link from "next/link";
-
+import Head from "next/head";
 export default function contacts() {
   return (
     <div>
-      <Banner/>
+      <Head>
+        <title>А-Промсталь - Контакты</title>
+      </Head>
+      <Banner />
       <Container className="bg-white shadow-custom p-4 rounded-[10px] mt-24 mb-24">
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
           {/* <div     className="flex flex-col bg-white flex-wrap  items-center pt-8 

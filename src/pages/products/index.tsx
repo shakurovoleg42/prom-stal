@@ -1,0 +1,97 @@
+import React from "react";
+import Banner from "../../components/Banner";
+import { Container } from "../../components/Container";
+import Filters from "@/src/blocks/products/Filters";
+import ListProducts from "@/src/blocks/products/ListProducts";
+import Partners from "@/src/components/Partners";
+import Link from "next/link";
+import ContactForm from "@/src/components/ContactForm";
+import Image from "next/image";
+import Head from "next/head";
+
+export default function products() {
+  return (
+    <>
+    <Head>
+      <title>А-Промсталь - Каталог</title>
+    </Head>
+      <Banner />
+      <Container className="flex flex-col mt-6">
+        <p className="text-[#0A8C99] font-[700] leading-[20px] ">
+          <Link href="/" className="hover:border-b hover:border-[#0A8C99]">
+            Главная
+          </Link>
+          <span className=""> / </span>
+          Каталог
+        </p>
+        <div className="flex flex-row items-center justify-between mt-7">
+          {catalogHeader.map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-row items-center py-4 pl-4 pr-1 bg-[#E2E6ED] rounded-[10px]"
+            >
+              <Image src={item.img} width={46} height={46} alt="" />
+              <span className="ml-3 max-w-[142px] text-[15px] leading-[19px] font-[700]">
+                {item.title}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="relative w-full h-[3px] bg-transparent my-7">
+          <div className="absolute top-[-1px] left-0 right-0 h-[8px] bg-gradient-to-r from-transparent via-[#0A8C99] to-transparent"></div>
+        </div>
+      </Container>
+      <Container className="flex flex-row justify-between ">
+        <Filters />
+        <ListProducts />
+      </Container>
+      <Container className="flex flex-col items-center justify-center mb-24">
+        <Partners />
+        <h2 className="text-[#FFBC01] text-[1.7rem] font-[700]">
+          Сертификаты соответствия
+        </h2>
+        <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
+          <img src="/cer1.png" alt="" />
+          <img src="/cer2.png" alt="" />
+          <img src="/cer3.png" alt="" />
+          <img src="/cer4.png" alt="" />
+          <img src="/cer5.png" alt="" />
+          <img src="/cer6.png" alt="" />
+          <img src="/cer7.png" alt="" />
+          <img src="/cer8.png" alt="" />
+          <img src="/cer9.png" alt="" />
+          <img src="/cer10.png" alt="" />
+        </div>
+      </Container>
+      <ContactForm />
+    </>
+  );
+}
+
+const catalogHeader = [
+  {
+    id: 0,
+    img: "/elektrosvarnye.png",
+    title: "Электросварная стальная труба",
+  },
+  {
+    id: 1,
+    img: "/besshovnye.png",
+    title: "Бесшовная стальная труба",
+  },
+  {
+    id: 2,
+    img: "/tonkostennye.png",
+    title: "Тонкостенные стальные трубы",
+  },
+  {
+    id: 3,
+    img: "/tolstostennye.png",
+    title: "Толстостенные стальные трубы",
+  },
+  {
+    id: 4,
+    img: "/truby-bolshogo-diametra.png",
+    title: "Трубы большого диаметра",
+  },
+];
