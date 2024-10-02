@@ -1,5 +1,6 @@
 import Faq from "@/src/blocks/products/Faq";
 import Payment from "@/src/blocks/products/Payment";
+import SimilarProducts from "@/src/blocks/products/SimilarProducts";
 import { Container } from "@/src/components/Container";
 import Form from "@/src/components/Form/Form";
 import { Button } from "@/src/components/ui/button";
@@ -67,7 +68,7 @@ export default function product() {
         {/* Описание */}
         <div className="h-auto w-full mt-6 flex flex-col lg:flex-row">
           {/* Левая сторона */}
-          <div className="h-auto flex flex-col lg:flex-row">
+          <div className="h-auto flex flex-col">
             <div className="h-[200px] flex flex-col border border-1-[#d2d3d3] rounded-[10px] p-5">
               <div className="flex flex-row gap-5 items-center justify-between mb-2 uppercase ">
                 <span className="font-bold">Цена по запросу</span>
@@ -135,6 +136,7 @@ export default function product() {
       <Form />
       <Payment />
       <Faq/>
+      <SimilarProducts/>
     </>
   );
 }
