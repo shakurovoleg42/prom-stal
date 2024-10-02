@@ -24,11 +24,11 @@ export default function products() {
           <span className=""> / </span>
           Каталог
         </p>
-        <div className="flex flex-row items-center justify-between mt-7">
+        <div className="flex justify-around flex-wrap mt-7">
           {catalogHeader.map((item) => (
             <div
               key={item.id}
-              className="flex flex-row items-center py-4 pl-4 pr-1 bg-[#E2E6ED] rounded-[10px]"
+              className="flex items-center mt-3 py-4 pl-4 pr-1 bg-[#E2E6ED] rounded-[10px]"
             >
               <Image src={item.img} width={46} height={46} alt="" />
               <span className="ml-3 max-w-[142px] text-[15px] leading-[19px] font-[700]">
@@ -41,7 +41,7 @@ export default function products() {
           <div className="absolute top-[-1px] left-0 right-0 h-[8px] bg-gradient-to-r from-transparent via-[#0A8C99] to-transparent"></div>
         </div>
       </Container>
-      <Container className="flex flex-row justify-between ">
+      <Container className="flex flex-col justify-between lg:flex-row ">
         <Filters />
         <ListProducts />
       </Container>
@@ -51,16 +51,16 @@ export default function products() {
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
-          <img src="/cer1.png" alt="" />
-          <img src="/cer2.png" alt="" />
-          <img src="/cer3.png" alt="" />
-          <img src="/cer4.png" alt="" />
-          <img src="/cer5.png" alt="" />
-          <img src="/cer6.png" alt="" />
-          <img src="/cer7.png" alt="" />
-          <img src="/cer8.png" alt="" />
-          <img src="/cer9.png" alt="" />
-          <img src="/cer10.png" alt="" />
+         <Image width={198} height={280} src="/cer1.png" alt="" />
+         <Image width={198} height={280} src="/cer2.png" alt="" />
+         <Image width={198} height={280} src="/cer3.png" alt="" />
+         <Image width={198} height={280} src="/cer4.png" alt="" />
+         <Image width={198} height={280} src="/cer5.png" alt="" />
+         <Image width={198} height={280} src="/cer6.png" alt="" />
+         <Image width={198} height={280} src="/cer7.png" alt="" />
+         <Image width={198} height={280} src="/cer8.png" alt="" />
+         <Image width={198} height={280} src="/cer9.png" alt="" />
+         <Image width={198} height={280} src="/cer10.png" alt="" />
         </div>
       </Container>
       <ContactForm />

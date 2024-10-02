@@ -20,6 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         contact: "bg-[#0A8C99] text-white hover:bg-[#0A8C99]/90",
         seePrice: "bg-[#FED731] text-[#0A8C99] text-[10px] font-[700] leading-[21px] hover:bg-[#FED731]/90 uppercase rounded-[6px]",
+        tabs: "bg-transparent hover:bg-[#0A8C99] text-[#6F727B] font-bold hover:text-[#FED731] hover:text-[#FED731]/90 w-[600px]",
       },
       size: {
         default: "h-11 px-4 py-3",

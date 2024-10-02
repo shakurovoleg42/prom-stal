@@ -5,16 +5,16 @@ import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function ListProducts() {
-  const slug = "rolton";
+  const slug = "product";
 
   return (
     <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] ml-1">
       {data.map((item) => (
         <div
           key={item.id}
-          className="flex flex-row items-center justify-between p-2 border-b border-[#D3D6DB] pl-4 py-4"
+          className="flex justify-around flex-wrap p-2 border-b border-[#D3D6DB] pl-4 py-4"
         >
-          <Image src="/guy.png" alt="" width={35} height={35} />
+          <Image src="/elektrosvarnye.png" alt="" width={35} height={35} />
           <Link
             href={`/products/${slug}`}
             className="max-w-[550px] text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
