@@ -235,17 +235,20 @@ const Header = () => {
               className="flex flex-col items-start text-left"
             >
               <SheetHeader>
-                <SheetTitle className="text-[2rem] border-b border-1-[#999999]">Перейти к:</SheetTitle>
+                <SheetTitle className="text-[2rem] border-b border-1-[#999999]">
+                  Перейти к:
+                </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col mt-12 gap-2">
                 {pages.map((page) => (
-                  <Link
-                    key={page.name}
-                    href={page.href}
-                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[22px]"
-                  >
-                    <b>{page.name}</b>
-                  </Link>
+                  <SheetClose asChild key={page.name}>
+                    <Link
+                      href={page.href}
+                      className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[22px]"
+                    >
+                      <b>{page.name}</b>
+                    </Link>
+                  </SheetClose>
                 ))}
               </div>
             </SheetContent>
