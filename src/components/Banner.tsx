@@ -21,7 +21,7 @@ export default function Banner() {
   };
 
   return (
-    <div className="flex w-full max-h-[589px] bg-[url('/Banner.png')] bg-cover bg-center text-white mt-5">
+    <div className="flex w-full max-h-[589px] bg-[url('/Banner.png')] bg-cover bg-center text-white mt-5 font-montserrat">
       <Container className="text-left items-left py-[100px] justify-left">
         <h1 className="text-white text-[2rem] text-left leading-normal font-[700] lg:text-[85px]">
           {whatPageBanner()}

@@ -23,7 +23,7 @@ export default function Filters() {
   };
 
   return (
-    <div className="flex w-auto flex-col border-t border-r border-b border-[#D3D6DB] rounded-[10px] px-14 lg:px-0">
+    <div className="flex w-auto flex-col border-t border-r border-b border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat">
       <div className="flex flex-col ">
         <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("thickness")}>
          <span

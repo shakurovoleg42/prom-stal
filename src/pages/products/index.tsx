@@ -16,7 +16,7 @@ export default function products() {
       <title>А-Промсталь - Каталог</title>
     </Head>
       <Banner />
-      <Container className="flex flex-col mt-6">
+      <Container className="flex flex-col mt-6 font-montserrat">
         <p className="text-[#0A8C99] font-[700] leading-[20px] ">
           <Link href="/" className="hover:border-b hover:border-[#0A8C99]">
             Главная
@@ -45,7 +45,7 @@ export default function products() {
         <Filters />
         <ListProducts />
       </Container>
-      <Container className="flex flex-col items-center justify-center mb-24">
+      <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />
         <h2 className="text-[#FFBC01] text-[1.7rem] font-[700]">
           Сертификаты соответствия

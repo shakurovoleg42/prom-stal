@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function ContactForm() {
   return (
-    <Container className="items-center mb-24">
-      <div className="p-5 flex flex-col items-center">
+    <Container className="items-center mb-24 font-poppins">
+      <div className="p-5 flex flex-col items-center font-poppins">
         <div className="text-center max-w-[560px] items-center">
           <h1 className="text-[60px] font-[700] text-[#FFBC01]">Контакты</h1>
           <p className="text-[19px] font-[600]">

@@ -17,7 +17,7 @@ export default function contacts() {
         <title>А-Промсталь - Контакты</title>
       </Head>
       <Banner />
-      <Container className="bg-white shadow-custom p-4 rounded-[10px] mt-24 mb-24">
+      <Container className="bg-white shadow-custom p-4 rounded-[10px] mt-24 mb-24 font-montserrat">
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
           {/* <div     className="flex flex-col bg-white flex-wrap  items-center pt-8 
                                 2xl:max-w-[250px] xl:max-w-[200px] lg:max-w-[180px] md:max-w-[160px]

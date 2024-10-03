@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Payment() {
   return (
-    <Container  className="flex flex-col my-20">
+    <Container  className="flex flex-col my-20 font-montserrat">
       <h3 id="payment" className="text-center font-bold text-[2rem] text-black">Оплата</h3>
       <div className="w-full flex items-center justify-around flex-wrap mt-16 gap-4">
         <div className="max-w-[360px] flex flex-col items-center text-center bg-[#0A8C99] rounded-[10px] p-4">

@@ -11,7 +11,7 @@ export default function delivery() {
     </Head>
       <Banner />
       <Container>
-        <div className="text-left text-[1rem] font-[700] my-20 px-2">
+        <div className="text-left text-[1rem] font-[700] my-20 px-2 font-montserrat">
           <p>
             Компания Промсталь осуществляет доставку по всем регионам Российской
             Федерации, Республики Казахстан, Республики Узбекистан и странам

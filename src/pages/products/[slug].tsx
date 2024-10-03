@@ -17,7 +17,7 @@ export default function product() {
     <Head>
       <title>А-Промсталь - Продукт</title>
     </Head>
-      <Container className="flex flex-col mt-6">
+      <Container className="flex flex-col mt-6 font-montserrat">
         <p className="text-[#999999] font-[700] leading-[20px] ">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
@@ -26,8 +26,8 @@ export default function product() {
           Продукт
         </p>
       </Container>
-      <Container className="w-full h-full flex flex-col items-center mt-5  mb-11">
-        <div className="w-full flex flex-col pl-6 justify-center lg:flex-row justify-left">
+      <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
+        <div className="w-full flex flex-col justify-center lg:flex-row justify-left">
           <img
             src={img}
             width={250}
@@ -67,7 +67,7 @@ export default function product() {
           </div>
         </div>
         {/* Описание */}
-        <div className="h-auto w-full mt-6 flex flex-col lg:flex-row">
+        <div className="h-auto w-full mt-6 flex flex-col lg:flex-row gap-0 lg:gap-10">
           {/* Левая сторона */}
           <div className="h-auto flex flex-col">
             <div className="h-[200px] flex flex-col border border-1-[#d2d3d3] rounded-[10px] p-5">
@@ -83,11 +83,11 @@ export default function product() {
                 >
                   Узнать цену
                 </Button>
-                <Button className="bg-[#F5F7F8] text-[#FFD66C]">
-                  <Phone size={16} style={{ fill: "#FFD66C" }} />
+                <Button className="bg-[#F5F7F8] hover:bg-black  text-[#FFD66C]">
+                  <Phone size={16}  />
                 </Button>
-                <Button className="bg-[#F5F7F8] ">
-                  <Mail size={17} style={{ fill: "#FFD66C" }} />
+                <Button className="bg-[#F5F7F8] hover:bg-black text-[#FFD66C]">
+                  <Mail size={17}  />
                 </Button>
               </div>
             </div>
@@ -109,9 +109,9 @@ export default function product() {
             </div>
           </div>
           {/* Правая сторона */}
-          <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px]">
-            <div className="max-w-[768px] py-3 pl-4">
-              <p className="text-[14px] leading-[16px] font-[400] h-full">
+          <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px] pl-4 ">
+            <div className="max-w-[768px] py-3 ">
+              <p className="text-[14px] leading-[16px] font-[400] h-full ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore aliquam corporis dolores aspernatur maxime perspiciatis eos nemo praesentium! Quisquam saepe dolores omnis? Quidem dolore maiores architecto fugit deserunt quos aspernatur?
                 Minima ut adipisci, consequuntur autem voluptatum enim illum odit labore consequatur totam atque laborum sequi dolorum aperiam velit minus exercitationem provident nobis cumque. Asperiores accusantium libero sint ut sunt ipsam!
                 Soluta quos dignissimos omnis, dolorem dicta labore corrupti eum minima ducimus quaerat et accusantium animi impedit deserunt praesentium, fugiat consectetur ad possimus beatae laboriosam ullam rem aliquid perspiciatis magni? Facere!

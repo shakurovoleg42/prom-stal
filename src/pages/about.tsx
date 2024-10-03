@@ -16,7 +16,7 @@ export default function about() {
       <title>А-Промсталь - Щ компании</title>
     </Head>
       <Banner />
-      <Container className="mt-20 flex">
+      <Container className="mt-20 flex font-montserrat">
         <div className="flex flex-col text-left h-auto">
           <div className="mt-5 max-w-[987px]">
             <p className="text-[#FFBC01] text-[1.7rem] font-[700] leading-[40.95px] md:text-[35px]">

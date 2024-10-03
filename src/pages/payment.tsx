@@ -11,7 +11,7 @@ export default function payment() {
     </Head>
       <Banner />
       <Container>
-        <div className="text-left text-[1rem] font-[700] my-20 px-2">
+        <div className="text-left text-[1rem] font-[700] my-20 px-2 font-montserrat">
           <p>
             Обсудить все вопросы, рассчитать стоимость доставки и договориться о
             способе оплаты Вы можете с экспертами нашего коммерческого отдела.

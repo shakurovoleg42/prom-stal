@@ -8,7 +8,7 @@ export default function ListProducts() {
   const slug = "product";
 
   return (
-    <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] ml-1">
+    <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] ml-1 font-montserrat">
       {data.map((item) => (
         <div
           key={item.id}
