@@ -17,9 +17,9 @@ export default function about() {
     </Head>
       <Banner />
       <Container className="mt-20 flex font-montserrat">
-        <div className="flex flex-col text-left h-auto">
+        <div className="flex flex-col text-left h-auto w-full">
           <div className="mt-5 max-w-[987px]">
-            <p className="text-[#FFBC01] text-[1.7rem] font-[700] leading-[40.95px] md:text-[35px]">
+            <p className="text-[#FFBC01] break-words text-[1.7rem] font-[700]  md:text-[35px]">
               Компания  <span className="text-[#284F52]">А-ПРОМСТАЛЬ</span>
                специализируется на продаже металлопроката различных видов и
               размеров
