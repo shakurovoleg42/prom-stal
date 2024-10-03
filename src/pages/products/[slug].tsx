@@ -27,7 +27,7 @@ export default function product() {
         </p>
       </Container>
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
-        <div className="w-full flex flex-col justify-center lg:flex-row justify-left">
+        <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:justify-left lg:items-start">
           <img
             src={img}
             width={250}
@@ -111,7 +111,7 @@ export default function product() {
           {/* Правая сторона */}
           <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px] pl-4 ">
             <div className="max-w-[768px] py-3 ">
-              <p className="text-[14px] leading-[16px] font-[400] h-full ">
+              <p className="text-[14px] leading-[16px] font-[400] h-full pr-4 md:pr-0">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore aliquam corporis dolores aspernatur maxime perspiciatis eos nemo praesentium! Quisquam saepe dolores omnis? Quidem dolore maiores architecto fugit deserunt quos aspernatur?
                 Minima ut adipisci, consequuntur autem voluptatum enim illum odit labore consequatur totam atque laborum sequi dolorum aperiam velit minus exercitationem provident nobis cumque. Asperiores accusantium libero sint ut sunt ipsam!
                 Soluta quos dignissimos omnis, dolorem dicta labore corrupti eum minima ducimus quaerat et accusantium animi impedit deserunt praesentium, fugiat consectetur ad possimus beatae laboriosam ullam rem aliquid perspiciatis magni? Facere!

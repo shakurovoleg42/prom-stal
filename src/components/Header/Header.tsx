@@ -6,11 +6,7 @@ import { Button } from "@/src/components/ui/button"
 import { Label } from "@/src/components/ui/label"
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/src/components/ui/popover";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -195,32 +191,32 @@ const Header = () => {
 
       <div className="mt-8 flex justify-between items-center py-5">
         <div className="flex flex-col sm:items-center sm:flex-row">
-          <Popover>
-            <PopoverTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
+          <Sheet>
+            <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
               <img
                 src="/catalog.svg"
                 alt=""
                 className="mr-2 w-[20px] text-[14px] border-1-black bg-white p-1 rounded-[5px]"
               />
               Каталог
-            </PopoverTrigger>
-            <PopoverContent className="flex flex-col">
-              <span className="border-b border-[#cbccce] pb-3 text-center">
-                Перейти к
-              </span>
-              <div className="flex flex-col mt-2 gap-2">
+            </SheetTrigger>
+            <SheetContent side="left" className="flex flex-col items-start text-left">
+              {/* <SheetHeader> */}
+                {/* <SheetTitle className="text-[2rem]">Gtht</SheetTitle> */}
+              {/* </SheetHeader> */}
+              <div className="flex flex-col mt-12 gap-2">
                 {pages.map((page) => (
                   <Link
                     key={page.name}
                     href={page.href}
-                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[14px]"
+                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[22px]"
                   >
                     <b>{page.name}</b>
                   </Link>
                 ))}
               </div>
-            </PopoverContent>
-          </Popover>
+            </SheetContent>
+          </Sheet>
 
           <div className="relative flex items-center bg-[#F5F7F8] py-3 pr-[8px] pl-[25px] rounded-[8px] ml-12">
             <Input

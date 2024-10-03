@@ -14,13 +14,15 @@ export default function ListProducts() {
           key={item.id}
           className="flex justify-around flex-wrap p-2 border-b border-[#D3D6DB] pl-4 py-4"
         >
+          <div className="flex flex-row ">
           <Image src="/elektrosvarnye.png" alt="" width={35} height={35} />
           <Link
             href={`/products/${slug}`}
-            className="max-w-[550px] text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
+            className="max-w-[550px] ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
           >
             {item.name}
           </Link>
+          </div>
           <Button variant="seePrice">узнать цену</Button>
           <Button variant="contact" className="text-[#FFD66C]">
             <Phone size={20} />
