@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ContactForm() {
   return (
     <Container className="items-center mb-24 font-poppins">
-      <div className="p-5 flex flex-col items-center font-poppins">
+      <div className="p-2 flex flex-col items-center font-poppins">
         <div className="text-center max-w-[560px] items-center">
           <h1 className="text-[60px] font-[700] text-[#FFBC01]">Контакты</h1>
           <p className="text-[19px] font-[600]">
@@ -16,14 +16,14 @@ export default function ContactForm() {
           </p>
         </div>
         <div className="flex flex-col items-center justify-between mt-16 lg:flex-row">
-          <div className="mt-[10px] flex flex-col w-[50%] text-[26px] font-[600] text-black">
+          <div className="mt-[10px] flex flex-col w-[50%] text-[26px] text-center font-[600] text-black">
             <p>Телефон:</p>
 
-            <p>8(708)001-68-68</p>
+            <p className="text-[1rem] md:text-[1.4rem]">8(708)001-68-68</p>
 
             <p>Email:</p>
 
-            <p>APS168@yandex.kz </p>
+            <p className="text-[1rem] md:text-[1.4rem]">APS168@yandex.kz </p>
 
             <div className="flex flex-row mt-5 gap-5">
               <Link href="https://www.facebook.com/people/Too-Apromstall/pfbid02Y7usfniRUK8KWbx971VZEogtTbgRXNK2hZgUPuX8TBusiCZav7WrADgip4NGQKNdl/">
@@ -55,7 +55,7 @@ export default function ContactForm() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col w-auto border border-1-black shadow-custom py-[12px] pl-[15px] pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-64">
+          <div className="flex flex-col w-auto border border-1-black shadow-custom ml-0 lg-ml-20 py-[12px] pl-[15px] pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-32">
             <form className="flex flex-col">
               <div className="flex flex-col gap-10 lg:flex-row">
                 <input

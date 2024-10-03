@@ -12,7 +12,7 @@ export default function ListProducts() {
       {data.map((item) => (
         <div
           key={item.id}
-          className="flex justify-around flex-wrap p-2 border-b border-[#D3D6DB] pl-4 py-4"
+          className="flex justify-around flex-wrap  border-b border-[#D3D6DB] pl-2 py-4"
         >
           <div className="flex flex-row ">
           <Image src="/elektrosvarnye.png" alt="" width={35} height={35} />

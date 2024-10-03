@@ -2,8 +2,8 @@
 import React from "react";
 import { Input } from "../ui/input";
 import Link from "next/link";
-import { Button } from "@/src/components/ui/button"
-import { Label } from "@/src/components/ui/label"
+import { Button } from "@/src/components/ui/button";
+import { Label } from "@/src/components/ui/label";
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
 
@@ -22,7 +22,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/src/components/ui/sheet"
+} from "@/src/components/ui/sheet";
 import Image from "next/image";
 
 const Header = () => {
@@ -144,12 +144,20 @@ const Header = () => {
             </Link>
           </div>
           <Sheet>
-            <SheetTrigger asChild className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]">
+            <SheetTrigger
+              asChild
+              className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]"
+            >
               <button>
-              <Image src="/request.svg" alt="Request" width={20} height={20} className="mr-2" />
-              Оставить заявку
+                <Image
+                  src="/request.svg"
+                  alt="Request"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />
+                Оставить заявку
               </button>
-                
             </SheetTrigger>
             <SheetContent className="flex flex-col items-start text-left">
               <SheetHeader>
@@ -157,20 +165,44 @@ const Header = () => {
               </SheetHeader>
               <div className="flex flex-col items-left gap-8 py-4 px-2">
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="product" className="text-left">Товар</Label>
-                  <Input id="name" placeholder="Кабель силовой медный" className="col-span-3 py-7 px-2 border border-1-black" />
+                  <Label htmlFor="product" className="text-left">
+                    Товар
+                  </Label>
+                  <Input
+                    id="name"
+                    placeholder="Кабель силовой медный"
+                    className="col-span-3 py-7 px-2 border border-1-black"
+                  />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username" className="text-left">Количество</Label>
-                  <Input id="username" placeholder="20" className="col-span-3 py-7 px-2 border border-1-black" />
+                  <Label htmlFor="username" className="text-left">
+                    Количество
+                  </Label>
+                  <Input
+                    id="username"
+                    placeholder="20"
+                    className="col-span-3 py-7 px-2 border border-1-black"
+                  />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username" className="text-left">Номер телефона</Label>
-                  <Input id="username" placeholder="" className="col-span-3 py-7 px-2 border border-1-black" />
+                  <Label htmlFor="username" className="text-left">
+                    Номер телефона
+                  </Label>
+                  <Input
+                    id="username"
+                    placeholder=""
+                    className="col-span-3 py-7 px-2 border border-1-black"
+                  />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="username" className="text-left">Email</Label>
-                  <Input id="username" placeholder="example@gmail.com" className="col-span-3 py-7 px-2 border border-1-black" />
+                  <Label htmlFor="username" className="text-left">
+                    Email
+                  </Label>
+                  <Input
+                    id="username"
+                    placeholder="example@gmail.com"
+                    className="col-span-3 py-7 px-2 border border-1-black"
+                  />
                 </div>
               </div>
               <SheetFooter>
@@ -180,8 +212,6 @@ const Header = () => {
               </SheetFooter>
             </SheetContent>
           </Sheet>
-
-          
         </div>
       </div>
 
@@ -200,10 +230,13 @@ const Header = () => {
               />
               Каталог
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col items-start text-left">
-              {/* <SheetHeader> */}
-                {/* <SheetTitle className="text-[2rem]">Gtht</SheetTitle> */}
-              {/* </SheetHeader> */}
+            <SheetContent
+              side="left"
+              className="flex flex-col items-start text-left"
+            >
+              <SheetHeader>
+                <SheetTitle className="text-[2rem] border-b border-1-[#999999]">Перейти к:</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col mt-12 gap-2">
                 {pages.map((page) => (
                   <Link
