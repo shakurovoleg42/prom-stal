@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Parts() {
   return (
-    <Container className="mt-20 text-center items-center">
+    <Container className="mt-20 text-center items-center font-montserrat">
       <div className=" flex flex-col items-center ">
         <h3 className="text-[#FFBC01] text-[1rem] leading-[60px] font-bold sm:text-[60px]">Этапы работы</h3>
         <div className="bg-[#0A8C99] py-4  my-7 rounded-[35px]">

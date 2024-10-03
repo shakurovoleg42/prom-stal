@@ -6,7 +6,7 @@ import React from "react";
 export default function Categories() {
   return (
     <Container>
-      <div className=" text-[10px] leading-[10px] text-center mt-16">
+      <div className=" text-[10px] leading-[10px] text-center mt-16 font-inter">
         <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Категории</h2>
         <div className="flex flex-wrap justify-between mt-8">
           <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">

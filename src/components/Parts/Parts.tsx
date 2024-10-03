@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Parts() {
   return (
-    <Container className="mt-20 text-center items-center">
+    <Container className="mt-20 text-center items-center font-montserrat">
       <div className=" flex flex-col items-center">
         <h3 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Этапы работы</h3>
         <div className="flex flex-row mt-24 max-w-[857px]" >

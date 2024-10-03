@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Input } from "../ui/inputSearch";
+import { Input } from "../ui/input";
 import Link from "next/link";
+import { Button } from "@/src/components/ui/button"
+import { Label } from "@/src/components/ui/label"
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
 import {
@@ -16,10 +18,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/src/components/ui/sheet"
 import Image from "next/image";
 
 const Header = () => {
-
   const langs = [
     {
       name: "Русский",
@@ -32,7 +42,7 @@ const Header = () => {
     {
       name: "Қазақ",
       code: "kk",
-    }
+    },
   ];
 
   const cities = [
@@ -78,7 +88,7 @@ const Header = () => {
   ];
 
   return (
-    <Container>
+    <Container className="font-inter">
       <div className="flex flex-col justify-between items-center py-5 lg:flex-row">
         <div className="flex items-center">
           <Link href="/">
@@ -94,17 +104,17 @@ const Header = () => {
               <DropdownMenuSeparator />
               {cities.map((cities) => (
                 <DropdownMenuItem key={cities.code}>
-                <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
-                  {cities.name}
-                </b>
-              </DropdownMenuItem>
+                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
+                    {cities.name}
+                  </b>
+                </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
-            <img src="/ru.svg" alt="" className="mr-2 w-[20px]" /> RU
-            <ChevronDown />
+              <img src="/ru.svg" alt="" className="mr-2 w-[20px]" /> RU
+              <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuSeparator />
@@ -137,12 +147,45 @@ const Header = () => {
               <b>info@example.com</b>
             </Link>
           </div>
-          <Link href="#">
-            <button className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]">
-              <img src="/request.svg" alt="" className="mr-2 w-[20px]" />
+          <Sheet>
+            <SheetTrigger asChild className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]">
+              <button>
+              <Image src="/request.svg" alt="Request" width={20} height={20} className="mr-2" />
               Оставить заявку
-            </button>
-          </Link>
+              </button>
+                
+            </SheetTrigger>
+            <SheetContent className="flex flex-col items-start text-left">
+              <SheetHeader>
+                <SheetTitle className="text-[2rem]">Заказ в 1 клик</SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col items-left gap-8 py-4 px-2">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="product" className="text-left">Товар</Label>
+                  <Input id="name" placeholder="Кабель силовой медный" className="col-span-3 py-7 px-2 border border-1-black" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="username" className="text-left">Количество</Label>
+                  <Input id="username" placeholder="20" className="col-span-3 py-7 px-2 border border-1-black" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="username" className="text-left">Номер телефона</Label>
+                  <Input id="username" placeholder="" className="col-span-3 py-7 px-2 border border-1-black" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="username" className="text-left">Email</Label>
+                  <Input id="username" placeholder="example@gmail.com" className="col-span-3 py-7 px-2 border border-1-black" />
+                </div>
+              </div>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button type="submit">Отправить</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+
+          
         </div>
       </div>
 
@@ -197,16 +240,25 @@ const Header = () => {
         </div>
         <div className="hidden xl:flex items-center ">
           <div className="flex">
-            <Link href="/#regards" className="ml-5 text-[14px] uppercase font-bold">
+            <Link
+              href="/#regards"
+              className="ml-5 text-[14px] uppercase font-bold"
+            >
               Преимущества
             </Link>
-            <Link href="/products" className="ml-5 text-[14px] uppercase font-bold">
+            <Link
+              href="/products"
+              className="ml-5 text-[14px] uppercase font-bold"
+            >
               Продукция
             </Link>
             <Link href="/#faq" className="ml-5 text-[14px] uppercase font-bold">
               Вопросы
             </Link>
-            <Link href="/contacts" className="ml-5 text-[14px] uppercase font-bold">
+            <Link
+              href="/contacts"
+              className="ml-5 text-[14px] uppercase font-bold"
+            >
               Контакты
             </Link>
             <button className="ml-5 text-[14px] uppercase font-bold">

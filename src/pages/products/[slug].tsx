@@ -11,6 +11,7 @@ import Link from "next/link";
 import React from "react";
 
 export default function product() {
+  const img = "https://isteels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
   return (
     <>
     <Head>
@@ -27,8 +28,8 @@ export default function product() {
       </Container>
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11">
         <div className="w-full flex flex-col pl-6 justify-center lg:flex-row justify-left">
-          <Image
-            src="/elektrosvarnye.png"
+          <img
+            src={img}
             width={250}
             height={250}
             alt="Фото товара"
@@ -102,7 +103,9 @@ export default function product() {
               <Link href="/#faq">
                 <Button variant="tabs" className="w-full bg-transparent text-[#000]">Вопрос-ответ</Button>
               </Link>
+              <Link href="#similar-products">
               <Button variant="tabs" className="w-full bg-transparent text-[#000]">Аналоги</Button>
+              </Link>
             </div>
           </div>
           {/* Правая сторона */}

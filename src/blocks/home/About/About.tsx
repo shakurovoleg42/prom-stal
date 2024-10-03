@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 export default function About() {
   return (
-    <Container className="mt-20 flex flex-row items-center">
+    <Container className="mt-20 flex flex-row items-center font-montserrat">
       <div className="">
         <Image src="/guy.png" width={561} height={565} alt="guy" className="hidden xl:block"/>
       </div>

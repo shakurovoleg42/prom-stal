@@ -6,7 +6,7 @@ export default function Partners() {
   return (
     <Container>
       <div className="text-center m-0 px-5 mt-20">
-        <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Наши партнёры</h2>
+        <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px] font-montserrat">Наши партнёры</h2>
         <div className="flex justify-around my-16">
           <a href="#">
             <img src="image 2.svg" alt="" />
