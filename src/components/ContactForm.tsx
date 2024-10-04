@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ContactForm() {
   return (
     <Container className="items-center mb-24 font-poppins">
-      <div className="p-2 flex flex-col items-center font-poppins">
+      <div className="p-0 flex flex-col items-center font-poppins">
         <div className="text-center max-w-[560px] items-center">
           <h1 className="text-[60px] font-[700] text-[#FFBC01]">Контакты</h1>
           <p className="text-[19px] font-[600]">
@@ -55,11 +55,11 @@ export default function ContactForm() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col w-auto border border-1-black shadow-custom ml-0 lg-ml-20 py-[12px] pl-[15px] pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-32">
+          <div className="flex py-6 flex-col w-auto border border-1-black shadow-custom ml-0 lg-ml-20  pl-[15px] pr-[2px] sm:pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-32">
             <form className="flex flex-col">
               <div className="flex flex-col gap-10 lg:flex-row">
                 <input
-                  className="border border-1-gray p-3"
+                  className="border border-1-gray p-1"
                   type="text"
                   id="name"
                   name="name"
@@ -67,7 +67,7 @@ export default function ContactForm() {
                   required
                 />
                 <input
-                  className="border border-1-gray p-3"
+                  className="border border-1-gray p-1"
                   type="tel"
                   id="phone"
                   name="phone"
@@ -77,7 +77,7 @@ export default function ContactForm() {
               </div>
 
               <textarea
-                className="mt-9 border border-1-gray p-4"
+                className="mt-9 border border-1-gray p-1"
                 id="comment"
                 name="comment"
                 placeholder="Комментарий"
