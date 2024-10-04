@@ -59,7 +59,7 @@ export default function ContactForm() {
             <form className="flex flex-col">
               <div className="flex flex-col gap-10 lg:flex-row">
                 <input
-                  className=" border border-1-gray p-4"
+                  className="border border-1-gray p-3"
                   type="text"
                   id="name"
                   name="name"
@@ -67,7 +67,7 @@ export default function ContactForm() {
                   required
                 />
                 <input
-                  className="border border-1-gray p-4"
+                  className="border border-1-gray p-3"
                   type="tel"
                   id="phone"
                   name="phone"

@@ -66,7 +66,11 @@ const Header = () => {
           </Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
-              <img src="/location.svg" alt="location" className="mr-2 w-[20px] " />
+              <img
+                src="/location.svg"
+                alt="location"
+                className="mr-2 w-[20px] "
+              />
               Астана
               <ChevronDown />
             </DropdownMenuTrigger>
@@ -117,6 +121,8 @@ const Header = () => {
               <b>info@example.com</b>
             </Link>
           </div>
+        </div>
+        <div className="mt-6 sm:mt-4 lg:mt-0">
           <Sheet>
             <SheetTrigger
               asChild
