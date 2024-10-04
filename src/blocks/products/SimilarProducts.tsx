@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/src/components/ui/carousel";
+import Image from "next/image";
 // import Image from "next/image";
 import React from "react";
 
@@ -21,7 +22,7 @@ export default function SimilarProducts() {
         <CarouselContent className=" flex items-center gap-4">
           <CarouselItem className="max-w-[260px] p-0 flex items-center justify-center basis-1/2 lg:basis-1/3">
             <div className="flex flex-col items-center justify-center px-0">
-              <img src={img} width={214} height={219} alt="1" />
+              <Image src={img} width={214} height={219} alt="1" />
               <p className="text-black text-[18px] font-[700] leading-[19.3px] text-left mt-5">
                 Штрипс нержавеющий шлифованный 4N+PE 1 мм AISI 202 в Астане
               </p>

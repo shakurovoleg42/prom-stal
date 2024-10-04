@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Faq from "@/src/blocks/products/Faq";
 import Payment from "@/src/blocks/products/Payment";
 import SimilarProducts from "@/src/blocks/products/SimilarProducts";
