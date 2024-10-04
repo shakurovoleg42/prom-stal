@@ -24,9 +24,9 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
-            <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="2.svg" alt="parts" />
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border ">
+            <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] flex items-start">
+              <img src="2.svg" alt="parts" className="" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Специальные стали</h3>

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import Link from 'next/link'
-import { Input } from '../ui/input'
+import { Input } from '../ui/inputSearch'
 import Image from 'next/image'
 
 export default function SecondHeader() {
@@ -83,7 +83,7 @@ export default function SecondHeader() {
               type="text"
               placeholder="Найти товар"
               defaultValue=""
-              className="ml-5 border-none outline-none w-auto"
+              className="ml-5 border-none outline-none w-auto "
             />
             <Image
               src="/search-icon.svg"
