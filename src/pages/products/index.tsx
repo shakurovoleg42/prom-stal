@@ -51,16 +51,16 @@ export default function products() {
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
-         <Image width={198} height={280} src="/cer1.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer2.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer3.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer4.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer5.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer6.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer7.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer8.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer9.png" alt="certificate" />
-         <Image width={198} height={280} src="/cer10.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer1.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer2.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer3.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer4.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer5.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer6.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer7.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer8.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer9.png" alt="certificate" />
+         <Image width={160} height={280} src="/cer10.png" alt="certificate" />
         </div>
       </Container>
       <ContactForm />
