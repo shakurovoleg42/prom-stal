@@ -31,7 +31,9 @@ export default function About() {
             резке металлопроката по индивидуальным потребностям клиента.
           </p>
         </div>
+        <div className="w-full flex items-center justify-center sm:items-start">
         <Button variant="contact" className="w-[141px] mt-9"><Link href="/about">Подробнее</Link></Button>
+        </div>
       </div>
     </Container>
   );

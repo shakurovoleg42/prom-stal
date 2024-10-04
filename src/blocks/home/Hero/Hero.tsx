@@ -18,15 +18,15 @@ export default function Hero() {
             </span>
           </h1>
           <form className="flex flex-col xl:flex-row gap-[41px] mt-5 items-center">
-            <div className="grid w-full max-w-sm items-center gap-1.5">
+            <div className="grid w-full max-w-sm items-center justify-center gap-1.5">
               <Label htmlFor="email">Поиск</Label>
               <Input type="text" defaultValue="" />
             </div>
-            <div className="grid w-full max-w-sm items-center gap-1.5">
+            <div className="grid w-full max-w-sm items-center justify-center gap-1.5">
               <Label htmlFor="email">Контакты</Label>
               <Input type="text" defaultValue="" />
             </div>
-            <Button type="submit" variant="contact" className="items-center flex flex-row text-[14px]">
+            <Button type="submit" variant="contact" className="items-center flex flex-row text-[14px] sm:mt-5">
               <b>Оставить заявку!</b>
               <ArrowRight size={20} className="ml-[10px]"/>
             </Button>
