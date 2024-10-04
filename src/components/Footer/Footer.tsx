@@ -61,7 +61,7 @@ export default function Footer() {
           <input
             type="email"
             placeholder="Электронная почта"
-            className=" border-none rounded-[10px] p-[20px] sm:rounded-l-[25px] sm:rounded-[8px] sm:rounded-tl-[25px] sm:rounded-tr-[0] sm:rounded-bl-[25px] text-[12px] outline-none bg-white "
+            className=" border-none rounded-[10px] p-[20px] sm:p-[10px] sm:rounded-l-[25px] sm:rounded-[8px] sm:rounded-tl-[25px] sm:rounded-tr-[0] sm:rounded-bl-[25px] text-[12px] outline-none bg-white "
           />
           <button
             className="mt-2  sm:mt-0 bg-[#284F52] text-white border-none py-[10px] px-[35px] rounded-[25px] text-12px cursor-pointer outline-none"
