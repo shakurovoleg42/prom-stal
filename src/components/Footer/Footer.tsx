@@ -55,16 +55,16 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="mb-5 sm:px-9">
+      <div className="mb-5 sm:px-9 text-center">
         <h4 className="mb-3 text-[19px] font-[600]">Подписка на рассылку</h4>
-        <form className="flex flex-col sm:flex-row items-center rounded-[25px] overflow-hidden bg-white  text-black w-auto">
+        <form className="flex flex-col sm:flex-row items-center sm:rounded-[25px] overflow-hidden  sm:bg-white  text-black w-auto">
           <input
             type="email"
             placeholder="Электронная почта"
-            className=" border-none p-[6px] rounded-l-[25px] rounded-tl-[25px] rounded-tr-[0] rounded-bl-[25px] text-[12px] outline-none"
+            className=" border-none rounded-[10px] p-[20px] sm:rounded-l-[25px] sm:rounded-[8px] sm:rounded-tl-[25px] sm:rounded-tr-[0] sm:rounded-bl-[25px] text-[12px] outline-none bg-white "
           />
           <button
-            className=" bg-[#284F52] text-white border-none py-[10px] px-[35px] rounded-[25px] text-12px cursor-pointer outline-none"
+            className="mt-2  sm:mt-0 bg-[#284F52] text-white border-none py-[10px] px-[35px] rounded-[25px] text-12px cursor-pointer outline-none"
             type="submit"
           >
             Подписаться
