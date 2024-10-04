@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { Container } from "@/src/components/Container";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
 export default function Categories() {
   return (
     <Container>
@@ -11,7 +10,7 @@ export default function Categories() {
         <div className="flex flex-wrap justify-between mt-8">
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="1.svg" alt="parts" />
+              <Image width={49} height={49} src="/1.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
               <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Черный металлопрокат</h3>
@@ -25,8 +24,8 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start ">
-            <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] flex items-start">
-              <img src="2.svg" alt="parts" />
+            <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
+              <Image width={49} height={49} src="/2.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Специальные стали</h3>
@@ -41,7 +40,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="3.svg" alt="parts" />
+              <Image width={49} height={49} src="/3.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Нержавеющий прокат</h3>
@@ -56,7 +55,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="4.svg" alt="parts" />
+              <Image width={49} height={49} src="/4.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Цветной металлопрокат</h3>
@@ -71,7 +70,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="5.svg" alt="parts" />
+              <Image width={49} height={49} src="/5.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Благородные металлы</h3>
@@ -86,7 +85,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="6.svg" alt="parts" />
+              <Image width={49} height={49} src="/6.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Редкоземельные металлы</h3>
@@ -101,7 +100,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="7.svg" alt="parts" />
+              <Image width={49} height={49} src="/7.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Кабельная продукция</h3>
@@ -116,7 +115,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="8.svg" alt="parts" />
+              <Image width={49} height={49} src="/8.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Сварочные материалы</h3>
@@ -131,7 +130,7 @@ export default function Categories() {
           </div>
           <div className="flex justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
-              <img src="9.svg" alt="parts" />
+              <Image width={49} height={49} src="/9.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Металл Китайский</h3>
