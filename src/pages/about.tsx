@@ -53,7 +53,7 @@ export default function about() {
         <h2 className="text-[#FFBC01] text-[1.7rem] font-[700]">
           Сертификаты соответствия
         </h2>
-        <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
+        <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-around mt-8 gap-2 px-4">
           <Image src="/cer1.png" width={160} height={160} alt="" />
           <Image src="/cer2.png" width={160} height={160} alt="" />
           <Image src="/cer3.png" width={160} height={160} alt="" />
