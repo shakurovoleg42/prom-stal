@@ -12,7 +12,7 @@ import Link from "next/link";
 import React from "react";
 
 export default function product() {
-  const img = "https://isteels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
+  // const img = "https://ist{img}eels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
   return (
     <>
     <Head>
@@ -29,14 +29,17 @@ export default function product() {
       </Container>
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
         <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:justify-left lg:items-start">
-          <img
-            src={img}
+          <div className="w-fullflex sm:items-start">
+          <Image
+            src="/elektrosvarnye.png"
             width={250}
             height={250}
             alt="Фото товара"
           />
+          </div>
+          
           <div className="flex flex-col ml-4">
-            <div className="flex flex-col ">
+            <div className="flex flex-col mt-5 lg:mt-0">
               <h1 className="text-black text-[1.8rem] font-[700] leading-[30px] ">
                 Штрипс нержавеющий шлифованный 4N+PE 1 мм AISI 202 в Астане
               </h1>
