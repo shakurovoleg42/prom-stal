@@ -140,14 +140,14 @@ const Header = () => {
               </button>
             </SheetTrigger>
             <form>
-              <SheetContent className="flex flex-col items-start text-left">
+              <SheetContent className="flex flex-col items-center text-left sm:items-center">
                 <SheetHeader>
                   <SheetTitle className="text-[2rem]">
                     Заказ в 1 клик
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col items-left gap-8 py-4 px-2">
-                  <div className="grid grid-cols-4 items-center gap-4">
+                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="product" className="text-left font-bold">
                       Товар
                     </Label>
@@ -157,13 +157,13 @@ const Header = () => {
                       required
                     />
                   </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
+                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="count" className="text-left font-bold">
                       Количество
                     </Label>
                     <Input id="count" placeholder="20" required />
                   </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
+                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label
                       htmlFor="phonenumber"
                       className="text-left font-bold"
@@ -176,7 +176,7 @@ const Header = () => {
                       required
                     />
                   </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
+                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="email" className="text-left font-bold">
                       Email
                     </Label>
