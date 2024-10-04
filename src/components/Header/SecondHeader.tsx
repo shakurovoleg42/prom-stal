@@ -77,7 +77,7 @@ export default function SecondHeader() {
             </SheetContent>
           </Sheet>
 
-          <div className="relative flex items-center bg-[#F5F7F8] py-3 pr-[8px] pl-[25px] rounded-[8px] ml-12">
+          <div className="relative flex items-center bg-[#F5F7F8] py-3 pr-[8px] pl-[25px] rounded-[8px] ml-5">
             <Input
               type="text"
               placeholder="Найти товар"

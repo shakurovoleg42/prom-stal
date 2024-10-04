@@ -133,36 +133,45 @@ const Header = () => {
                 Оставить заявку
               </button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col items-start text-left">
-              <SheetHeader>
-                <SheetTitle className="text-[2rem]">Заказ в 1 клик</SheetTitle>
-              </SheetHeader>
-              <form>
+            <form>
+              <SheetContent className="flex flex-col items-start text-left">
+                <SheetHeader>
+                  <SheetTitle className="text-[2rem]">
+                    Заказ в 1 клик
+                  </SheetTitle>
+                </SheetHeader>
                 <div className="flex flex-col items-left gap-8 py-4 px-2">
                   <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="product" className="text-left">
+                    <Label htmlFor="product" className="text-left font-bold">
                       Товар
                     </Label>
                     <Input
-                      id="name"
+                      id="product"
                       placeholder="Кабель силовой медный"
                       required
                     />
                   </div>
                   <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="username" className="text-left">
+                    <Label htmlFor="count" className="text-left font-bold">
                       Количество
                     </Label>
-                    <Input id="username" placeholder="20" required />
+                    <Input id="count" placeholder="20" required />
                   </div>
                   <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="username" className="text-left">
+                    <Label
+                      htmlFor="phonenumber"
+                      className="text-left font-bold"
+                    >
                       Номер телефона
                     </Label>
-                    <Input id="username" placeholder="" required />
+                    <Input
+                      id="phonenumber"
+                      placeholder="+7 (___) ___-__-__"
+                      required
+                    />
                   </div>
                   <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="username" className="text-left">
+                    <Label htmlFor="email" className="text-left font-bold">
                       Email
                     </Label>
                     <Input
@@ -173,13 +182,13 @@ const Header = () => {
                     />
                   </div>
                 </div>
-              </form>
-              <SheetFooter>
-                <SheetClose asChild>
-                  <Button type="submit">Отправить</Button>
-                </SheetClose>
-              </SheetFooter>
-            </SheetContent>
+                <SheetFooter>
+                  <SheetClose asChild>
+                    <Button type="submit">Отправить</Button>
+                  </SheetClose>
+                </SheetFooter>
+              </SheetContent>
+            </form>
           </Sheet>
         </div>
       </div>

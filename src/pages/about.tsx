@@ -16,7 +16,7 @@ export default function about() {
       <title>А-Промсталь - Щ компании</title>
     </Head>
       <Banner />
-      <Container className="mt-20 flex font-montserrat">
+      <Container className="mt-20 flex px-4 font-montserrat">
         <div className="flex flex-col text-left h-auto w-full">
           <div className="mt-5 max-w-[987px]">
             <p className="text-[#FFBC01] break-words text-[1.7rem] font-[700]  md:text-[35px]">
@@ -54,16 +54,16 @@ export default function about() {
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
-          <img src="/cer1.png" alt="" />
-          <img src="/cer2.png" alt="" />
-          <img src="/cer3.png" alt="" />
-          <img src="/cer4.png" alt="" />
-          <img src="/cer5.png" alt="" />
-          <img src="/cer6.png" alt="" />
-          <img src="/cer7.png" alt="" />
-          <img src="/cer8.png" alt="" />
-          <img src="/cer9.png" alt="" />
-          <img src="/cer10.png" alt="" />
+          <Image src="/cer1.png" width={160} height={160} alt="" />
+          <Image src="/cer2.png" width={160} height={160} alt="" />
+          <Image src="/cer3.png" width={160} height={160} alt="" />
+          <Image src="/cer4.png" width={160} height={160} alt="" />
+          <Image src="/cer5.png" width={160} height={160} alt="" />
+          <Image src="/cer6.png" width={160} height={160} alt="" />
+          <Image src="/cer7.png" width={160} height={160} alt="" />
+          <Image src="/cer8.png" width={160} height={160} alt="" />
+          <Image src="/cer9.png" width={160} height={160} alt="" />
+          <Image src="/cer10.png" width={160} height={160} alt="" />
         </div>
       </Container>
       <ContactForm />

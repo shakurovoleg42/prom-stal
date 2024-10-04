@@ -54,7 +54,7 @@ export default function Faq() {
             <AccordionTrigger className="text-xl font-[600] text-white text-[19px]">
               {item.title}
             </AccordionTrigger>
-            <AccordionContent className="max-w-[750px] text-white text-[17px] font-[500] mt-6">{item.text}</AccordionContent>
+            <AccordionContent className="max-w-[750px] text-white text-[17px] font-[500] mt-6 pb-4">{item.text}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

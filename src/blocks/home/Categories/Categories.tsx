@@ -9,7 +9,7 @@ export default function Categories() {
       <div className=" text-[10px] leading-[10px] text-center mt-16 font-inter">
         <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Категории</h2>
         <div className="flex flex-wrap justify-between mt-8">
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="1.svg" alt="" />
             </div>
@@ -24,7 +24,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="2.svg" alt="" />
             </div>
@@ -39,7 +39,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="3.svg" alt="" />
             </div>
@@ -54,7 +54,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="4.svg" alt="" />
             </div>
@@ -69,7 +69,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="5.svg" alt="" />
             </div>
@@ -84,7 +84,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="6.svg" alt="" />
             </div>
@@ -99,7 +99,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="7.svg" alt="" />
             </div>
@@ -114,7 +114,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="8.svg" alt="" />
             </div>
@@ -129,7 +129,7 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex w-auto items-center justify-center m-[10px] p-[10px] border border-1-[#eee] flex-[1_1_calc(25%-20px)] box-border">
+          <div className="flex w-auto items-center justify-center m-[10px] p-[10px]  flex-[1_1_calc(25%-20px)] box-border">
             <div className="w-[50px] h-[50px] bg-[#e0e0e0] rounded-[50%] mr-[10px] mb-[50px]">
               <img src="9.svg" alt="" />
             </div>
