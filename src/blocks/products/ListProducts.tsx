@@ -14,22 +14,25 @@ export default function ListProducts() {
           key={item.id}
           className="flex justify-around flex-wrap  border-b border-[#D3D6DB] pl-2 py-4"
         >
-          <div className="flex flex-row ">
-          <Image src="/elektrosvarnye.png" alt="" width={35} height={35} />
+          <div className="flex flex-col items-center sm:flex-row sm:items-start ">
+          <Image src="/elektrosvarnye.png" alt="" width={50} height={50} className="hidden sm:block"/>
+          <Image src="/elektrosvarnye.png" alt="" width={150} height={150} className="block sm:hidden"/>
+
           <Link
             href={`/products/${slug}`}
-            className="max-w-[550px] ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
+            className="max-w-[550px] mt-6 sm:mt-0 ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
           >
             {item.name}
           </Link>
           </div>
-          <Button variant="seePrice">узнать цену</Button>
-          <Button variant="contact" className="text-[#FFD66C]">
+          <Button variant="seePrice" className="mt-2 sm:mt-0">узнать цену</Button>
+          <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
             <Phone size={20} />
           </Button>
-          <Button variant="contact" className="text-[#FFD66C]">
+          <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
             <Mail size={20} />
           </Button>
+          
         </div>
       ))}
     </div>
