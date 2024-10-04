@@ -9,7 +9,7 @@ export default function Parts() {
         <h3 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Этапы работы</h3>
         <div className="bg-[#0A8C99] py-4  my-7 rounded-[35px]">
           <div className="flex flex-row mt-24 max-w-[857px] md:px-5">
-            <Image width={240} height={163} className="hidden lg:block" src="/01white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/01white.png" alt="parts" />
             <div className="ml-5  text-left text-white">
               <h2 className="font-bold text-[32px]">Заявка</h2>
               <p>
@@ -32,10 +32,10 @@ export default function Parts() {
                 в соответствии с требованиями клиента
               </p>
             </div>
-            <Image width={240} height={163} className="hidden lg:block" src="/02white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/02white.png" alt="parts" />
           </div>
           <div className="flex flex-row mt-[90px] max-w-[857px] md:px-5">
-            <Image width={240} height={163} className="hidden lg:block" src="/03white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/03white.png" alt="parts" />
 
             <div className="ml-5 text-left text-white">
               <h2 className="font-bold text-[32px] ">
@@ -60,10 +60,10 @@ export default function Parts() {
                 адресу, обеспечивая сохранность и своевременную поставку
               </p>
             </div>
-            <Image width={240} height={163} className="hidden lg:block" src="/04white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/04white.png" alt="parts" />
           </div>
           <div className="flex flex-row mt-[90px] max-w-[857px] md:px-5 mb-7">
-            <Image width={240} height={163} className="hidden lg:block" src="/05white.png" alt="" />
+            <Image width={240} height={163} className="hidden lg:block" src="/05white.png" alt="parts" />
 
             <div className="ml-5 text-left text-white">
               <h2 className="font-bold text-[32px] ">

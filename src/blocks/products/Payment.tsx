@@ -9,7 +9,7 @@ export default function Payment() {
       <h3 id="payment" className="text-center font-bold text-[2rem] text-black">Оплата</h3>
       <div className="w-full flex items-center justify-around flex-wrap mt-16 gap-4">
         <div className="max-w-[360px] flex flex-col items-center text-center bg-[#0A8C99] rounded-[10px] p-4">
-          <Image src="/fCard.svg" width={160} height={160} alt="" />
+          <Image src="/fCard.svg" width={160} height={160} alt="payment variant" />
           <p className="text-[#F8F8F8] text-[22px] leading-[27px] font-[700] my-6">
             На расчетный счет
           </p>
@@ -18,7 +18,7 @@ export default function Payment() {
           </p>
         </div>
         <div className="max-w-[360px] flex flex-col items-center text-center bg-[#0A8C99] rounded-[10px] p-4">
-          <Image src="/sCard.svg" width={160} height={160} alt="" />
+          <Image src="/sCard.svg" width={160} height={160} alt="payment variant" />
           <p className="text-[#F8F8F8] text-[22px] leading-[27px] font-[700] my-6">
           Отсрочка платежа
           </p>
@@ -27,7 +27,7 @@ export default function Payment() {
           </p>
         </div>
         <div className="max-w-[360px] flex flex-col items-center text-center bg-[#0A8C99] rounded-[10px] p-4">
-          <Image src="/tCard.svg" width={160} height={160} alt="" />
+          <Image src="/tCard.svg" width={160} height={160} alt="payment variant" />
           <p className="text-[#F8F8F8] text-[22px] leading-[27px] font-[700] my-6">
           Способ оплаты
           </p>

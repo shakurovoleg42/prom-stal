@@ -9,7 +9,7 @@ export default function Regards() {
         <div className="flex justify-around flex-wrap mt-14">
           <div className="bg-[#0A8C99] border border-1-[#ccc] rounded-[8px] w-[260px] h-auto p-5 m-[10px] text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-white items-center">
             <div className="flex items-center justify-center">
-              <img src="i1.svg" alt="" sizes="99px" />
+              <img src="i1.svg" alt="regard" sizes="99px" />
             </div>
             <h3 className="font-bold text-[17px] leading-[12px]  mt-[11px] mb-[11px]">Широкий ассортимент</h3>
             <h4 className="text-[9px] leading-[12px]">
@@ -20,7 +20,7 @@ export default function Regards() {
           </div>
           <div className="bg-[#0A8C99] border border-1-[#ccc] rounded-[8px] w-[260px] h-auto p-5 m-[10px] text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-white items-center">
             <div className="flex items-center justify-center">
-              <img src="i2.svg" alt="" className="w-[72px] h-[99px]" />
+              <img src="i2.svg" alt="regard" className="w-[72px] h-[99px]" />
             </div>
             <h3 className="font-bold text-[17px] leading-[12px]  mt-[11px] mb-[11px]">Высокое качество</h3>
             <h4 className="text-[9px] leading-[12px]">
@@ -31,7 +31,7 @@ export default function Regards() {
           </div>
           <div className="bg-[#0A8C99] border border-1-[#ccc] rounded-[8px] w-[260px] h-auto p-5 m-[10px] text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-white items-center">
             <div className="flex items-center justify-center">
-              <img src="i3.svg" alt="" className="w-[89px] h-[99px]" />
+              <img src="i3.svg" alt="regard" className="w-[89px] h-[99px]" />
             </div>
             <h3 className="font-bold text-[17px] leading-[12px]  mt-[11px] mb-[11px]">Гибкий подход</h3>
             <h4 className="text-[9px] leading-[12px]">
@@ -42,7 +42,7 @@ export default function Regards() {
           </div>
           <div className="bg-[#0A8C99] border border-1-[#ccc] rounded-[8px] w-[260px] h-auto p-5 m-[10px] text-center shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-white items-center">
             <div className="flex items-center justify-center">
-              <img src="i4.svg" alt="" className="w-[114px] h-[92px]" />
+              <img src="i4.svg" alt="regard" className="w-[114px] h-[92px]" />
             </div>
             <h3 className="font-bold text-[17px] leading-[12px]  mt-[11px] mb-[11px]">Профессионализм и опыт</h3>
             <h4 className="text-[9px] leading-[12px]">

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import Link from 'next/link'
@@ -48,7 +49,7 @@ export default function SecondHeader() {
             <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
               <img
                 src="/catalog.svg"
-                alt=""
+                alt="burfer munu"
                 className="mr-2 w-[20px] text-[14px] border-1-black bg-white p-1 rounded-[5px]"
               />
               Каталог
@@ -117,7 +118,7 @@ export default function SecondHeader() {
               Контакты
             </Link>
             <button className="ml-5 text-[14px] uppercase font-bold">
-              <img src="/cart.svg" alt="" className="mr-2 w-[30px]" />
+              <img src="/cart.svg" alt="cart" className="mr-2 w-[30px]" />
             </button>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default function products() {
               key={item.id}
               className="flex items-center mt-3 py-4 pl-4 pr-1 bg-[#E2E6ED] rounded-[10px]"
             >
-              <Image src={item.img} width={46} height={46} alt="" />
+              <Image src={item.img} width={46} height={46} alt="certificate" />
               <span className="ml-3 max-w-[142px] text-[15px] leading-[19px] font-[700]">
                 {item.title}
               </span>
@@ -51,16 +51,16 @@ export default function products() {
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
-         <Image width={198} height={280} src="/cer1.png" alt="" />
-         <Image width={198} height={280} src="/cer2.png" alt="" />
-         <Image width={198} height={280} src="/cer3.png" alt="" />
-         <Image width={198} height={280} src="/cer4.png" alt="" />
-         <Image width={198} height={280} src="/cer5.png" alt="" />
-         <Image width={198} height={280} src="/cer6.png" alt="" />
-         <Image width={198} height={280} src="/cer7.png" alt="" />
-         <Image width={198} height={280} src="/cer8.png" alt="" />
-         <Image width={198} height={280} src="/cer9.png" alt="" />
-         <Image width={198} height={280} src="/cer10.png" alt="" />
+         <Image width={198} height={280} src="/cer1.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer2.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer3.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer4.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer5.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer6.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer7.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer8.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer9.png" alt="certificate" />
+         <Image width={198} height={280} src="/cer10.png" alt="certificate" />
         </div>
       </Container>
       <ContactForm />

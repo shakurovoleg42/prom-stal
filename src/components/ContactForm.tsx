@@ -32,7 +32,7 @@ export default function ContactForm() {
                   src="Button Icon.svg"
                   width={62.25}
                   height={62.25}
-                  alt=""
+                  alt="Meta"
                 />
               </Link>
               <Link href="https://x.com/APromStal">
@@ -41,7 +41,7 @@ export default function ContactForm() {
                   src="Button Icon (1).svg"
                   width={62.25}
                   height={62.25}
-                  alt=""
+                  alt="X"
                 />
               </Link>
               <Link href="https://ru.linkedin.com/in/%D0%BF%D0%BA-%D0%BF%D1%80%D0%BE%D0%BC%D1%81%D1%82%D0%B0%D0%BB%D1%8C-ooo-552889136">
@@ -50,7 +50,7 @@ export default function ContactForm() {
                   src="Button Icon (2).svg"
                   width={62.25}
                   height={62.25}
-                  alt=""
+                  alt="LinkedIn"
                 />
               </Link>
             </div>

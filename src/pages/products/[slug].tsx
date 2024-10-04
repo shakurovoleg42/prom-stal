@@ -73,7 +73,7 @@ export default function product() {
             <div className="h-[200px] flex flex-col border border-1-[#d2d3d3] rounded-[10px] p-5">
               <div className="flex flex-row gap-5 items-center justify-between mb-2 uppercase ">
                 <span className="font-bold">Цена по запросу</span>
-                <Image src="/question.svg" width={12} height={12} alt="" />
+                <Image src="/question.svg" width={12} height={12} alt="information" />
               </div>
               <span className="max-h-1 flex-grow border-b border-[#d2d3d3] mx-2"></span>
               <div className="flex justify-around flex-wrap gap-2 mt-2">
