@@ -1,1 +1,8 @@
-{"/_app":"pages/_app.js","/_document":"pages/_document.js","/about":"pages/about.html","/contacts":"pages/contacts.html","/delivery":"pages/delivery.html","/":"pages/index.html","/payment":"pages/payment.html","/products/[slug]":"pages/products/[slug].html","/products":"pages/products.html","/_error":"pages/_error.js","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/products": "pages/products.js",
+  "/products/[slug]": "pages/products/[slug].js"
+}

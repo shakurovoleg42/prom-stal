@@ -15,9 +15,9 @@ export default function product() {
   // const img = "https://ist{img}eels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
   return (
     <>
-    <Head>
-      <title>А-Промсталь - Продукт</title>
-    </Head>
+      <Head>
+        <title>А-Промсталь - Продукт</title>
+      </Head>
       <Container className="flex flex-col mt-6 font-montserrat">
         <p className="text-[#999999] font-[700] leading-[20px] ">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
@@ -30,14 +30,14 @@ export default function product() {
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
         <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:justify-left lg:items-start">
           <div className="w-fullflex sm:items-start">
-          <Image
-            src="/elektrosvarnye.png"
-            width={250}
-            height={250}
-            alt="Фото товара"
-          />
+            <Image
+              src="/elektrosvarnye.png"
+              width={250}
+              height={250}
+              alt="Фото товара"
+            />
           </div>
-          
+
           <div className="flex flex-col ml-4">
             <div className="flex flex-col mt-5 lg:mt-0">
               <h1 className="text-black text-[1.8rem] font-[700] leading-[30px] ">
@@ -77,7 +77,12 @@ export default function product() {
             <div className="h-[200px] flex flex-col border border-1-[#d2d3d3] rounded-[10px] p-5">
               <div className="flex flex-row gap-5 items-center justify-between mb-2 uppercase ">
                 <span className="font-bold">Цена по запросу</span>
-                <Image src="/question.svg" width={12} height={12} alt="information" />
+                <Image
+                  src="/question.svg"
+                  width={12}
+                  height={12}
+                  alt="information"
+                />
               </div>
               <span className="max-h-1 flex-grow border-b border-[#d2d3d3] mx-2"></span>
               <div className="flex justify-around flex-wrap gap-2 mt-2">
@@ -87,28 +92,57 @@ export default function product() {
                 >
                   Узнать цену
                 </Button>
-                <Button className="bg-[#F5F7F8] hover:bg-black  text-[#FFD66C]">
-                  <Phone size={16}  />
-                </Button>
-                <Button className="bg-[#F5F7F8] hover:bg-black text-[#FFD66C]">
-                  <Mail size={17}  />
-                </Button>
+                <Link href="tel:8(708)001-68-68">
+                  <Button className="bg-[#F5F7F8] hover:bg-black  text-[#FFD66C]">
+                    <Phone size={16} />
+                  </Button>
+                </Link>
+                <Link href="mailto:aps168@yandex.kz">
+                  <Button className="bg-[#F5F7F8] hover:bg-black text-[#FFD66C]">
+                    <Mail size={17} />
+                  </Button>
+                </Link>
               </div>
             </div>
 
             <div className="flex flex-col gap-4 mt-16">
-              <Button variant="tabs" className="w-full bg-transparent text-[#000]">Описание</Button>
+              <Button
+                variant="tabs"
+                className="w-full bg-transparent text-[#000]"
+              >
+                Описание
+              </Button>
               <Link href="/delivery">
-                <Button variant="tabs" className="w-full bg-transparent text-[#000]">Доставка</Button>
+                <Button
+                  variant="tabs"
+                  className="w-full bg-transparent text-[#000]"
+                >
+                  Доставка
+                </Button>
               </Link>
               <Link href="#payment">
-                <Button variant="tabs" className="w-full bg-transparent text-[#000]">Оплата</Button>
+                <Button
+                  variant="tabs"
+                  className="w-full bg-transparent text-[#000]"
+                >
+                  Оплата
+                </Button>
               </Link>
               <Link href="/#faq">
-                <Button variant="tabs" className="w-full bg-transparent text-[#000]">Вопрос-ответ</Button>
+                <Button
+                  variant="tabs"
+                  className="w-full bg-transparent text-[#000]"
+                >
+                  Вопрос-ответ
+                </Button>
               </Link>
               <Link href="#similar-products">
-              <Button variant="tabs" className="w-full bg-transparent text-[#000]">Аналоги</Button>
+                <Button
+                  variant="tabs"
+                  className="w-full bg-transparent text-[#000]"
+                >
+                  Аналоги
+                </Button>
               </Link>
             </div>
           </div>
@@ -116,25 +150,76 @@ export default function product() {
           <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px] pl-4 ">
             <div className="max-w-[768px] py-3 ">
               <p className="text-[14px] leading-[16px] font-[400] h-full pr-4 md:pr-0">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore aliquam corporis dolores aspernatur maxime perspiciatis eos nemo praesentium! Quisquam saepe dolores omnis? Quidem dolore maiores architecto fugit deserunt quos aspernatur?
-                Minima ut adipisci, consequuntur autem voluptatum enim illum odit labore consequatur totam atque laborum sequi dolorum aperiam velit minus exercitationem provident nobis cumque. Asperiores accusantium libero sint ut sunt ipsam!
-                Soluta quos dignissimos omnis, dolorem dicta labore corrupti eum minima ducimus quaerat et accusantium animi impedit deserunt praesentium, fugiat consectetur ad possimus beatae laboriosam ullam rem aliquid perspiciatis magni? Facere!
-                Dolorem quibusdam eaque repellendus, delectus facilis consequatur libero velit iure veniam totam. Illo quasi commodi in? Distinctio corporis atque obcaecati alias in, minus quae repellendus, enim voluptas ea modi assumenda!
-                Similique iusto corporis ipsam. Odit assumenda aliquam tempora magni? Aliquam, numquam! Quod excepturi consequuntur accusantium sequi incidunt, ex omnis blanditiis voluptas molestiae nemo libero, tempore quaerat harum iusto sit. Officiis.
-                Ipsam quisquam ipsum magni eum, laudantium architecto ut minus repellendus neque magnam. Provident, quaerat, debitis voluptate neque qui a tempora quas commodi, sint quidem quam amet error consequatur fugiat voluptatem.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea at asperiores labore repudiandae ratione voluptates ut adipisci aliquid, temporibus voluptatibus aut quaerat qui distinctio inventore magnam ullam earum. Inventore?
-                Debitis, doloribus iste aliquam cupiditate officiis odio voluptatum laudantium impedit soluta nesciunt nostrum neque dolor illo, delectus error? Maxime ipsa nulla numquam aliquam dolores. Molestias blanditiis excepturi voluptate doloremque corrupti.
-                Reiciendis dicta minima sed laudantium tenetur amet nemo assumenda, mollitia in cum tempore dolorem magnam cupiditate sapiente ad neque officia inventore natus suscipit. Sunt nulla placeat vero culpa nihil dolorum!
-                Recusandae velit distinctio harum earum amet ducimus asperiores fugit sit nesciunt labore odio omnis, quo aspernatur hic quos eos, similique est illo aut nulla. Laudantium ut tenetur quo quibusdam deserunt.
-                Voluptate ad pariatur illum culpa aspernatur ducimus animi, quidem deserunt. Quas, animi libero aut est a quos dolorem dolore doloremque. Natus aperiam amet assumenda provident tenetur velit omnis et adipisci.
-                Cupiditate cum nulla quo iste aut deserunt sequi quos vero ex? Atque consequatur perferendis dolor velit deleniti consectetur hic, incidunt amet sapiente quo optio ratione ducimus. Neque qui atque unde?
-                Quas, aliquam ipsum! Minima doloremque porro quis. Ad praesentium odit, illum aut totam aperiam, laboriosam facilis cumque, libero nesciunt soluta id architecto eligendi quidem harum ducimus assumenda eius magni consectetur.
-                In impedit assumenda iste voluptas ipsam eos perspiciatis, fuga corporis minus non ad corrupti? Molestias qui autem facilis architecto reprehenderit nostrum fugit est eligendi, obcaecati quae animi, ratione nihil sed!
-                Placeat nihil qui temporibus veniam commodi sequi. Molestias temporibus adipisci esse deserunt quod eos minus placeat omnis numquam, id nobis atque cum, necessitatibus ab ullam reprehenderit odit eveniet distinctio illo!
-                Nisi, nesciunt porro. Ex libero odio, dignissimos non, modi officia, ipsa illum quos asperiores quasi est provident hic sit sint? Fuga debitis natus, corrupti nemo eveniet sequi qui tempora pariatur?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, placeat blanditiis voluptatibus dolorum nostrum facilis mollitia soluta enim quis, rem veniam ipsum commodi repudiandae incidunt aliquid, vel praesentium nobis harum.
-                Non numquam deleniti asperiores veritatis iure minus qui nostrum, labore nihil optio aliquid iste? Maiores id minus accusamus facere voluptates error autem ratione impedit voluptate, doloremque corrupti aspernatur, repellat commodi?
-                Expedita temporibus veniam quia velit vero aspernatur. Sit consectetur dolor, obcaecati omnis consequuntur, repudiandae aliquid, porro ipsam rem natus expedita nulla ducimus reprehenderit ipsum sapiente ex. Qui amet corporis distinctio?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Tempore aliquam corporis dolores aspernatur maxime perspiciatis
+                eos nemo praesentium! Quisquam saepe dolores omnis? Quidem
+                dolore maiores architecto fugit deserunt quos aspernatur? Minima
+                ut adipisci, consequuntur autem voluptatum enim illum odit
+                labore consequatur totam atque laborum sequi dolorum aperiam
+                velit minus exercitationem provident nobis cumque. Asperiores
+                accusantium libero sint ut sunt ipsam! Soluta quos dignissimos
+                omnis, dolorem dicta labore corrupti eum minima ducimus quaerat
+                et accusantium animi impedit deserunt praesentium, fugiat
+                consectetur ad possimus beatae laboriosam ullam rem aliquid
+                perspiciatis magni? Facere! Dolorem quibusdam eaque repellendus,
+                delectus facilis consequatur libero velit iure veniam totam.
+                Illo quasi commodi in? Distinctio corporis atque obcaecati alias
+                in, minus quae repellendus, enim voluptas ea modi assumenda!
+                Similique iusto corporis ipsam. Odit assumenda aliquam tempora
+                magni? Aliquam, numquam! Quod excepturi consequuntur accusantium
+                sequi incidunt, ex omnis blanditiis voluptas molestiae nemo
+                libero, tempore quaerat harum iusto sit. Officiis. Ipsam
+                quisquam ipsum magni eum, laudantium architecto ut minus
+                repellendus neque magnam. Provident, quaerat, debitis voluptate
+                neque qui a tempora quas commodi, sint quidem quam amet error
+                consequatur fugiat voluptatem. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Sed ea at asperiores labore
+                repudiandae ratione voluptates ut adipisci aliquid, temporibus
+                voluptatibus aut quaerat qui distinctio inventore magnam ullam
+                earum. Inventore? Debitis, doloribus iste aliquam cupiditate
+                officiis odio voluptatum laudantium impedit soluta nesciunt
+                nostrum neque dolor illo, delectus error? Maxime ipsa nulla
+                numquam aliquam dolores. Molestias blanditiis excepturi
+                voluptate doloremque corrupti. Reiciendis dicta minima sed
+                laudantium tenetur amet nemo assumenda, mollitia in cum tempore
+                dolorem magnam cupiditate sapiente ad neque officia inventore
+                natus suscipit. Sunt nulla placeat vero culpa nihil dolorum!
+                Recusandae velit distinctio harum earum amet ducimus asperiores
+                fugit sit nesciunt labore odio omnis, quo aspernatur hic quos
+                eos, similique est illo aut nulla. Laudantium ut tenetur quo
+                quibusdam deserunt. Voluptate ad pariatur illum culpa aspernatur
+                ducimus animi, quidem deserunt. Quas, animi libero aut est a
+                quos dolorem dolore doloremque. Natus aperiam amet assumenda
+                provident tenetur velit omnis et adipisci. Cupiditate cum nulla
+                quo iste aut deserunt sequi quos vero ex? Atque consequatur
+                perferendis dolor velit deleniti consectetur hic, incidunt amet
+                sapiente quo optio ratione ducimus. Neque qui atque unde? Quas,
+                aliquam ipsum! Minima doloremque porro quis. Ad praesentium
+                odit, illum aut totam aperiam, laboriosam facilis cumque, libero
+                nesciunt soluta id architecto eligendi quidem harum ducimus
+                assumenda eius magni consectetur. In impedit assumenda iste
+                voluptas ipsam eos perspiciatis, fuga corporis minus non ad
+                corrupti? Molestias qui autem facilis architecto reprehenderit
+                nostrum fugit est eligendi, obcaecati quae animi, ratione nihil
+                sed! Placeat nihil qui temporibus veniam commodi sequi.
+                Molestias temporibus adipisci esse deserunt quod eos minus
+                placeat omnis numquam, id nobis atque cum, necessitatibus ab
+                ullam reprehenderit odit eveniet distinctio illo! Nisi, nesciunt
+                porro. Ex libero odio, dignissimos non, modi officia, ipsa illum
+                quos asperiores quasi est provident hic sit sint? Fuga debitis
+                natus, corrupti nemo eveniet sequi qui tempora pariatur? Lorem,
+                ipsum dolor sit amet consectetur adipisicing elit. Beatae,
+                placeat blanditiis voluptatibus dolorum nostrum facilis mollitia
+                soluta enim quis, rem veniam ipsum commodi repudiandae incidunt
+                aliquid, vel praesentium nobis harum. Non numquam deleniti
+                asperiores veritatis iure minus qui nostrum, labore nihil optio
+                aliquid iste? Maiores id minus accusamus facere voluptates error
+                autem ratione impedit voluptate, doloremque corrupti aspernatur,
+                repellat commodi? Expedita temporibus veniam quia velit vero
+                aspernatur. Sit consectetur dolor, obcaecati omnis consequuntur,
+                repudiandae aliquid, porro ipsam rem natus expedita nulla
+                ducimus reprehenderit ipsum sapiente ex. Qui amet corporis
+                distinctio?
               </p>
             </div>
           </div>
@@ -142,8 +227,8 @@ export default function product() {
       </Container>
       <Form />
       <Payment />
-      <Faq/>
-      <SimilarProducts/>
+      <Faq />
+      <SimilarProducts />
     </>
   );
 }

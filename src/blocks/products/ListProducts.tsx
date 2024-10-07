@@ -15,23 +15,40 @@ export default function ListProducts() {
           className="flex justify-around flex-wrap  border-b border-[#D3D6DB] pl-2 py-4"
         >
           <div className="flex flex-col items-center sm:flex-row sm:items-start ">
-          <Image src="/elektrosvarnye.png" alt="" width={50} height={50} className="hidden sm:block"/>
-          <Image src="/elektrosvarnye.png" alt="" width={150} height={150} className="block sm:hidden"/>
-          <Link
-            href={`/products/${slug}`}
-            className="max-w-[550px] mt-6 sm:mt-0 ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:border-b hover:border-[#0A8C99]"
-          >
-            {item.name}
-          </Link>
+            <Image
+              src="/elektrosvarnye.png"
+              alt=""
+              width={50}
+              height={50}
+              className="hidden sm:block"
+            />
+            <Image
+              src="/elektrosvarnye.png"
+              alt=""
+              width={150}
+              height={150}
+              className="block sm:hidden"
+            />
+            <Link
+              href={`/products/${slug}`}
+              className="max-w-[550px] mt-6 sm:mt-0 ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:underline hover:underline-offset-2 hover:text-[#0A8C99]"
+            >
+              {item.name}
+            </Link>
           </div>
-          <Button variant="seePrice" className="mt-2 sm:mt-0">узнать цену</Button>
-          <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
-            <Phone size={20} />
+          <Button variant="seePrice" className="mt-2 sm:mt-0">
+            узнать цену
           </Button>
-          <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
-            <Mail size={20} />
-          </Button>
-          
+          <Link href="tel:8(708)001-68-68">
+            <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
+              <Phone size={20} />
+            </Button>
+          </Link>
+          <Link href="mailto:aps168@yandex.kz">
+            <Button variant="contact" className="text-[#FFD66C] mt-2 sm:mt-0">
+              <Mail size={20} />
+            </Button>
+          </Link>
         </div>
       ))}
     </div>

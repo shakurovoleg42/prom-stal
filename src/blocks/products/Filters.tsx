@@ -23,17 +23,18 @@ export default function Filters() {
   };
 
   return (
-    <div className="flex w-auto flex-col border-t border-r border-b border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat">
-      <div className="flex flex-col ">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("thickness")}>
-         <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
+    <div className="flex w-auto flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
+      <div className="flex flex-col border-b border-[#D3D6DB] mt-4">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("thickness")}
         >
-          Толщина стенки, мм
-        </span>
-        <ChevronDown/>   
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Толщина стенки, мм
+          </span>
+          <ChevronDown />
         </div>
-        
+
         {isOpen.thickness && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -47,17 +48,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("type")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("type")}
         >
-          Вид
-        </span>
-        <ChevronDown/> 
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Вид
+          </span>
+          <ChevronDown />
         </div>
-          
+
         {isOpen.type && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -71,17 +72,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("composition")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("composition")}
         >
-          Состав
-        </span>
-        <ChevronDown/>  
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Состав
+          </span>
+          <ChevronDown />
         </div>
-         
+
         {isOpen.composition && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -95,17 +96,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("method")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("method")}
         >
-          Метод обработки
-        </span>
-        <ChevronDown/>  
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Метод обработки
+          </span>
+          <ChevronDown />
         </div>
-         
+
         {isOpen.method && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -119,17 +120,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("coating")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("coating")}
         >
-          Покрытие
-        </span>
-        <ChevronDown/>
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Покрытие
+          </span>
+          <ChevronDown />
         </div>
-           
+
         {isOpen.coating && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -143,17 +144,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("wallType")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("wallType")}
         >
-          Тип стенки
-        </span>
-        <ChevronDown/>
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Тип стенки
+          </span>
+          <ChevronDown />
         </div>
-           
+
         {isOpen.wallType && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -167,17 +168,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("outerDiameter")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("outerDiameter")}
         >
-          Наружный диаметр, мм
-        </span>
-        <ChevronDown/>
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Наружный диаметр, мм
+          </span>
+          <ChevronDown />
         </div>
-           
+
         {isOpen.outerDiameter && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
@@ -191,17 +192,17 @@ export default function Filters() {
           </div>
         )}
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row items-center cursor-pointer justify-between mt-4" onClick={() => toggleMenu("brand")}>
-        <span
-          className="text-[1rem] text-[#262A31] font-[700] leading-[38px] cursor-pointer"
-          
+      <div className="flex flex-col border-b border-[#D3D6DB]">
+        <div
+          className="flex flex-row items-center cursor-pointer justify-between "
+          onClick={() => toggleMenu("brand")}
         >
-          Марка
-        </span>
-        <ChevronDown/>
+          <span className="text-[1rem] text-[#262A31] font-[700] leading-[1.3rem] cursor-pointer">
+            Марка
+          </span>
+          <ChevronDown />
         </div>
-           
+
         {isOpen.brand && (
           <div className="flex flex-col pl-4">
             <label className="flex items-center">
