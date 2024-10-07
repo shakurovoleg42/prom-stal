@@ -7,7 +7,14 @@ export default function Footer() {
   return (
     <div className="w-full flex flex-col bg-[#0A8C99] py-14 px-5 items-center justify-center text-white sm:flex-col xl:flex-row font-poppins">
       <div className="mb-5 px-9 footer-logo">
-        <Image src="/footer-logo.svg" alt="Логотип" width={260} height={144} />
+        <Link href="/">
+          <Image
+            src="/footer-logo.svg"
+            alt="Логотип"
+            width={260}
+            height={144}
+          />
+        </Link>
       </div>
 
       <div className="mb-5 px-9 text-[14px] my-1 font-[500]">

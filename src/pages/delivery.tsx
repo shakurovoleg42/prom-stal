@@ -6,9 +6,9 @@ import Head from "next/head";
 export default function delivery() {
   return (
     <>
-    <Head>
-      <title>А-Промсталь - О доставке</title>
-    </Head>
+      <Head>
+        <title>А-Промсталь - О доставке</title>
+      </Head>
       <Banner />
       <Container>
         <div className="text-left text-[1rem] font-[700] my-20 px-2 font-montserrat">

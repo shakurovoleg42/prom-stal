@@ -47,7 +47,7 @@ export default function products() {
       </Container>
       <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />
-        <h2 className="text-[#FFBC01] text-[1.7rem] font-[700]">
+        <h2 className="text-[#FFBC01] text-center text-[1.7rem] font-[700]">
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
