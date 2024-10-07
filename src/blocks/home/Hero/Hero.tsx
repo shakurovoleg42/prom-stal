@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Input } from "@/src/components/ui/inputForm";
-import { Label } from "@/src/components/ui/label";
-import { Button } from "@/src/components/ui/button";
-import { ArrowRight } from "lucide-react";
+// import { Input } from "@/src/components/ui/inputForm";
+// import { Label } from "@/src/components/ui/label";
+// import { Button } from "@/src/components/ui/button";
+// import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -17,7 +17,7 @@ export default function Hero() {
               Казахстана
             </span>
           </h1>
-          <form className="flex flex-col xl:flex-row gap-[41px] mt-5 items-center">
+          {/* <form className="flex flex-col xl:flex-row gap-[41px] mt-5 items-center">
             <div className="grid w-full max-w-sm items-center justify-center gap-1.5">
               <Label htmlFor="email">Поиск</Label>
               <Input type="text" defaultValue="" />
@@ -30,7 +30,7 @@ export default function Hero() {
               <b>Оставить заявку!</b>
               <ArrowRight size={20} className="ml-[10px]"/>
             </Button>
-          </form>
+          </form> */}
         </div>
         <div className="hidden xl:block bg-white p-5 rounded-[10px] text-left text-black">
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>

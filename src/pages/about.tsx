@@ -12,9 +12,9 @@ import Head from "next/head";
 export default function about() {
   return (
     <>
-    <Head>
-      <title>А-Промсталь - Щ компании</title>
-    </Head>
+      <Head>
+        <title>А-Промсталь - О компании</title>
+      </Head>
       <Banner />
       <Container className="mt-20 flex px-4 font-montserrat">
         <div className="flex flex-col text-left h-auto w-full">

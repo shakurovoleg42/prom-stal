@@ -9,7 +9,7 @@ export default function Categories() {
         <h2 className="text-[#FFBC01] text-[2rem] leading-[60px] font-bold sm:text-[60px]">Категории</h2>
         <div className="flex flex-wrap items-start mt-8">
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/1.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -24,7 +24,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px] ">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/2.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -39,7 +39,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/3.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -54,7 +54,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/4.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -69,7 +69,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/5.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -84,7 +84,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/6.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -99,7 +99,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/7.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -114,7 +114,7 @@ export default function Categories() {
             </div>
           </div>
           <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/8.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -128,8 +128,8 @@ export default function Categories() {
               </Link>
             </div>
           </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px] mb-[50px]">
+          {/* <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
+            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
               <Image width={52} height={52} src="/9.svg" alt="parts" />
             </div>
             <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
@@ -139,7 +139,7 @@ export default function Categories() {
                 Показать еще
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Container>
