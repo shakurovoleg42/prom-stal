@@ -27,25 +27,35 @@ export default function Hero() {
               <Label htmlFor="email">Контакты</Label>
               <Input type="text" defaultValue="" />
             </div>*/}
-            <Link href="#form">
-            <Button type="submit" variant="contact" className="items-center flex flex-row text-[14px] sm:mt-5">
+          <Link href="#form" className="">
+            <Button
+              variant="contact"
+              className="items-center flex flex-row text-[14px] sm:mt-5 ml-5"
+            >
               <b>Оставить заявку!</b>
-              <ArrowRight size={20} className="ml-[10px]"/>
+              <ArrowRight size={20} className="ml-[10px]" />
             </Button>
-            </Link>
-            
+          </Link>
+
           {/* </form> */}
         </div>
         <div className="hidden xl:block bg-white p-5 rounded-[10px] text-left text-black">
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
           <div className="flex items-center mb-[13px] flex-row">
-            <img src="/phone-icon.svg" alt="Телефон"  className="mr-[10px]"/> <b>8(708)001-68-68</b>
+            <img src="/phone-icon.svg" alt="Телефон" className="mr-[10px]" />{" "}
+            <b>8(708)001-68-68</b>
           </div>
           <div className="flex items-center mb-[13px] flex-row">
-            <img src="/whatsapp-icon.svg" alt="WhatsApp"  className="mr-[10px]"/> <b>WhatsApp</b>
+            <img
+              src="/whatsapp-icon.svg"
+              alt="WhatsApp"
+              className="mr-[10px]"
+            />{" "}
+            <b>WhatsApp</b>
           </div>
           <div className="flex items-center mb-[13px] flex-row">
-            <img src="/email-icon.svg" alt="Email"  className="mr-[10px]"/> <b>APS168@yandex.kz</b>
+            <img src="/email-icon.svg" alt="Email" className="mr-[10px]" />{" "}
+            <b>APS168@yandex.kz</b>
           </div>
         </div>
       </div>
