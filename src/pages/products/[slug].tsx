@@ -128,7 +128,7 @@ export default function product() {
                   Оплата
                 </Button>
               </Link>
-              <Link href="/#faq">
+              <Link href="#faq">
                 <Button
                   variant="tabs"
                   className="w-full bg-transparent text-[#000]"
