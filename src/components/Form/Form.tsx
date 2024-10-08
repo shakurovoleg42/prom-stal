@@ -23,8 +23,8 @@ export default function Form() {
   };
 
   return (
-    <div className="flex w-full h-[589px] bg-[url('/fon1.png')] bg-cover bg-center justify-center items-center text-white mt-5 font-montserrat">
-      <Container className="">
+    <div id="form" className="flex w-full h-[589px] bg-[url('/fon1.png')] bg-cover bg-center justify-center items-center text-white mt-5 font-montserrat">
+      <Container  className="">
         <div className="flex flex-col bg-[#FFFFFF] p-2 sm:p-8 rounded-[10px] max-w-[540px] h-auto text-left items-start">
           <h3 className="text-[#182F43] font-bold text-[29px] mb-3">
             {whatPageForm()}

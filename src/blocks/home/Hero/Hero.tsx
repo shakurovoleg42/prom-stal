@@ -2,8 +2,9 @@
 import React from "react";
 // import { Input } from "@/src/components/ui/inputForm";
 // import { Label } from "@/src/components/ui/label";
-// import { Button } from "@/src/components/ui/button";
-// import { ArrowRight } from "lucide-react";
+import { Button } from "@/src/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -25,12 +26,15 @@ export default function Hero() {
             <div className="grid w-full max-w-sm items-center justify-center gap-1.5">
               <Label htmlFor="email">Контакты</Label>
               <Input type="text" defaultValue="" />
-            </div>
+            </div>*/}
+            <Link href="#form">
             <Button type="submit" variant="contact" className="items-center flex flex-row text-[14px] sm:mt-5">
               <b>Оставить заявку!</b>
               <ArrowRight size={20} className="ml-[10px]"/>
             </Button>
-          </form> */}
+            </Link>
+            
+          {/* </form> */}
         </div>
         <div className="hidden xl:block bg-white p-5 rounded-[10px] text-left text-black">
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
