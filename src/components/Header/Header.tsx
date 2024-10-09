@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { Input } from "../ui/input";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Label } from "@/src/components/ui/label";
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
-
+import fetchService from "../../services/fetch";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,7 +26,41 @@ import {
 import Image from "next/image";
 import SecondHeader from "./SecondHeader";
 
-const Header = () => {
+interface FormData {
+  product: string;
+  count: number;
+  phone: string;
+  email: string;
+}
+
+const Header: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    product: '',
+    count: 0,
+    phone: '',
+    email: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    // Parse the count to a number if it's the count field
+    const updatedValue = name === "count" ? parseInt(value, 10) : value;
+
+    setFormData({ ...formData, [name]: updatedValue });
+    console.log(formData);
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const res = await fetchService.sendRightSideMessage(formData);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const langs = [
     {
       name: "Русский",
@@ -53,7 +87,7 @@ const Header = () => {
     },
     {
       name: "Актау",
-      code: "Aktau",
+      code: "aktau",
     },
   ];
 
@@ -65,21 +99,21 @@ const Header = () => {
             <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12  text-[13px]">
+            <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center font-inter-bold font-bold mr-12 text-[13px]">
               <img
                 src="/location.svg"
                 alt="location"
-                className="mr-2 w-[20px] "
+                className="mr-2 w-[20px]"
               />
               Астана
               <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuSeparator />
-              {cities.map((cities) => (
-                <DropdownMenuItem key={cities.code}>
+              {cities.map((city) => (
+                <DropdownMenuItem key={city.code}>
                   <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
-                    {cities.name}
+                    {city.name}
                   </b>
                 </DropdownMenuItem>
               ))}
@@ -139,7 +173,7 @@ const Header = () => {
                 Оставить заявку
               </button>
             </SheetTrigger>
-            <form>
+            <form onSubmit={handleSubmit}>
               <SheetContent className="flex flex-col items-center text-left sm:items-center">
                 <SheetHeader>
                   <SheetTitle className="text-[2rem]">
@@ -153,7 +187,9 @@ const Header = () => {
                     </Label>
                     <Input
                       id="product"
+                      name="product"
                       placeholder="Кабель силовой медный"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -161,7 +197,14 @@ const Header = () => {
                     <Label htmlFor="count" className="text-left font-bold">
                       Количество
                     </Label>
-                    <Input id="count" placeholder="20" required />
+                    <Input
+                      id="count"
+                      name="count"
+                      placeholder="20"
+                      type="number"
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label
@@ -172,7 +215,9 @@ const Header = () => {
                     </Label>
                     <Input
                       id="phonenumber"
+                      name="phone"
                       placeholder="+7 (___) ___-__-__"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -182,8 +227,10 @@ const Header = () => {
                     </Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="example@gmail.com"
+                      onChange={handleChange}
                       required
                     />
                   </div>
