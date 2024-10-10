@@ -24,7 +24,6 @@ const Form: React.FC = () => {
     const { name, value } = e.target;
 
     const updatedValue = name === "count" ? parseInt(value, 10) : value;
-console.log(formData)
     setFormData({ ...formData, [name]: updatedValue });
   };
 

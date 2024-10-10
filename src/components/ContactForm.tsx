@@ -1,10 +1,44 @@
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { Container } from "./Container";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import fetchService from "../services/fetch";
+import toast from "react-hot-toast";
 
-export default function ContactForm() {
+interface FormData {
+  name: string;
+  phone: string;
+  comment: string;
+}
+
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    comment: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const updatedValue = name === "count" ? parseInt(value, 10) : value;
+    console.log(formData);
+    setFormData({ ...formData, [name]: updatedValue });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const res = await fetchService.sendContactForm(formData);
+      console.log(res);
+      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
+    } catch (error) {
+      console.log(error);
+      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
+    }
+  };
+
   return (
     <Container className="items-center mb-24 font-poppins">
       <div className="p-0 flex flex-col items-center font-poppins">
@@ -56,21 +90,23 @@ export default function ContactForm() {
             </div>
           </div>
           <div className="flex py-6 flex-col w-auto border border-1-black shadow-custom ml-0 lg-ml-20  pl-[15px] pr-[2px] sm:pr-[15px] md:pl-[51px] lg:pr-[82px] mt-6 lg:py-[52px] xl:ml-32">
-            <form className="flex flex-col">
+            <form className="flex flex-col" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-10 lg:flex-row">
                 <input
                   className="border border-1-gray p-1"
                   type="text"
                   id="name"
                   name="name"
+                  onChange={handleChange}
                   placeholder="Ваше имя"
                   required
                 />
                 <input
                   className="border border-1-gray p-1"
-                  type="tel"
+                  type="text"
                   id="phone"
                   name="phone"
+                  onChange={handleChange}
                   placeholder="Нормер телефона"
                   required
                 />
@@ -80,9 +116,10 @@ export default function ContactForm() {
                 className="mt-9 border border-1-gray p-1"
                 id="comment"
                 name="comment"
+                onChange={handleChange}
                 placeholder="Комментарий"
                 required
-              ></textarea>
+              />
 
               <Button type="submit" variant="contact" className="mt-8 w-44">
                 Отправить заявку
@@ -93,4 +130,5 @@ export default function ContactForm() {
       </div>
     </Container>
   );
-}
+};
+export default ContactForm;

@@ -11,6 +11,11 @@ const fetchService = {
     const res = await axios.post(process.env.NEXT_PUBLIC_API + "/feedback", data);
     return res.data;
   },
+
+  sendContactForm: async (data) => {
+    const res = await axios.post(process.env.NEXT_PUBLIC_API + "/cfeedback", data);
+    return res.data;
+  },
   
 };
 
