@@ -6,6 +6,11 @@ const fetchService = {
     const res = await axios.post(process.env.NEXT_PUBLIC_API + "/request", data);
     return res.data;
   },
+
+  sendForm: async (data) => {
+    const res = await axios.post(process.env.NEXT_PUBLIC_API + "/feedback", data);
+    return res.data;
+  },
   
 };
 

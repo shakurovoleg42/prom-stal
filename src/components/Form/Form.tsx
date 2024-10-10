@@ -1,12 +1,44 @@
 "use client";
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { Input } from "../ui/inputForm";
 import { Button } from "../ui/button";
 import { Container } from "../Container";
 import { usePathname } from "next/navigation";
+import fetchService from "@/src/services/fetch";
+import toast from "react-hot-toast";
 
-export default function Form() {
+interface FormData {
+  name: string;
+  phone: string;
+}
+
+const Form: React.FC = () => {
   const pathname = usePathname();
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const updatedValue = name === "count" ? parseInt(value, 10) : value;
+console.log(formData)
+    setFormData({ ...formData, [name]: updatedValue });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const res = await fetchService.sendForm(formData);
+      console.log(res);
+      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
+    } catch (error) {
+      console.log(error);
+      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
+    }
+  };
 
   const whatPageForm = () => {
     if (pathname === "/") {
@@ -33,16 +65,22 @@ export default function Form() {
             Заполните форму и получите бесплатную консультацию менеджера, а
             также полный прайс цен в удобной для Вас форме!
           </p>
-          <form className="max-w-[444px]">
+          <form className="max-w-[444px]" onSubmit={handleSubmit}>
             <Input
+              id="phone"
+              name="phone"
               type="text"
               placeholder="Телефон"
+              onChange={handleChange}
               required
               className="text-black border border-1-[#000] max-w-[444px]"
             />
             <Input
-              type="text"
+              id="name"
+              name="name"
+              type="name"
               placeholder="Имя"
+              onChange={handleChange}
               required
               className="text-black border border-1-[#000] max-w-[444px] mt-4"
             />
@@ -59,3 +97,5 @@ export default function Form() {
     </div>
   );
 }
+
+export default Form;
