@@ -7,6 +7,7 @@ import { Label } from "@/src/components/ui/label";
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
 import fetchService from "../../services/fetch";
+import toast, { Toaster } from "react-hot-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +17,6 @@ import {
 } from "@/src/components/ui/dropdown-menu";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetFooter,
   SheetHeader,
@@ -28,27 +28,25 @@ import SecondHeader from "./SecondHeader";
 
 interface FormData {
   product: string;
-  count: number;
+  count: string | number;
   phone: string;
   email: string;
 }
 
 const Header: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    product: '',
+    product: "",
     count: 0,
-    phone: '',
-    email: '',
+    phone: "",
+    email: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    // Parse the count to a number if it's the count field
     const updatedValue = name === "count" ? parseInt(value, 10) : value;
 
     setFormData({ ...formData, [name]: updatedValue });
-    console.log(formData);
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -56,8 +54,10 @@ const Header: React.FC = () => {
     try {
       const res = await fetchService.sendRightSideMessage(formData);
       console.log(res);
+      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
     } catch (error) {
       console.log(error);
+      toast.error("Не удалось отправить заявку. Попробуйте ещё раз.");
     }
   };
 
@@ -93,6 +93,7 @@ const Header: React.FC = () => {
 
   return (
     <Container className="font-inter">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex flex-col justify-between items-center py-5 lg:flex-row">
         <div className="flex items-center">
           <Link href="/">
@@ -173,13 +174,15 @@ const Header: React.FC = () => {
                 Оставить заявку
               </button>
             </SheetTrigger>
-            <form onSubmit={handleSubmit}>
               <SheetContent className="flex flex-col items-center text-left sm:items-center">
+
                 <SheetHeader>
                   <SheetTitle className="text-[2rem]">
                     Заказ в 1 клик
                   </SheetTitle>
                 </SheetHeader>
+            <form onSubmit={handleSubmit}>
+
                 <div className="flex flex-col items-left gap-8 py-4 px-2">
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="product" className="text-left font-bold">
@@ -235,13 +238,16 @@ const Header: React.FC = () => {
                     />
                   </div>
                 </div>
-                <SheetFooter>
-                  <SheetClose asChild>
-                    <Button type="submit">Отправить</Button>
-                  </SheetClose>
+                <SheetFooter className="w-full flex items-center justify-center">
+                  {/* <SheetClose asChild> */}
+                    <Button className="w-full flex items-center justify-center rounded-[25px]" type="submit">Отправить</Button>
+                  {/* </SheetClose> */}
                 </SheetFooter>
+                </form>
+
+                
               </SheetContent>
-            </form>
+            
           </Sheet>
         </div>
       </div>
