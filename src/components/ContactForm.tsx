@@ -19,9 +19,9 @@ const ContactForm: React.FC = () => {
     comment: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-
+  
     const updatedValue = name === "count" ? parseInt(value, 10) : value;
     console.log(formData);
     setFormData({ ...formData, [name]: updatedValue });
