@@ -9,14 +9,14 @@ import toast from "react-hot-toast";
 interface FormData {
   name: string;
   phone: string;
-  comment: string;
+  message: string;
 }
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
-    comment: "",
+    message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -114,8 +114,8 @@ const ContactForm: React.FC = () => {
 
               <textarea
                 className="mt-9 border border-1-gray p-1"
-                id="comment"
-                name="comment"
+                id="message"
+                name="message"
                 onChange={handleChange}
                 placeholder="Комментарий"
                 required
