@@ -30,7 +30,7 @@ export default function Hero() {
           <Link href="#form" className="">
             <Button
               variant="contact"
-              className="items-center flex flex-row text-[14px] sm:mt-5 ml-5"
+              className="items-center flex flex-row text-[14px] sm:mt-5 ml-5 "
             >
               <b>Оставить заявку!</b>
               <ArrowRight size={20} className="ml-[10px]" />

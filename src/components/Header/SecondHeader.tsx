@@ -44,9 +44,9 @@ export default function SecondHeader() {
 
   return (
     <div className="mt-8 flex justify-between items-center py-5">
-        <div className="flex flex-col sm:items-center sm:flex-row">
+        <div className="flex flex-col sm:items-center sm:flex-row text-black">
           <Sheet>
-            <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0">
+            <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0 text-black">
               <img
                 src="/catalog.svg"
                 alt="burfer munu"
@@ -63,7 +63,7 @@ export default function SecondHeader() {
                   Перейти к:
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col mt-12 gap-2">
+              <div className="flex flex-col mt-12 gap-2 text-black">
                 {pages.map((page) => (
                   <SheetClose asChild key={page.name}>
                     <Link

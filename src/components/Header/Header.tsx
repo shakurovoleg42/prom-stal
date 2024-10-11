@@ -163,7 +163,7 @@ const Header: React.FC = () => {
           <Sheet>
             <SheetTrigger
               asChild
-              className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px]"
+              className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px] text-black"
             >
               <button>
                 <Image
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
                 <SheetTitle className="text-[2rem]">Заказ в 1 клик</SheetTitle>
               </SheetHeader>
               <form onSubmit={handleSubmit}>
-                <div className="flex flex-col items-left gap-8 py-4 px-2">
+                <div className="flex flex-col items-left gap-8 py-4 px-2 text-black">
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="product" className="text-left font-bold">
                       Товар

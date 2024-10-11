@@ -1,8 +1,26 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react";
 import { Container } from "@/src/components/Container";
-import Image from "next/image";
+import fetchService from "@/src/services/fetch";
 import Link from "next/link";
-import React from "react";
-export default function Categories() {
+
+const Categories = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await fetchService.getAllCategories();
+      console.log(
+        response.flatMap((item: { subcategories: any }) => item.subcategories)
+      );
+      setCategories(
+        response.flatMap((item: { subcategories: any }) => item.subcategories)
+      );
+    };
+
+    fetchCategories();
+  }, []);
   return (
     <Container>
       <div className=" text-[10px] leading-[10px] text-center mt-16 font-inter">
@@ -10,180 +28,38 @@ export default function Categories() {
           Категории
         </h2>
         <div className="flex flex-wrap items-start mt-8">
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/1.svg" alt="parts" />
+          {categories.map((item: any) => (
+            <div
+              key={item.id}
+              className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]"
+            >
+              <div className="rounded-[4px] mr-[10px] bg-[#F4F6F7]">
+                <img className="min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-[8px] p-1" src={item.image || '/no-image.jpg'} alt="parts" />
+              </div>
+              <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
+                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
+                  {item.name}
+                </h3>
+                {item.subcategories.slice(0, 4).map((subItem: any) => (
+                  <div key={subItem.id} className="flex flex-col">
+                    <Link href={`/${subItem.slug}`} className="mb-2">
+                      {subItem.name}
+                    </Link>
+                  </div>
+                ))}
+                <Link
+                  href="#"
+                  className="text-[#ddc124] decoration-none font-bold"
+                >
+                  Показать еще
+                </Link>
+              </div>
             </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Черный металлопрокат
-              </h3>
-              <p className="mb-2">Трубный прокат</p>
-              <p className="mb-2">Плоский прокат</p>
-              <p className="mb-2">Фасонный прокат</p>
-              <p className="mb-2">Сортовой прокат</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px] ">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/2.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Специальные стали
-              </h3>
-              <p className="mb-2">Листы Hardox</p>
-              <p className="mb-2">Кислотостойкие стали</p>
-              <p className="mb-2">Пищевые стали</p>
-              <p className="mb-2">Конструкционные стали</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/3.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Нержавеющий прокат
-              </h3>
-              <p className="mb-2">Нержавеющий трубопрокат</p>
-              <p className="mb-2">Плоский нержавеющий прокат</p>
-              <p className="mb-2">Фасонный нержавеющий прокат</p>
-              <p className="mb-2">Сортовой нержавеющий прокат</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/4.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Цветной металлопрокат
-              </h3>
-              <p className="mb-2">Алюминиевый прокат</p>
-              <p className="mb-2">Бериллиевый прокат</p>
-              <p className="mb-2">Бронзовый прокат</p>
-              <p className="mb-2">Ванадиевый прокат</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/5.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Благородные металлы
-              </h3>
-              <p className="mb-2">Золото</p>
-              <p className="mb-2">Серебро</p>
-              <p className="mb-2">Платина</p>
-              <p className="mb-2">Палладий</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px] flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/6.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Редкоземельные металлы
-              </h3>
-              <p className="mb-2">Цирконий</p>
-              <p className="mb-2">Скандий</p>
-              <p className="mb-2">Лантан</p>
-              <p className="mb-2">Церий</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px] rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/7.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Кабельная продукция
-              </h3>
-              <p className="mb-2">Связь</p>
-              <p className="mb-2">Провода</p>
-              <p className="mb-2">СИП</p>
-              <p className="mb-2">Витая пара</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/8.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-              <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
-                Сварочные материалы
-              </h3>
-              <p className="mb-2">Проволоки сварочные</p>
-              <p className="mb-2">Электроды сварочные</p>
-              <p className="mb-2">Флюс сварочный</p>
-              <p className="mb-2">Присадочные прутки</p>
-              <Link
-                href="#"
-                className="text-[#ddc124] decoration-none font-bold"
-              >
-                Показать еще
-              </Link>
-            </div>
-          </div>
-          {/* <div className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]">
-            <div className="w-[50px] h-[50px]  rounded-[50%] mr-[10px]">
-              <Image width={52} height={52} src="/9.svg" alt="parts" />
-            </div>
-            <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-               <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">Металл Китайский</h3>
-              <p className="mb-2">Цирконий</p>
-              <Link href="#" className="text-[#ddc124] decoration-none font-bold">
-                Показать еще
-              </Link>
-            </div>
-          </div> */}
+          ))}
         </div>
       </div>
     </Container>
   );
-}
+};
+
+export default Categories;
