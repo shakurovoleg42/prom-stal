@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import fetchService from "../services/fetch";
 import toast from "react-hot-toast";
-
+// import InputMask from "react-input-mask";
+import MaskedInput from "react-text-mask";
 interface FormData {
   name: string;
   phone: string;
@@ -19,9 +20,11 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-  
+
     const updatedValue = name === "count" ? parseInt(value, 10) : value;
     console.log(formData);
     setFormData({ ...formData, [name]: updatedValue });
@@ -101,15 +104,36 @@ const ContactForm: React.FC = () => {
                   placeholder="Ваше имя"
                   required
                 />
-                <input
-                  className="border border-1-gray p-1"
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  onChange={handleChange}
-                  placeholder="Нормер телефона"
-                  required
-                />
+                <MaskedInput
+      mask={[
+        "+",
+        "7",
+        " ",
+        "(",
+        /[1-9]/,
+        /\d/,
+        /\d/,
+        ")",
+        " ",
+        /\d/,
+        /\d/,
+        /\d/,
+        "-",
+        /\d/,
+        /\d/,
+        "-",
+        /\d/,
+        /\d/,
+      ]}
+      className="border border-1-gray p-1"
+      placeholder="+7 (___) ___-__-__"
+      guide={false}
+      type="text"
+      id="phone"
+      name="phone"
+      value={formData.phone} // Привязка значения к состоянию
+      onChange={handleChange} // Обработчик изменений
+    />
               </div>
 
               <textarea

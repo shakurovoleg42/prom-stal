@@ -23,6 +23,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/src/components/ui/sheet";
+import MaskedInput from "react-text-mask";
+// import InputMask from "react-input-mask";
 import Image from "next/image";
 import SecondHeader from "./SecondHeader";
 
@@ -174,15 +176,11 @@ const Header: React.FC = () => {
                 Оставить заявку
               </button>
             </SheetTrigger>
-              <SheetContent className="flex flex-col items-center text-left sm:items-center">
-
-                <SheetHeader>
-                  <SheetTitle className="text-[2rem]">
-                    Заказ в 1 клик
-                  </SheetTitle>
-                </SheetHeader>
-            <form onSubmit={handleSubmit}>
-
+            <SheetContent className="flex flex-col items-center text-left sm:items-center">
+              <SheetHeader>
+                <SheetTitle className="text-[2rem]">Заказ в 1 клик</SheetTitle>
+              </SheetHeader>
+              <form onSubmit={handleSubmit}>
                 <div className="flex flex-col items-left gap-8 py-4 px-2">
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="product" className="text-left font-bold">
@@ -216,13 +214,36 @@ const Header: React.FC = () => {
                     >
                       Номер телефона
                     </Label>
-                    <Input
-                      id="phonenumber"
-                      name="phone"
-                      placeholder="+7 (___) ___-__-__"
-                      onChange={handleChange}
-                      required
-                    />
+                    <MaskedInput
+                  mask={[
+                    "+",
+                    "7",
+                    " ",
+                    "(",
+                    /[1-9]/,
+                    /\d/,
+                    /\d/,
+                    ")",
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    "-",
+                    /\d/,
+                    /\d/,
+                    "-",
+                    /\d/,
+                    /\d/,
+                  ]}
+                  className="flex h-10 w-full rounded-md   bg-background px-3 py-2 text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
+                  placeholder="+7 (___) ___-__-__"
+                  guide={false}
+                  type="text"
+                  id="phonenumber"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
                   </div>
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="email" className="text-left font-bold">
@@ -240,14 +261,16 @@ const Header: React.FC = () => {
                 </div>
                 <SheetFooter className="w-full flex items-center justify-center">
                   {/* <SheetClose asChild> */}
-                    <Button className="w-full flex items-center justify-center rounded-[25px]" type="submit">Отправить</Button>
+                  <Button
+                    className="w-full flex items-center justify-center rounded-[25px]"
+                    type="submit"
+                  >
+                    Отправить
+                  </Button>
                   {/* </SheetClose> */}
                 </SheetFooter>
-                </form>
-
-                
-              </SheetContent>
-            
+              </form>
+            </SheetContent>
           </Sheet>
         </div>
       </div>
