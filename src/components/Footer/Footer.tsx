@@ -23,14 +23,15 @@ export default function Footer() {
         <p>Нержавеющий металлопрокат</p>
         <p>Цветной металлопрокат</p>
         <p>Запорно-регулирующая арматура</p>
-        <p className="mt-2 font-[500] text-[21px] leading-[31.5px]">
+        <div className="flex flex-col mt-2">
+        <Link href="mailto:APS168@yandex.kz" className="mt-2 font-[500] text-[21px] leading-[31.5px]">
           APS168@yandex.kz
-        </p>
-        <p className="mt-2 font-[500] text-[24px] leading-[36px]">
+        </Link>
+        <Link href="tel:87080016868" className="mt-2 font-[500] text-[24px] leading-[36px]">
           8(708)001-68-68
-        </p>
+        </Link>
+        </div>
       </div>
-
       <div className="mb-5 px-9 mt-2">
         <h4 className="text-[19px] mb-3 font-[600]">Меню сайта</h4>
         <ul className="style-none p-0 m-0">

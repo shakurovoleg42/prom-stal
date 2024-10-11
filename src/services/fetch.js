@@ -7,6 +7,11 @@ const fetchService = {
     return res.data;
   },
 
+  getCategoryBySlug: async (slug) => {
+    const res = await axios.get(process.env.NEXT_PUBLIC_API + "/category/" + slug);
+    return res.data;
+  },
+
   sendRightSideMessage: async (data) => {
     const res = await axios.post(process.env.NEXT_PUBLIC_API + "/request", data);
     return res.data;

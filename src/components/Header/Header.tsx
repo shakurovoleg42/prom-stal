@@ -151,11 +151,11 @@ const Header: React.FC = () => {
           </div>
           <div>
             <Link
-              href="mailto:info@example.com"
+              href="mailto:APS168@yandex.kz"
               className="mr-[50px] text-[12px] flex items-center"
             >
               <img src="/email.svg" alt="email" className="w-[20px] mr-2" />
-              <b>info@example.com</b>
+              <b>APS168@yandex.kz</b>
             </Link>
           </div>
         </div>

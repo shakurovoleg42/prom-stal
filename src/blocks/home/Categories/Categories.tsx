@@ -34,15 +34,25 @@ const Categories = () => {
               className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]"
             >
               <div className="rounded-[4px] mr-[10px] bg-[#F4F6F7]">
-                <img className="min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-[8px] p-1" src={item.image || '/no-image.jpg'} alt="parts" />
+                <img
+                  className="min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-[8px] p-1"
+                  src={item.image || "/no-image.jpg"}
+                  alt="parts"
+                />
               </div>
               <div className="text-left text-[0.8rem] leading-[13px] font-[500]">
-                <h3 className="text-[1rem] font-bold mb-2 leading-[20px]">
+                <h3 className="text-[1rem] font-[900] mb-2 leading-[20px]">
                   {item.name}
                 </h3>
                 {item.subcategories.slice(0, 4).map((subItem: any) => (
                   <div key={subItem.id} className="flex flex-col">
-                    <Link href={`/${subItem.slug}`} className="mb-2">
+                    <Link
+                      href={{
+                        pathname: `/catalog/${subItem.slug}`,
+                        query: { slug: subItem.slug },
+                      }}
+                      className="mb-4 font-bold"
+                    >
                       {subItem.name}
                     </Link>
                   </div>
