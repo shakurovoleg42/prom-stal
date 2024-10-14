@@ -31,8 +31,7 @@ const Form: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetchService.sendForm(formData);
-      console.log(res);
+      await fetchService.sendForm(formData);
       toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
     } catch (error) {
       console.log(error);

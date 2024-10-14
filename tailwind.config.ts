@@ -10,7 +10,9 @@ const config = {
     './src/**/*.{ts,tsx}',
   ],
   prefix: '',
-  theme: {
+  theme: {scrollBehavior: {
+	smooth: 'smooth',
+  },
   	container: {
   		center: true,
   		padding: '2rem',

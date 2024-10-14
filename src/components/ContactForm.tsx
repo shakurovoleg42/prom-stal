@@ -26,15 +26,13 @@ const ContactForm: React.FC = () => {
     const { name, value } = e.target;
 
     const updatedValue = name === "count" ? parseInt(value, 10) : value;
-    console.log(formData);
     setFormData({ ...formData, [name]: updatedValue });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetchService.sendContactForm(formData);
-      console.log(res);
+      await fetchService.sendContactForm(formData);
       toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
     } catch (error) {
       console.log(error);

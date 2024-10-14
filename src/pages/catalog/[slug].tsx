@@ -1,24 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container } from "@/src/components/Container";
 import fetchService from "@/src/services/fetch";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { CircleArrowLeft } from "lucide-react";
 
 const Catalog = () => {
   const router = useRouter();
-  const { slug } = router.query;
+  const { slug, name } = router.query;
 
-  // Создаем состояние для хранения данных категории
-  const [category, setCategory] = useState<any>(null);
+  const [subcategory, setSubcategories] = useState<any>(null);
 
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
         try {
           const response = await fetchService.getCategoryBySlug(slug);
-          console.log(response.category);
-          setCategory(response.category);
+          setSubcategories(response.subcategories);
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
         }
@@ -28,34 +28,62 @@ const Catalog = () => {
     fetchCategory();
   }, [slug]);
 
-  if (!category) {
+  if (!subcategory) {
     return <div>Загрузка...</div>;
   }
-console.log(category.products);
+
+  if (!subcategory.length) {
+    return (
+      <div className="my-44 flex flex-col items-center text-center">
+        <div className=" text-[3rem] ">Ничего не найдено</div>
+        <div className="underline items-center w-[200px] flex">
+          <Link
+            href="/"
+            className="flex flex-row"
+          >
+            <CircleArrowLeft />
+            Вернуться на главную
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <Container className="flex flex-col justify-between items-center text-center font-montserrat">
+    <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[80%]">
       <p className="w-full text-[#999999] font-[700] leading-[20px] flex flex-row text-start">
         <Link href="/" className="hover:border-b hover:border-[#999999]">
           Главная
         </Link>
         <span className="mx-2"> / </span>
-        <span>Категория {category.name}</span>
+        <span>Категория {name}</span>
       </p>
 
       <div className="w-full flex flex-col mt-9">
         <div className="w-full">
-          <h1 className="text-[2rem] font-[800] text-center">{category.name}</h1>
+          <h1 className="text-[2rem] font-[800] text-center">{name}</h1>
         </div>
-        <div className="w-full flex flex-wrap items-center justify-center gap-5 mt-5">
-          {category.products.map((product: any) => (
-            <div key={product.id} className="w-[200px]">
-              <Link href={`/products/${product.slug}`}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-[200px] h-[200px] object-cover"
-                />
-              </Link>
+        <div className="w-full flex flex-wrap justify-center gap-24 mt-5">
+          {subcategory.map((category: any) => (
+            <div
+              key={category.id}
+              className="max-w-[150px] flex flex-col items-center text-left text-wrap gap-3"
+            >
+              <img
+                src={category.image || "/no-image.jpg"}
+                alt={category.name}
+                className="w-[90px] h-[90px]"
+              />
+              <div className="flex flex-col text-center gap-5">
+                <Link
+                  href={{
+                    pathname: "/products",
+                    query: { category: category.slug },
+                  }}
+                >
+                  {category.name}
+                </Link>
+              </div>
             </div>
           ))}
         </div>

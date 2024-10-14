@@ -12,7 +12,7 @@ import Link from "next/link";
 import React from "react";
 
 export default function product() {
-  // const img = "https://ist{img}eels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
+
   return (
     <>
       <Head>

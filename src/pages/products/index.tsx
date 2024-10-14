@@ -8,8 +8,13 @@ import Link from "next/link";
 import ContactForm from "@/src/components/ContactForm";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-export default function products() {
+export default function Products() {
+  const router = useRouter();
+  const { category } = router.query;
+  console.log(category)
+
   return (
     <>
     <Head>

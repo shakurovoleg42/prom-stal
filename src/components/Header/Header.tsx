@@ -54,8 +54,8 @@ const Header: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetchService.sendRightSideMessage(formData);
-      console.log(res);
+      await fetchService.sendRightSideMessage(formData);
+      
       toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
     } catch (error) {
       console.log(error);

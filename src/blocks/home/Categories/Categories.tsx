@@ -11,9 +11,6 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await fetchService.getAllCategories();
-      console.log(
-        response.flatMap((item: { subcategories: any }) => item.subcategories)
-      );
       setCategories(
         response.flatMap((item: { subcategories: any }) => item.subcategories)
       );
@@ -49,7 +46,7 @@ const Categories = () => {
                     <Link
                       href={{
                         pathname: `/catalog/${subItem.slug}`,
-                        query: { slug: subItem.slug },
+                        query: { category: subItem.slug, name: subItem.name },
                       }}
                       className="mb-4 font-bold"
                     >
