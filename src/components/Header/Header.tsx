@@ -42,6 +42,10 @@ const Header: React.FC = () => {
     phone: "",
     email: "",
   });
+  const [region, setRegion] = useState("Астана");
+  const [lang, setLang] = useState("RU");
+
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -108,14 +112,14 @@ const Header: React.FC = () => {
                 alt="location"
                 className="mr-2 w-[20px]"
               />
-              Астана
+              {region}
               <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuSeparator />
               {cities.map((city) => (
                 <DropdownMenuItem key={city.code}>
-                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
+                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]" onClick={() => setRegion(city.name)}>
                     {city.name}
                   </b>
                 </DropdownMenuItem>
@@ -124,14 +128,14 @@ const Header: React.FC = () => {
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
-              <img src="/ru.svg" alt="flag" className="mr-2 w-[20px]" /> RU
+              <img src="/ru.svg" alt="flag" className="mr-2 w-[20px]" /> {lang}
               <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuSeparator />
               {langs.map((lang) => (
                 <DropdownMenuItem key={lang.code}>
-                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]">
+                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]" onClick={() => setLang(lang.code)}>
                     {lang.name}
                   </b>
                 </DropdownMenuItem>
@@ -235,7 +239,7 @@ const Header: React.FC = () => {
                     /\d/,
                     /\d/,
                   ]}
-                  className="flex h-10 w-full rounded-md   bg-background px-3 py-2 text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
+                  className="flex h-10 w-full rounded-md   bg-background text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
                   placeholder="+7 (___) ___-__-__"
                   guide={false}
                   type="text"
