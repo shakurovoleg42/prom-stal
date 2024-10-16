@@ -36,12 +36,12 @@ const Catalog = () => {
     return (
       <div className="my-44 flex flex-col items-center text-center">
         <div className=" text-[3rem] ">Ничего не найдено</div>
-        <div className="underline items-center w-[200px] flex">
+        <div className="underline items-center w-[400px] text-center justify-center flex">
           <Link
             href="/"
             className="flex flex-row"
           >
-            <CircleArrowLeft />
+            <CircleArrowLeft className="mr-2"/>
             Вернуться на главную
           </Link>
         </div>
