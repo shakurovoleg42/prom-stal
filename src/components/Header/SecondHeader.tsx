@@ -147,9 +147,9 @@ export default function SecondHeader() {
           >
             Контакты
           </Link>
-          <button className="ml-5 text-[14px] uppercase font-bold">
+          {/* <button className="ml-5 text-[14px] uppercase font-bold">
             <img src="/cart.svg" alt="cart" className="mr-2 w-[30px]" />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
