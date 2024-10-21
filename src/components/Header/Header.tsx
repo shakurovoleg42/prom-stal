@@ -46,8 +46,6 @@ const Header: React.FC = () => {
   const [region, setRegion] = useState("Астана");
   const [lang, setLang] = useState("RU");
 
-  
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -60,7 +58,7 @@ const Header: React.FC = () => {
     e.preventDefault();
     try {
       await fetchService.sendRightSideMessage(formData);
-      
+
       toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
     } catch (error) {
       console.log(error);
@@ -120,7 +118,10 @@ const Header: React.FC = () => {
               <DropdownMenuSeparator />
               {cities.map((city) => (
                 <DropdownMenuItem key={city.code}>
-                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]" onClick={() => setRegion(city.name)}>
+                  <b
+                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]"
+                    onClick={() => setRegion(city.name)}
+                  >
                     {city.name}
                   </b>
                 </DropdownMenuItem>
@@ -136,7 +137,10 @@ const Header: React.FC = () => {
               <DropdownMenuSeparator />
               {langs.map((lang) => (
                 <DropdownMenuItem key={lang.code}>
-                  <b className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]" onClick={() => setLang(lang.code)}>
+                  <b
+                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]"
+                    onClick={() => setLang(lang.code)}
+                  >
                     {lang.name}
                   </b>
                 </DropdownMenuItem>
@@ -220,35 +224,35 @@ const Header: React.FC = () => {
                       Номер телефона
                     </Label>
                     <MaskedInput
-                  mask={[
-                    "+",
-                    "7",
-                    " ",
-                    "(",
-                    /[1-9]/,
-                    /\d/,
-                    /\d/,
-                    ")",
-                    " ",
-                    /\d/,
-                    /\d/,
-                    /\d/,
-                    "-",
-                    /\d/,
-                    /\d/,
-                    "-",
-                    /\d/,
-                    /\d/,
-                  ]}
-                  className="flex h-10 w-full rounded-md   bg-background text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
-                  placeholder="+7 (___) ___-__-__"
-                  guide={false}
-                  type="text"
-                  id="phonenumber"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+                      mask={[
+                        "+",
+                        "7",
+                        " ",
+                        "(",
+                        /[1-9]/,
+                        /\d/,
+                        /\d/,
+                        ")",
+                        " ",
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        "-",
+                        /\d/,
+                        /\d/,
+                        "-",
+                        /\d/,
+                        /\d/,
+                      ]}
+                      className="flex h-10 w-full rounded-md   bg-background text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
+                      placeholder="+7 (___) ___-__-__"
+                      guide={false}
+                      type="text"
+                      id="phonenumber"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
                     <Label htmlFor="email" className="text-left font-bold">
@@ -266,12 +270,12 @@ const Header: React.FC = () => {
                 </div>
                 <SheetFooter className="w-full flex items-center justify-center">
                   <SheetClose asChild>
-                  <Button
-                    className="w-full flex items-center justify-center rounded-[25px]"
-                    type="submit"
-                  >
-                    Отправить
-                  </Button>
+                    <Button
+                      className="w-full flex items-center justify-center rounded-[25px]"
+                      type="submit"
+                    >
+                      Отправить
+                    </Button>
                   </SheetClose>
                 </SheetFooter>
               </form>

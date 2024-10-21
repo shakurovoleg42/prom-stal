@@ -17,7 +17,6 @@ interface ListProductsProps {
 }
 
 const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
-
   if (!Array.isArray(products) || products.length === 0) {
     return <div>Загрузка...</div>;
   }
@@ -29,7 +28,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
           key={item.id}
           className="flex justify-around flex-wrap border-b border-[#D3D6DB] pl-2 py-4"
         >
-          <div className="flex flex-col items-center sm:flex-row sm:items-start ">
+          <div className="max-w-[612px] flex flex-col items-center sm:flex-row sm:items-start ">
             <img
               src={item.image || "/elektrosvarnye.png"}
               alt={item.name}
@@ -41,7 +40,10 @@ const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
               className="block w-[150px] h-[150px] sm:hidden"
             />
             <Link
-              href={`/products/${item.slug}`}
+              href={{
+                pathname: `/products/${item.slug}`,
+                query: { category: item.slug },
+              }}
               className="max-w-[550px] mt-6 sm:mt-0 ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:underline hover:underline-offset-2 hover:text-[#0A8C99]"
             >
               {item.name}

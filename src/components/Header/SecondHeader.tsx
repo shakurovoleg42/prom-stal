@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import {
   Sheet,
   SheetClose,
@@ -13,6 +14,16 @@ import { Input } from "../ui/inputSearch";
 import Image from "next/image";
 
 export default function SecondHeader() {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
+  const goToProduct = (query: string) => {
+    router.push({
+      pathname: "/search",
+      query: { query },
+    });
+  };
+
   const pages = [
     {
       name: "Главная",
@@ -88,6 +99,10 @@ export default function SecondHeader() {
           <form
             action=""
             className="relative flex items-center bg-[#F5F7F8] py-3 pr-[8px] pl-[25px] rounded-[8px] ml-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              goToProduct(search);
+            }}
           >
             <Input
               type="text"
@@ -95,7 +110,7 @@ export default function SecondHeader() {
               name="searchInput"
               defaultValue=""
               className="ml-5 border-none outline-none w-auto "
-              onChange={() => console.log("click")}
+              onChange={(e) => setSearch(e.target.value)}
             />
             <button className="flex items-center" type="submit">
               <Image
@@ -104,7 +119,6 @@ export default function SecondHeader() {
                 width={16}
                 height={16}
                 className="mr-2 absolute left-[15px] text-[14px] cursor-pointer"
-                onClick={() => console.log("click")}
               />
             </button>
           </form>

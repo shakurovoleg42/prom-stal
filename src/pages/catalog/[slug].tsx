@@ -51,7 +51,7 @@ const Catalog = () => {
 
   return (
     <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[80%]">
-      <p className="w-full text-[#999999] font-[700] leading-[20px] flex flex-row text-start">
+      <p className="w-full text-[#999999] font-[700] leading-[20px] flex flex-row text-start ml-5">
         <Link href="/" className="hover:border-b hover:border-[#999999]">
           Главная
         </Link>

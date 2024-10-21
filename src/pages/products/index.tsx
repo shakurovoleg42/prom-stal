@@ -17,6 +17,7 @@ export default function Products() {
   const router = useRouter();
   const { category } = router.query;
   const [products, setProducts] = useState<any>(null);
+  // const [characteristics, setCharacteristics] = useState<any>(null); 
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -44,11 +45,11 @@ export default function Products() {
     </Head>
       <Banner />
       <Container className="flex flex-col mt-6 font-montserrat">
-        <p className="text-[#0A8C99] font-[700] leading-[20px] ">
+        <p className="text-[#0A8C99] font-[700] leading-[20px] ml-5">
           <Link href="/" className="hover:border-b hover:border-[#0A8C99]">
             Главная
           </Link>
-          <span className=""> / </span>
+          <span> / </span>
           Каталог
         </p>
         <div className="flex justify-around flex-wrap mt-7">
