@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
 import Faq from "@/src/blocks/products/Faq";
 import Payment from "@/src/blocks/products/Payment";
@@ -9,11 +13,8 @@ import { Container } from "@/src/components/Container";
 import Form from "@/src/components/Form/Form";
 import { Button } from "@/src/components/ui/button";
 import fetchService from "@/src/services/fetch";
+
 import { Phone, Mail } from "lucide-react";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
 interface Product {
   characteristics: any[];
@@ -65,9 +66,9 @@ const Product = () => {
         {product && (
           <div>
             <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:justify-left lg:items-start">
-              <div className=" sm:items-start">
+              <div className="lg:w-[612px] sm:items-start">
                 <img
-                  src={product.image}
+                  src={product.image || "/no-image.jpg"}
                   className="w-[250px] h-[250px]"
                   alt="Фото товара"
                 />
@@ -78,7 +79,7 @@ const Product = () => {
                   <h1 className="text-black text-[1.8rem] font-[700] leading-[30px] ">
                     {product.name}
                   </h1>
-                  <span className="text-[12px] font-bold text-center uppercase">
+                  <span className="text-[12px] font-bold text-center uppercase mt-5">
                     Сроки доставки: от 1 дня
                   </span>
                 </div>
@@ -92,17 +93,22 @@ const Product = () => {
                   <div className="flex flex-col">
                     <div className="flex flex-row">
                       <div className="flex flex-col w-full justify-between">
-                        {product.characteristics.map((characteristic, index) => (
-                          <div key={index} className="flex flex-row items-center text-start">
-                            <span className="text-[#999999] text-[15px] font-[400] leading-[12px] text-start">
-                              {characteristic.name}
-                            </span>
-                            <span className="flex-grow border-b border-[#d2d3d3] mx-2 text-end"></span>
-                            <span className="font-bold text-end">
-                              {characteristic.pivot.value}
-                            </span>
-                          </div>
-                        ))}
+                        {product.characteristics.map(
+                          (characteristic, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-row items-center text-start"
+                            >
+                              <span className="text-[#999999] text-[15px] font-[400] leading-[12px] text-start">
+                                {characteristic.name}
+                              </span>
+                              <span className="flex-grow border-b border-[#d2d3d3] mx-2 text-end"></span>
+                              <span className="font-bold text-end">
+                                {characteristic.pivot.value}
+                              </span>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>
@@ -143,7 +149,6 @@ const Product = () => {
                     </Link>
                   </div>
                 </div>
-
                 <div className="flex flex-col gap-4 mt-16">
                   <Button
                     variant="tabs"
@@ -208,4 +213,3 @@ const Product = () => {
 };
 
 export default Product;
-
