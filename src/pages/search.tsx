@@ -7,6 +7,9 @@ import fetchService from "../services/fetch";
 import { Phone, Mail } from "lucide-react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
+import ContactForm from "../components/ContactForm";
+import toast from "react-hot-toast";
+
 
 interface Product {
   id: number;
@@ -23,19 +26,27 @@ const Search = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       if (query) {
+        const toastId = toast.loading("Это может занять немного времени...");
         try {
           const response = await fetchService.getProductsBySearch(query);
           setProducts(response.data);
+          
+          toast.dismiss(toastId); 
+          toast.success("Продукты по Вашему запросу найдены!");
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
+          
+          toast.dismiss(toastId);
+          toast.error("Ошибка при поиске продуктов!");
         }
       } else {
         return <div>Нет продуктов по такому названию</div>;
       }
     };
-
+  
     fetchCategory();
   }, [query]);
+  
 
   return (
     <Container>
@@ -100,6 +111,7 @@ const Search = () => {
             ))}
         </div>
       )}
+      <ContactForm />
     </Container>
   );
 };
