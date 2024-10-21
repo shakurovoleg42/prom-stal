@@ -7,6 +7,11 @@ const fetchService = {
     return res.data;
   },
 
+  getAllProducts: async () => {
+    const res = await axios.get(process.env.NEXT_PUBLIC_API + "/products");
+    return res.data;
+  },
+
   getCategoryBySlug: async (slug) => {
     const res = await axios.get(process.env.NEXT_PUBLIC_API + "/category/" + slug);
     return res.data;

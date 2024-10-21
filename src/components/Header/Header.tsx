@@ -17,6 +17,7 @@ import {
 } from "@/src/components/ui/dropdown-menu";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetFooter,
   SheetHeader,
@@ -264,14 +265,14 @@ const Header: React.FC = () => {
                   </div>
                 </div>
                 <SheetFooter className="w-full flex items-center justify-center">
-                  {/* <SheetClose asChild> */}
+                  <SheetClose asChild>
                   <Button
                     className="w-full flex items-center justify-center rounded-[25px]"
                     type="submit"
                   >
                     Отправить
                   </Button>
-                  {/* </SheetClose> */}
+                  </SheetClose>
                 </SheetFooter>
               </form>
             </SheetContent>

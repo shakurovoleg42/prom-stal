@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import { Container } from "../../components/Container";
 import Filters from "@/src/blocks/products/Filters";
@@ -9,11 +11,31 @@ import ContactForm from "@/src/components/ContactForm";
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import fetchService from "@/src/services/fetch";
 
 export default function Products() {
   const router = useRouter();
   const { category } = router.query;
-  console.log(category)
+  const [products, setProducts] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        if (category) {
+          const response = await fetchService.getCategoryBySlug(category);
+          setProducts(response.category.products);
+        } else {
+          const response = await fetchService.getAllProducts();
+          setProducts(response.products);
+        }
+      } catch (error) {
+        console.error("Ошибка при загрузке:", error);
+      }
+    };
+  
+    fetchCategory();
+  }, [category]);
+
 
   return (
     <>
@@ -48,7 +70,7 @@ export default function Products() {
       </Container>
       <Container className="flex flex-col justify-between lg:flex-row ">
         <Filters />
-        <ListProducts />
+        <ListProducts products={products}/>
       </Container>
       <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />

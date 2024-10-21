@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Faq from "@/src/blocks/products/Faq";
 import Payment from "@/src/blocks/products/Payment";
 import SimilarProducts from "@/src/blocks/products/SimilarProducts";
@@ -11,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function product() {
+const Product = () => {
 
   return (
     <>
@@ -176,50 +177,6 @@ export default function product() {
                 consectetur adipisicing elit. Sed ea at asperiores labore
                 repudiandae ratione voluptates ut adipisci aliquid, temporibus
                 voluptatibus aut quaerat qui distinctio inventore magnam ullam
-                earum. Inventore? Debitis, doloribus iste aliquam cupiditate
-                officiis odio voluptatum laudantium impedit soluta nesciunt
-                nostrum neque dolor illo, delectus error? Maxime ipsa nulla
-                numquam aliquam dolores. Molestias blanditiis excepturi
-                voluptate doloremque corrupti. Reiciendis dicta minima sed
-                laudantium tenetur amet nemo assumenda, mollitia in cum tempore
-                dolorem magnam cupiditate sapiente ad neque officia inventore
-                natus suscipit. Sunt nulla placeat vero culpa nihil dolorum!
-                Recusandae velit distinctio harum earum amet ducimus asperiores
-                fugit sit nesciunt labore odio omnis, quo aspernatur hic quos
-                eos, similique est illo aut nulla. Laudantium ut tenetur quo
-                quibusdam deserunt. Voluptate ad pariatur illum culpa aspernatur
-                ducimus animi, quidem deserunt. Quas, animi libero aut est a
-                quos dolorem dolore doloremque. Natus aperiam amet assumenda
-                provident tenetur velit omnis et adipisci. Cupiditate cum nulla
-                quo iste aut deserunt sequi quos vero ex? Atque consequatur
-                perferendis dolor velit deleniti consectetur hic, incidunt amet
-                sapiente quo optio ratione ducimus. Neque qui atque unde? Quas,
-                aliquam ipsum! Minima doloremque porro quis. Ad praesentium
-                odit, illum aut totam aperiam, laboriosam facilis cumque, libero
-                nesciunt soluta id architecto eligendi quidem harum ducimus
-                assumenda eius magni consectetur. In impedit assumenda iste
-                voluptas ipsam eos perspiciatis, fuga corporis minus non ad
-                corrupti? Molestias qui autem facilis architecto reprehenderit
-                nostrum fugit est eligendi, obcaecati quae animi, ratione nihil
-                sed! Placeat nihil qui temporibus veniam commodi sequi.
-                Molestias temporibus adipisci esse deserunt quod eos minus
-                placeat omnis numquam, id nobis atque cum, necessitatibus ab
-                ullam reprehenderit odit eveniet distinctio illo! Nisi, nesciunt
-                porro. Ex libero odio, dignissimos non, modi officia, ipsa illum
-                quos asperiores quasi est provident hic sit sint? Fuga debitis
-                natus, corrupti nemo eveniet sequi qui tempora pariatur? Lorem,
-                ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-                placeat blanditiis voluptatibus dolorum nostrum facilis mollitia
-                soluta enim quis, rem veniam ipsum commodi repudiandae incidunt
-                aliquid, vel praesentium nobis harum. Non numquam deleniti
-                asperiores veritatis iure minus qui nostrum, labore nihil optio
-                aliquid iste? Maiores id minus accusamus facere voluptates error
-                autem ratione impedit voluptate, doloremque corrupti aspernatur,
-                repellat commodi? Expedita temporibus veniam quia velit vero
-                aspernatur. Sit consectetur dolor, obcaecati omnis consequuntur,
-                repudiandae aliquid, porro ipsam rem natus expedita nulla
-                ducimus reprehenderit ipsum sapiente ex. Qui amet corporis
-                distinctio?
               </p>
             </div>
           </div>
@@ -232,6 +189,8 @@ export default function product() {
     </>
   );
 }
+
+export default Product;
 
 const dataChar = [
   {
