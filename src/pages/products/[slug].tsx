@@ -53,8 +53,8 @@ const Product = () => {
       <Head>
         <title>А-Промсталь - Продукт</title>
       </Head>
-      <Container className="flex flex-col mt-6 ml-5 font-montserrat">
-        <p className="text-[#999999] font-[700] leading-[20px] ">
+      <Container className="flex flex-col mt-6  font-montserrat">
+        <p className="text-[#999999] font-[700] leading-[20px] ml-5">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
           </Link>
@@ -65,8 +65,8 @@ const Product = () => {
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
         {product && (
           <div>
-            <div className="w-full flex flex-col items-center justify-center lg:flex-row lg:justify-left lg:items-start">
-              <div className="lg:w-[612px] sm:items-start">
+            <div className="w-full flex gap-5 flex-col items-center  lg:flex-row lg:justify-left lg:items-start">
+              <div className="flex sm:items-start">
                 <img
                   src={product.image || "/no-image.jpg"}
                   className="w-[250px] h-[250px]"

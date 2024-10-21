@@ -28,7 +28,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
           key={item.id}
           className="flex justify-around flex-wrap border-b border-[#D3D6DB] pl-2 py-4"
         >
-          <div className="max-w-[612px] flex flex-col items-center sm:flex-row sm:items-start ">
+          <div className="w-auto lg:min-w-[612px] flex flex-col items-center sm:flex-row sm:items-start ">
             <img
               src={item.image || "/elektrosvarnye.png"}
               alt={item.name}
