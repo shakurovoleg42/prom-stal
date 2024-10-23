@@ -27,6 +27,8 @@ interface Product {
 
 const Product = () => {
   const [product, setProduct] = useState<Product | null>(null);
+  const [similarProducts, setSimilarProducts] = useState<Product | null>(null);
+console.log(similarProducts)
 
   const router = useRouter();
   const { slug } = router.query;
@@ -37,6 +39,8 @@ const Product = () => {
         try {
           const response = await fetchService.getSingleProduct(slug);
           setProduct(response.product);
+          setSimilarProducts(response.similar_products);
+
         } catch (error) {
           console.error("Ошибка при загрузке продукта:", error);
         }
@@ -207,6 +211,7 @@ const Product = () => {
       <Form />
       <Payment />
       <Faq />
+      {/* similarProduct={similarProducts} */}
       <SimilarProducts />
     </>
   );

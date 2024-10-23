@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Container } from "@/src/components/Container";
 import { Button } from "@/src/components/ui/button";
 import {
@@ -21,6 +22,7 @@ export default function SimilarProducts() {
       <Carousel id="similar-products" className="mt-20 w-full">
         <CarouselContent className=" flex items-center gap-4">
           <CarouselItem className="max-w-[260px] p-0 flex items-center justify-center basis-1/2 lg:basis-1/3">
+          
             <div className="flex flex-col items-center justify-center px-0">
               <div className="items-center sm:flex sm:items-start">
               <Image src="/elektrosvarnye.png" width={214} height={219} alt="1" />

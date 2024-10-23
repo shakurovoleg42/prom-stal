@@ -27,7 +27,7 @@ export default function Products() {
       try {
         if (category) {
           const response = await fetchService.getCategoryBySlug(category);
-          console.log("Category response:", response);
+          console.log("Category response:", response); // Логирование для отладки
           setProducts(response.category.products);
           setPagination(response.pagination);
         } else {
@@ -80,7 +80,6 @@ export default function Products() {
           <Filters />
           <ListProducts products={products} pagination={pagination} />
         </div>
-        <div></div>
       </Container>
       <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />
