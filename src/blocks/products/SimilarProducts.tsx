@@ -12,7 +12,7 @@ import Image from "next/image";
 import React from "react";
 
 export default function SimilarProducts() {
-  // const img = "https://isteels.kz/media/uploads/catalog/category/nerzhaveyushie-lenty-shtrips_isoSb59.webp"
+
   return (
     <Container className="flex items-center flex-col mb-20 font-montserrat">
       <h3 className="text-[#FFBC01] text-center text-[2rem] leading-[60px] font-bold sm:text-[60px]">

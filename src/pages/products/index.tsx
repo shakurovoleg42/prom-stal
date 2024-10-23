@@ -12,37 +12,41 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import fetchService from "@/src/services/fetch";
+import {  useSearchParams } from "next/navigation";
 
 export default function Products() {
   const router = useRouter();
   const { category } = router.query;
   const [products, setProducts] = useState<any>(null);
-  // const [characteristics, setCharacteristics] = useState<any>(null); 
-
+  const [pagination, setPagination] = useState<any>(null);
+  // const [characteristics, setCharacteristics] = useState<any>(null);
+  const searchParams = useSearchParams();
+  const page = +(searchParams.get("page") || 1);
   useEffect(() => {
     const fetchCategory = async () => {
       try {
         if (category) {
           const response = await fetchService.getCategoryBySlug(category);
           setProducts(response.category.products);
+          setPagination(response.pagination);
         } else {
-          const response = await fetchService.getAllProducts();
+          const response = await fetchService.getAllProducts({ page });
           setProducts(response.products);
+          setPagination(response.pagination);
         }
       } catch (error) {
         console.error("Ошибка при загрузке:", error);
       }
     };
-  
-    fetchCategory();
-  }, [category]);
 
+    fetchCategory();
+  }, [category, page]);
 
   return (
     <>
-    <Head>
-      <title>А-Промсталь - Каталог</title>
-    </Head>
+      <Head>
+        <title>А-Промсталь - Каталог</title>
+      </Head>
       <Banner />
       <Container className="flex flex-col mt-6 font-montserrat">
         <p className="text-[#0A8C99] font-[700] leading-[20px] ml-5">
@@ -69,9 +73,12 @@ export default function Products() {
           <div className="absolute top-[-1px] left-0 right-0 h-[8px] bg-gradient-to-r from-transparent via-[#0A8C99] to-transparent"></div>
         </div>
       </Container>
-      <Container className="flex flex-col justify-between lg:flex-row ">
-        <Filters />
-        <ListProducts products={products}/>
+      <Container className="flex flex-col justify-between">
+        <div className="flex flex-col gap-4 lg:flex-row">
+          <Filters />
+          <ListProducts products={products} pagination={pagination} />
+        </div>
+        <div></div>
       </Container>
       <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />
@@ -79,16 +86,16 @@ export default function Products() {
           Сертификаты соответствия
         </h2>
         <div className="flex flex-[1_1_calc(25%-20px)] items-center flex-wrap justify-between mt-8 gap-2">
-         <Image width={160} height={280} src="/cer1.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer2.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer3.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer4.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer5.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer6.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer7.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer8.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer9.png" alt="certificate" />
-         <Image width={160} height={280} src="/cer10.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer1.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer2.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer3.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer4.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer5.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer6.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer7.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer8.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer9.png" alt="certificate" />
+          <Image width={160} height={280} src="/cer10.png" alt="certificate" />
         </div>
       </Container>
       <ContactForm />

@@ -4,6 +4,13 @@ import { Button } from "@/src/components/ui/button";
 import React from "react";
 import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+import {
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from "next/navigation";
 
 interface Product {
   id: number;
@@ -12,30 +19,68 @@ interface Product {
   image: string;
 }
 
-interface ListProductsProps {
-  products?: Product[];
+interface Pagination {
+  total: number;
+  per_page: number;
+  current_page: number;
+  last_page: number;
+  next_page_url: string;
+  prev_page_url?: string;
 }
 
-const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
+interface ListProductsProps {
+  products?: Product[];
+  pagination?: Pagination;
+}
+
+const ListProducts: React.FC<ListProductsProps> = ({ products = [], pagination = {} }) => {
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+
+
   if (!Array.isArray(products) || products.length === 0) {
     return <div>Загрузка...</div>;
   }
+  const totalProducts = pagination?.total || 0;
+  const itemsPerPage = pagination.per_page || 1;
+  
+  const page = +(searchParams.get("page") ?? 1); 
+
+
+  const handlePageChange = (event: any, value: number) => {
+    params.set("page", value.toString());
+    router.replace(pathname + "?" + params.toString());
+  };
+  
+
+  const handleScroll = (e : any) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const totalPages = Math.ceil(totalProducts / itemsPerPage);
+
+  console.log(pagination)
 
   return (
-    <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] ml-1 font-montserrat">
+    <div>
+      <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] ml-1 font-montserrat">
       {products.map((item: Product) => (
         <div
           key={item.id}
-          className="flex justify-around flex-wrap border-b border-[#D3D6DB] pl-2 py-4"
+          className="flex justify-around flex-wrap border-b border-[#D3D6DB] px-2 py-4"
         >
           <div className="w-auto lg:min-w-[612px] flex flex-col items-center sm:flex-row sm:items-start ">
             <img
-              src={item.image || "/elektrosvarnye.png"}
+              src={item.image || "/no-image.jpg"}
               alt={item.name}
               className="hidden sm:block sm:w-[50px] sm:h-[50px]"
             />
             <img
-              src={item.image || "/elektrosvarnye.png"}
+              src={item.image || "/no-image.jpg"}
               alt={item.name}
               className="block w-[150px] h-[150px] sm:hidden"
             />
@@ -65,6 +110,23 @@ const ListProducts: React.FC<ListProductsProps> = ({ products = [] }) => {
         </div>
       ))}
     </div>
+      {/* Пагинация */}
+      <div className="text-center">
+      <div className="flex items-center justify-center mt-8">
+        <Stack spacing={2}>
+          <Pagination
+            count={totalPages}
+            variant="outlined"
+            shape="rounded"
+            page={page}
+            onChange={handlePageChange}
+            onClick={handleScroll}
+          />
+        </Stack>
+      </div>
+      </div>
+    </div>
+    
   );
 };
 

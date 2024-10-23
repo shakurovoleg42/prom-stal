@@ -69,12 +69,12 @@ const Search = () => {
               >
                 <div className="lg:w-[612px] flex flex-col items-center sm:flex-row sm:items-start ">
                   <img
-                    src={item.image || "/elektrosvarnye.png"}
+                    src={item.image || "/no-image.jpg"}
                     alt={item.name}
                     className="hidden sm:block sm:w-[50px] sm:h-[50px]"
                   />
                   <img
-                    src={item.image || "/elektrosvarnye.png"}
+                    src={item.image || "/no-image.jpg"}
                     alt={item.name}
                     className="block w-[150px] h-[150px] sm:hidden"
                   />
