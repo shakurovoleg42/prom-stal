@@ -12,7 +12,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import fetchService from "@/src/services/fetch";
-import {  useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function Products() {
   const router = useRouter();
@@ -27,10 +27,12 @@ export default function Products() {
       try {
         if (category) {
           const response = await fetchService.getCategoryBySlug(category);
+          console.log("Category response:", response);
           setProducts(response.category.products);
           setPagination(response.pagination);
         } else {
           const response = await fetchService.getAllProducts({ page });
+          console.log("Products response:", response); // Логирование для отладки
           setProducts(response.products);
           setPagination(response.pagination);
         }
