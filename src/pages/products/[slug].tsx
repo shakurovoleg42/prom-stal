@@ -28,7 +28,7 @@ interface Product {
 const Product = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [similarProducts, setSimilarProducts] = useState<Product | null>(null);
-console.log(similarProducts)
+  console.log(similarProducts)
 
   const router = useRouter();
   const { slug } = router.query;

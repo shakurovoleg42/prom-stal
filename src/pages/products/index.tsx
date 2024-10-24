@@ -14,12 +14,23 @@ import { useRouter } from "next/router";
 import fetchService from "@/src/services/fetch";
 import { useSearchParams } from "next/navigation";
 
+interface Characteristic {
+  name: string;         // Название характеристики
+  values: string[];     // Массив значений характеристики
+}
+
+interface Category {
+  characteristics: Characteristic[];  // Массив характеристик продукта
+}
+
 export default function Products() {
   const router = useRouter();
   const { category } = router.query;
+
   const [products, setProducts] = useState<any>(null);
   const [pagination, setPagination] = useState<any>(null);
-  // const [characteristics, setCharacteristics] = useState<any>(null);
+  const [characteristics, setCharacteristics] = useState<Category | any>(null);
+
   const searchParams = useSearchParams();
   const page = +(searchParams.get("page") || 1);
   useEffect(() => {
@@ -27,12 +38,13 @@ export default function Products() {
       try {
         if (category) {
           const response = await fetchService.getCategoryBySlug(category);
-          console.log("Category response:", response); // Логирование для отладки
+          console.log("Category response:", response);
           setProducts(response.category.products);
           setPagination(response.pagination);
+          setCharacteristics(response.characteristics);
         } else {
           const response = await fetchService.getAllProducts({ page });
-          console.log("Products response:", response); // Логирование для отладки
+          console.log("Products response:", response);
           setProducts(response.products);
           setPagination(response.pagination);
         }
@@ -62,7 +74,7 @@ export default function Products() {
           {catalogHeader.map((item) => (
             <div
               key={item.id}
-              className="flex items-center mt-3 py-4 pl-4 pr-1 bg-[#E2E6ED] rounded-[10px]"
+              className="flex items-center mt-3 py-4 pl-4 pr-2 bg-[#E2E6ED] rounded-[10px]"
             >
               <Image src={item.img} width={46} height={46} alt="certificate" />
               <span className="ml-3 max-w-[142px] text-[15px] leading-[19px] font-[700]">
@@ -77,7 +89,7 @@ export default function Products() {
       </Container>
       <Container className="flex flex-col justify-between">
         <div className="flex flex-col gap-4 lg:flex-row">
-          <Filters />
+          <Filters characteristics={characteristics}/>
           <ListProducts products={products} pagination={pagination} />
         </div>
       </Container>
