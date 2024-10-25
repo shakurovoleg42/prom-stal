@@ -88,7 +88,7 @@ const Product = () => {
                   </span>
                 </div>
                 {/* Характеристики */}
-                <div className="max-w-[580px] flex flex-col  mt-8 ml-2 px-5">
+                <div className="max-w-[480px] flex flex-col  mt-8 ml-2 px-5">
                   <div>
                     <span className="font-bold text-[20px] text-[#262A31] leading-[17px] uppercase">
                       Характеристики

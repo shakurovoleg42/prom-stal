@@ -56,9 +56,6 @@ export default function SimilarProducts() {
               </div>
             </div>
           </CarouselItem>
-          
-          
-          
         </CarouselContent>
         <CarouselPrevious className="hidden lg:block" />
         <CarouselNext className="hidden lg:block" />

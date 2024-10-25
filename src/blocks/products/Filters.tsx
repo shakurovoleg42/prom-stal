@@ -15,6 +15,11 @@ export default function Filters({ characteristics }: FiltersProps) {
   const [selectedValues, setSelectedValues] = useState<{
     [key: string]: string;
   }>({});
+  const [nameCat, setNameCat] = useState({});
+  const [cat, setCat] = useState({});
+
+
+
   const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
 
   const toggleMenu = (key: string) => {
@@ -25,12 +30,19 @@ export default function Filters({ characteristics }: FiltersProps) {
   };
 
   const handleCheckboxChange = (name: string, value: string) => {
-    console.log(value);
+    setNameCat(name);
+    setCat(value);
     setSelectedValues((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
+
+  const searchByFilters = () => {
+    console.log(selectedValues);
+  };
+
+  console.log(`${nameCat} ${cat}`)
 
   return (
     <div className="flex w-auto flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
@@ -69,12 +81,12 @@ export default function Filters({ characteristics }: FiltersProps) {
           ))
         ) : (
           <div className="text-[#262A31] text-[1rem] max-w-[200px] text-center">
-            Нет характеристик для отображения
+            Нет фильтров для отображения
           </div>
         )}
         {Array.isArray(characteristics) && characteristics.length > 0 ? (
           <div className="w-full flex flex-row items-center justify-center">
-            <Button className="gap-1">
+            <Button className="gap-1" onClick={searchByFilters}>
               <Search size={15} />
               <span>Найти</span>
             </Button>
