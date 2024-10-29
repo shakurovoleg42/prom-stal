@@ -28,7 +28,7 @@ const Categories = () => {
           {categories.map((item: any) => (
             <div
               key={item.id}
-              className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px]"
+              className="flex p-[10px]  flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px] max-w-[300px]"
             >
               <div className="rounded-[4px] mr-[10px] bg-[#F4F6F7]">
                 <img
@@ -52,6 +52,7 @@ const Categories = () => {
                     >
                       {subItem.name}
                     </Link>
+                    
                   </div>
                 ))}
                 <Link

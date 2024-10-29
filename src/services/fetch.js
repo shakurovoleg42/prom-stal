@@ -34,6 +34,11 @@ const fetchService = {
     return res.data;
   },
 
+  getProductsByCategory: async (slug, params) => {
+    const res = await axios.get("/api/category/" + slug, { params });
+    return res.data;
+  },
+
   sendRightSideMessage: async (data) => {
     const res = await axios.post(
       process.env.NEXT_PUBLIC_API + "/request",

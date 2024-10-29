@@ -15,12 +15,12 @@ import fetchService from "@/src/services/fetch";
 import { useSearchParams } from "next/navigation";
 
 interface Characteristic {
-  name: string;         // Название характеристики
-  values: string[];     // Массив значений характеристики
+  name: string;
+  values: string[];
 }
 
 interface Category {
-  characteristics: Characteristic[];  // Массив характеристик продукта
+  characteristics: Characteristic[];
 }
 
 export default function Products() {
@@ -38,7 +38,14 @@ export default function Products() {
       try {
         if (category) {
           const response = await fetchService.getCategoryBySlug(category);
+
           console.log("Category response:", response);
+          if (response.subcategories.length < 0) {
+            console.log("Category slug:", response.subcategories[0].slug);
+            router.push({
+              pathname: `/catalog/${response.subcategories[0].slug}`,
+            });
+          }
           setProducts(response.category.products);
           setPagination(response.pagination);
           setCharacteristics(response.characteristics);
@@ -54,7 +61,7 @@ export default function Products() {
     };
 
     fetchCategory();
-  }, [category, page]);
+  }, [category, page, searchParams]);
 
   return (
     <>
@@ -89,7 +96,7 @@ export default function Products() {
       </Container>
       <Container className="flex flex-col justify-between">
         <div className="flex flex-col gap-4 lg:flex-row">
-          <Filters characteristics={characteristics}/>
+          <Filters characteristics={characteristics} />
           <ListProducts products={products} pagination={pagination} />
         </div>
       </Container>

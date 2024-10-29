@@ -11,14 +11,21 @@ const Catalog = () => {
   const router = useRouter();
   const { slug, name } = router.query;
 
-  const [subcategory, setSubcategories] = useState<any>(null);
+  const [subcategory, setSubcategory] = useState<any>(null);
+  console.log(slug);
 
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
         try {
           const response = await fetchService.getCategoryBySlug(slug);
-          setSubcategories(response.subcategories);
+          if (response.subcategories.length <= 0) {
+            console.log("Category slug:", response.subcategories[0].slug);
+            router.push({
+              pathname: `/catalog/${response.subcategories.slug}`,
+            });
+          }
+          setSubcategory(response.subcategories);
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
         }
@@ -31,38 +38,39 @@ const Catalog = () => {
   if (!subcategory) {
     return (
       <>
-      <div className="my-44 flex flex-col items-center text-center">
-        <div className="text-[3rem] flex">
-          Загрузка
-          <span className="dot-1">.</span>
-          <span className="dot-2">.</span>
-          <span className="dot-3">.</span>
+        <div className="my-44 flex flex-col items-center text-center">
+          <div className="text-[3rem] flex">
+            Загрузка
+            <span className="dot-1">.</span>
+            <span className="dot-2">.</span>
+            <span className="dot-3">.</span>
+          </div>
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes dotAnimation {
-          0%, 100% {
-            opacity: 0;
+        <style jsx>{`
+          @keyframes dotAnimation {
+            0%,
+            100% {
+              opacity: 0;
+            }
+            25% {
+              opacity: 1;
+            }
           }
-          25% {
-            opacity: 1;
+
+          .dot-1 {
+            animation: dotAnimation 1.5s infinite;
           }
-        }
 
-        .dot-1 {
-          animation: dotAnimation 1.5s infinite;
-        }
+          .dot-2 {
+            animation: dotAnimation 1.5s infinite 0.5s;
+          }
 
-        .dot-2 {
-          animation: dotAnimation 1.5s infinite 0.5s;
-        }
-
-        .dot-3 {
-          animation: dotAnimation 1.5s infinite 1s;
-        }
-      `}</style>
-    </>
+          .dot-3 {
+            animation: dotAnimation 1.5s infinite 1s;
+          }
+        `}</style>
+      </>
     );
   }
 
@@ -108,7 +116,7 @@ const Catalog = () => {
               <div className="flex flex-col text-center gap-5">
                 <Link
                   href={{
-                    pathname: "/products",
+                    pathname: `/products/`,
                     query: { category: category.slug },
                   }}
                 >

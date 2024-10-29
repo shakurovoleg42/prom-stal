@@ -18,8 +18,6 @@ export default function Filters({ characteristics }: FiltersProps) {
   const [nameCat, setNameCat] = useState({});
   const [cat, setCat] = useState({});
 
-
-
   const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
 
   const toggleMenu = (key: string) => {
@@ -42,10 +40,10 @@ export default function Filters({ characteristics }: FiltersProps) {
     console.log(selectedValues);
   };
 
-  console.log(`${nameCat} ${cat}`)
+  console.log(nameCat,": ", cat);
 
   return (
-    <div className="flex w-auto flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
+    <div className="flex w-auto lg:max-w-[300px] flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
       <div className="flex flex-col mt-4 gap-6">
         {Array.isArray(characteristics) && characteristics.length > 0 ? (
           characteristics.map((item) => (
