@@ -45,6 +45,7 @@ const Header: React.FC = () => {
   });
   const [region, setRegion] = useState("Астана");
   const [lang, setLang] = useState("RU");
+  const [flag, setFlag] = useState("/russia-flag.png");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -70,14 +71,17 @@ const Header: React.FC = () => {
     {
       name: "Русский",
       code: "ru",
+      icons: "/russia-flag.png"
     },
     {
       name: "English",
       code: "en",
+      icons: "/england-flag.png"
     },
     {
       name: "Қазақ",
       code: "kk",
+      icons: "/kazakhstan-flag.png"
     },
   ];
 
@@ -130,7 +134,7 @@ const Header: React.FC = () => {
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
-              <img src="/ru.svg" alt="flag" className="mr-2 w-[20px]" /> {lang}
+              <img src={flag} alt="flag" className="mr-2 w-[23px]" /> {lang}
               <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -139,7 +143,11 @@ const Header: React.FC = () => {
                 <DropdownMenuItem key={lang.code}>
                   <b
                     className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]"
-                    onClick={() => setLang(lang.code)}
+                    onClick={() => {
+                      setLang(lang.code);
+                      setFlag(lang.icons);
+                    }}
+                    
                   >
                     {lang.name}
                   </b>

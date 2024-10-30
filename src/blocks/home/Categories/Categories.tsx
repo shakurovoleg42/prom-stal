@@ -52,7 +52,7 @@ const Categories = () => {
                   className={clsx(
                     "overflow-hidden transition-all duration-300 ease-in-out",
                     {
-                      "h-[auto]": expandedCategory === item.id,
+                      "max-h-[2500px]": expandedCategory === item.id,
                       "max-h-[100px]": expandedCategory !== item.id,
                     }
                   )}
