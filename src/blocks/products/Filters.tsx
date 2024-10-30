@@ -52,15 +52,11 @@ export default function Filters({ characteristics, category }: FiltersProps) {
       });
     });
   
-    const combinedQuery = `category=${category}?${filtersQuery.toString()}`;
+    // Формируем URL вручную с первым параметром category и остальными фильтрами
+    const queryString = `category=${category}?${filtersQuery.toString()}`;
   
-    router.push({
-      pathname: `/products`,
-      query: combinedQuery,
-    });
+    router.push(`/products?${queryString}`);
   };
-  
-  
 
   return (
     <div className="flex w-auto lg:max-w-[200px] flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">

@@ -13,10 +13,12 @@ const Catalog = () => {
   const { slug, name } = router.query;
 
   const [subcategory, setSubcategory] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true); // Добавляем состояние загрузки
 
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
+        setIsLoading(true); // Начало загрузки
         try {
           const response = await fetchService.getCategoryBySlug(slug);
           const subcategories = response.subcategories;
@@ -31,6 +33,8 @@ const Catalog = () => {
           }
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
+        } finally {
+          setIsLoading(false); // Завершение загрузки
         }
       }
     };
@@ -38,7 +42,7 @@ const Catalog = () => {
     fetchCategory();
   }, [slug]);
 
-  if (!subcategory) {
+  if (isLoading) { // Проверка состояния загрузки
     return (
       <>
         <div className="my-44 flex flex-col items-center text-center">
@@ -77,7 +81,7 @@ const Catalog = () => {
     );
   }
 
-  if (!subcategory.length) {
+  if (!subcategory.length) { // Если данные загружены, но массив пуст
     return (
       <div className="my-44 flex flex-col items-center text-center">
         <div className="text-[3rem]">Ничего не найдено</div>

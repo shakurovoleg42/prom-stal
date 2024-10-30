@@ -13,6 +13,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import fetchService from "@/src/services/fetch";
 import { useSearchParams } from "next/navigation";
+import { ChevronLeft } from "lucide-react";
+import { Button } from "@/src/components/ui/button";
 
 interface Characteristic {
   name: string;
@@ -67,6 +69,28 @@ const {filters} = router.query
     fetchCategory();
   }, [category, searchParams]); // Обновляем только при наличии category
   
+  const BackButton = () => {
+    const router = useRouter();
+    const { filters, category } = router.query;
+  
+    console.log("Filters:", filters);
+    console.log("Category:", category);
+  
+    if (filters || category) {
+      return (
+        <div className="flex w-full items-center ml-5 text-black my-6 " >
+          <Button variant="default" onClick={() => router.back()}>
+          <ChevronLeft />
+          <span>Вернуться назад</span>
+          </Button>
+          
+        </div>
+      );
+    }
+  
+    return null;
+  };
+  
 
   return (
     <>
@@ -100,7 +124,9 @@ const {filters} = router.query
         </div>
       </Container>
       <Container className="flex flex-col justify-between">
+      <BackButton/>
         <div className="flex flex-col gap-4 lg:flex-row">
+          
           <Filters characteristics={characteristics} category={category} />
           <ListProducts products={products} pagination={pagination} />
         </div>
