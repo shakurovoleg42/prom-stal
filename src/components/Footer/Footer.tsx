@@ -46,7 +46,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/products" className="mb-1 underline">
+            <Link href="/catalog" className="mb-1 underline">
               Продукция
             </Link>
           </li>

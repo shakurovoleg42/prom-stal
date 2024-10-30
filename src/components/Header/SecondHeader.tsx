@@ -39,7 +39,7 @@ export default function SecondHeader() {
     },
     {
       name: "Продукция",
-      href: "/products",
+      href: "/catalog",
     },
     {
       name: "Вопросы",
@@ -133,7 +133,7 @@ export default function SecondHeader() {
             Преимущества
           </Link>
           <Link
-            href="/products"
+            href="/catalog"
             className="ml-5 text-[14px] uppercase font-bold"
           >
             Продукция
