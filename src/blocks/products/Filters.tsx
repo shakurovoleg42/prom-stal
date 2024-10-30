@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
+import { useRouter } from "next/router";
 
 interface Characteristic {
   name: string;
@@ -9,14 +10,12 @@ interface Characteristic {
 
 interface FiltersProps {
   characteristics?: Characteristic[];
+  category: string | string[] | undefined;
 }
 
-export default function Filters({ characteristics }: FiltersProps) {
-  const [selectedValues, setSelectedValues] = useState<{
-    [key: string]: string;
-  }>({});
-  const [nameCat, setNameCat] = useState({});
-  const [cat, setCat] = useState({});
+export default function Filters({ characteristics, category }: FiltersProps) {
+  const [selectedValues, setSelectedValues] = useState<{ [key: string]: string[] }>({});
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
 
@@ -28,22 +27,43 @@ export default function Filters({ characteristics }: FiltersProps) {
   };
 
   const handleCheckboxChange = (name: string, value: string) => {
-    setNameCat(name);
-    setCat(value);
-    setSelectedValues((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setSelectedValues((prevState) => {
+      const currentValues = prevState[name] || [];
+      if (currentValues.includes(value)) {
+        return {
+          ...prevState,
+          [name]: currentValues.filter((v) => v !== value),
+        };
+      } else {
+        return {
+          ...prevState,
+          [name]: [...currentValues, value],
+        };
+      }
+    });
   };
 
   const searchByFilters = () => {
-    console.log(selectedValues);
+    const filtersQuery = new URLSearchParams();
+  
+    Object.entries(selectedValues).forEach(([key, values]) => {
+      values.forEach((value) => {
+        filtersQuery.append(`filters[${key}][]`, value);
+      });
+    });
+  
+    const combinedQuery = `category=${category}?${filtersQuery.toString()}`;
+  
+    router.push({
+      pathname: `/products`,
+      query: combinedQuery,
+    });
   };
-
-  console.log(nameCat,": ", cat);
+  
+  
 
   return (
-    <div className="flex w-auto lg:max-w-[300px] flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
+    <div className="flex w-auto lg:max-w-[200px] flex-col border-t border-[#D3D6DB] rounded-[10px] px-14 lg:px-0 font-montserrat gap-6">
       <div className="flex flex-col mt-4 gap-6">
         {Array.isArray(characteristics) && characteristics.length > 0 ? (
           characteristics.map((item) => (
@@ -66,7 +86,7 @@ export default function Filters({ characteristics }: FiltersProps) {
                         type="checkbox"
                         name={item.name}
                         value={value}
-                        checked={selectedValues[item.name] === value}
+                        checked={selectedValues[item.name]?.includes(value)}
                         onChange={() => handleCheckboxChange(item.name, value)}
                         className="mr-2"
                       />
@@ -78,7 +98,7 @@ export default function Filters({ characteristics }: FiltersProps) {
             </div>
           ))
         ) : (
-          <div className="text-[#262A31] text-[1rem] max-w-[200px] text-center">
+          <div className="text-[#262A31] text-[1rem] max-w-[190px] text-center">
             Нет фильтров для отображения
           </div>
         )}

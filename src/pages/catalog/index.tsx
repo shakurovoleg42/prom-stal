@@ -42,7 +42,6 @@ export default function Catalog() {
           </h1>
           <div className="flex flex-wrap items-start mt-8">
             {loading ? (
-              // Отображение скелетонов во время загрузки
               Array.from({ length: 7 }).map((_, index) => (
                 <div key={index} className="flex p-[10px] flex-[1_2_calc(25%-20px)] box-border items-start min-w-[300px] max-w-[400px]">
                   <div className="flex flex-col space-y-3">
@@ -75,7 +74,7 @@ export default function Catalog() {
                       className={clsx(
                         "overflow-hidden transition-all duration-500 ease-in-out",
                         {
-                          "max-h-[2500px]": expandedCategory === item.id,
+                          "max-h-[5000px]": expandedCategory === item.id,
                           "max-h-[100px]": expandedCategory !== item.id,
                         }
                       )}
@@ -90,7 +89,7 @@ export default function Catalog() {
                               pathname: `/catalog/${subItem.slug}`,
                               query: { category: subItem.slug, name: subItem.name },
                             }}
-                            className="mb-4 font-bold"
+                            className="mb-4 font-bold hover:text-[#707070]"
                           >
                             {subItem.name}
                           </Link>

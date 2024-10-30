@@ -26,19 +26,28 @@ interface Category {
 export default function Products() {
   const router = useRouter();
   const { category } = router.query;
+const {filters} = router.query
 
   const [products, setProducts] = useState<any>(null);
   const [pagination, setPagination] = useState<any>(null);
   const [characteristics, setCharacteristics] = useState<Category | any>(null);
 
   const searchParams = useSearchParams();
-  const page = +(searchParams.get("page") || 1);
+  // const page = +(searchParams.get("page") || 1);
+  const hasFilters = () => {
+    if (filters) {
+      console.log("Filters:", filters);
+      return filters;
+    }
+    return category;
+  }
   useEffect(() => {
     const fetchCategory = async () => {
       try {
+        // Убедимся, что `category` определен
         if (category) {
-          const response = await fetchService.getCategoryBySlug(category);
-
+          const response = await fetchService.getCategoryBySlug(hasFilters());
+  
           console.log("Category response:", response);
           if (response.subcategories.length < 0) {
             console.log("Category slug:", response.subcategories[0].slug);
@@ -49,19 +58,15 @@ export default function Products() {
           setProducts(response.category.products);
           setPagination(response.pagination);
           setCharacteristics(response.characteristics);
-        } else {
-          const response = await fetchService.getAllProducts({ page });
-          console.log("Products response:", response);
-          setProducts(response.products);
-          setPagination(response.pagination);
         }
       } catch (error) {
         console.error("Ошибка при загрузке:", error);
       }
     };
-
+  
     fetchCategory();
-  }, [category, page, searchParams]);
+  }, [category, searchParams]); // Обновляем только при наличии category
+  
 
   return (
     <>
@@ -96,7 +101,7 @@ export default function Products() {
       </Container>
       <Container className="flex flex-col justify-between">
         <div className="flex flex-col gap-4 lg:flex-row">
-          <Filters characteristics={characteristics} />
+          <Filters characteristics={characteristics} category={category} />
           <ListProducts products={products} pagination={pagination} />
         </div>
       </Container>

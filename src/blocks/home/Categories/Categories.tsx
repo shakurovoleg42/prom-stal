@@ -52,7 +52,7 @@ const Categories = () => {
                   className={clsx(
                     "overflow-hidden transition-all duration-300 ease-in-out",
                     {
-                      "max-h-[2500px]": expandedCategory === item.id,
+                      "max-h-[5000px]": expandedCategory === item.id,
                       "max-h-[100px]": expandedCategory !== item.id,
                     }
                   )}
@@ -67,7 +67,7 @@ const Categories = () => {
                           pathname: `/catalog/${subItem.slug}`,
                           query: { category: subItem.slug, name: subItem.name },
                         }}
-                        className="mb-4 font-bold"
+                        className="mb-4 font-bold hover:text-[#707070]"
                       >
                         {subItem.name}
                       </Link>
