@@ -28,7 +28,7 @@ interface Product {
 const Product = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [similarProducts, setSimilarProducts] = useState<Product | null>(null);
-  console.log(similarProducts)
+  console.log(similarProducts);
 
   const router = useRouter();
   const { slug } = router.query;
@@ -40,7 +40,6 @@ const Product = () => {
           const response = await fetchService.getSingleProduct(slug);
           setProduct(response.product);
           setSimilarProducts(response.similar_products);
-
         } catch (error) {
           console.error("Ошибка при загрузке продукта:", error);
         }
@@ -58,12 +57,22 @@ const Product = () => {
         <title>А-Промсталь - Продукт</title>
       </Head>
       <Container className="flex flex-col mt-6  font-montserrat">
-        <p className="text-[#999999] font-[700] leading-[20px] ml-5">
+        <p className="text-[12px] flex flex-row px-3 text-[#999999] font-[700] leading-[20px] ml-5">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
           </Link>
-          <span className=""> / </span>
-          Продукт
+          <span className="ml-2"> / </span>
+          <p
+            className="hover:border-b hover:border-[#999999] cursor-pointer ml-2"
+            onClick={() => router.back()}
+          >
+            Каталог продуктов
+          </p>
+          <span className="ml-2"> / </span>
+          <span className="ml-2">
+            {product?.name?.slice(0, 35)}
+            {product?.name && product.name.length > 35 ? "..." : ""}
+          </span>{" "}
         </p>
       </Container>
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">

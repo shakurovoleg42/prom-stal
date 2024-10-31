@@ -17,17 +17,17 @@ export default function Footer() {
         </Link>
       </div>
 
-      <div className="mb-5 px-9 text-[14px] my-1 font-[500]">
-        <p>Черный металлопрокат</p>
-        <p>Специальные стали и сплавы</p>
-        <p>Нержавеющий металлопрокат</p>
-        <p>Цветной металлопрокат</p>
-        <p>Запорно-регулирующая арматура</p>
+      <div className="flex flex-col mb-5 px-9 text-[14px] my-1 font-[500] ">
+        <Link href='/catalog' className="hover:underline">Черный металлопрокат</Link>
+        <Link href='/catalog' className="hover:underline">Специальные стали и сплавы</Link>
+        <Link href='/catalog' className="hover:underline">Нержавеющий металлопрокат</Link>
+        <Link href='/catalog' className="hover:underline">Цветной металлопрокат</Link>
+        <Link href='/catalog' className="hover:underline">Запорно-регулирующая арматура</Link>
         <div className="flex flex-col mt-2">
-        <Link href="mailto:APS168@yandex.kz" className="mt-2 font-[500] text-[21px] leading-[31.5px]">
+        <Link href="mailto:APS168@yandex.kz" className="mt-2 font-[500] text-[21px] leading-[31.5px] hover:underline">
           APS168@yandex.kz
         </Link>
-        <Link href="tel:87080016868" className="mt-2 font-[500] text-[24px] leading-[36px]">
+        <Link href="tel:87080016868" className="mt-2 font-[500] text-[24px] leading-[36px] hover:underline">
           8(708)001-68-68
         </Link>
         </div>

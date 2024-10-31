@@ -92,8 +92,6 @@ const ListProducts: React.FC<ListProductsProps> = ({
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);
 
-  console.log(pagination);
-
   return (
     <div>
       <div className="w-full flex flex-col border border-[#D3D6DB] rounded-[10px] sm:ml-1 font-montserrat">

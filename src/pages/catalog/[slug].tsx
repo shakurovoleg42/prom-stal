@@ -13,12 +13,12 @@ const Catalog = () => {
   const { slug, name } = router.query;
 
   const [subcategory, setSubcategory] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true); // Добавляем состояние загрузки
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
-        setIsLoading(true); // Начало загрузки
+        setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
           const subcategories = response.subcategories;
@@ -34,7 +34,7 @@ const Catalog = () => {
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
         } finally {
-          setIsLoading(false); // Завершение загрузки
+          setIsLoading(false);
         }
       }
     };
@@ -42,7 +42,8 @@ const Catalog = () => {
     fetchCategory();
   }, [slug]);
 
-  if (isLoading) { // Проверка состояния загрузки
+  if (isLoading) {
+    // Проверка состояния загрузки
     return (
       <>
         <div className="my-44 flex flex-col items-center text-center">
@@ -81,15 +82,15 @@ const Catalog = () => {
     );
   }
 
-  if (!subcategory.length) { // Если данные загружены, но массив пуст
+  if (!subcategory.length) {
     return (
       <div className="my-44 flex flex-col items-center text-center">
         <div className="text-[3rem]">Ничего не найдено</div>
         <div className="underline items-center w-[400px] text-center justify-center flex">
-          <Link href="/" className="flex flex-row">
+          <div className="flex flex-row" onClick={() => router.back()}>
             <CircleArrowLeft className="mr-2" />
             Вернуться на главную
-          </Link>
+          </div>
         </div>
       </div>
     );
@@ -101,17 +102,24 @@ const Catalog = () => {
         <title>Каталог - {name}</title>
       </Head>
       <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[20%]">
-        <p className="w-full text-[#999999] font-[700] leading-[20px] flex flex-row text-start ml-5">
+        <p className="w-full text-[#999999] font-[700] leading-[20px] sm:ml-5 sm:flex sm:flex-row text-start">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
           </Link>
           <span className="mx-2"> / </span>
-          <span>Категория {name}</span>
+          <Link
+            href="/catalog"
+            className="hover:border-b hover:border-[#999999]"
+          >
+            Каталог
+          </Link>
+          <span className="mx-2"> / </span>
+          <span className="">Категория {name}</span>
         </p>
 
         <div className="w-full flex flex-col mt-9">
           <div className="w-full">
-            <h1 className="text-[2rem] font-[800] text-center">{name}</h1>
+            <h1 className="text-[2rem] font-[800] text-center px-3">{name}</h1>
           </div>
           <div className="w-full flex flex-wrap justify-center gap-24 mt-5">
             {subcategory.map((category: any) => (
@@ -125,7 +133,8 @@ const Catalog = () => {
                   className="w-[90px] h-[90px]"
                 />
                 <div className="flex flex-col text-center gap-5">
-                  {category.subcategories && category.subcategories.length > 0 ? (
+                  {category.subcategories &&
+                  category.subcategories.length > 0 ? (
                     <Link
                       href={{
                         pathname: `/catalog/${category.slug}`,

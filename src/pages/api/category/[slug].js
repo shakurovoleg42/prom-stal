@@ -9,6 +9,5 @@ export async function GET(request, { params }) {
       page,
     },
   });
-  console.log(res)
   return Response.json(res.data);
 }

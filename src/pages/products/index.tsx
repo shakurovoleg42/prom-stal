@@ -35,10 +35,8 @@ const {filters} = router.query
   const [characteristics, setCharacteristics] = useState<Category | any>(null);
 
   const searchParams = useSearchParams();
-  // const page = +(searchParams.get("page") || 1);
   const hasFilters = () => {
     if (filters) {
-      console.log("Filters:", filters);
       return filters;
     }
     return category;
@@ -46,13 +44,10 @@ const {filters} = router.query
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        // Убедимся, что `category` определен
         if (category) {
           const response = await fetchService.getCategoryBySlug(hasFilters());
   
-          console.log("Category response:", response);
           if (response.subcategories.length < 0) {
-            console.log("Category slug:", response.subcategories[0].slug);
             router.push({
               pathname: `/catalog/${response.subcategories[0].slug}`,
             });
@@ -67,18 +62,15 @@ const {filters} = router.query
     };
   
     fetchCategory();
-  }, [category, searchParams]); // Обновляем только при наличии category
+  }, [category, searchParams]);
   
   const BackButton = () => {
     const router = useRouter();
     const { filters, category } = router.query;
   
-    console.log("Filters:", filters);
-    console.log("Category:", category);
-  
     if (filters || category) {
       return (
-        <div className="flex w-full items-center ml-5 text-black my-6 " >
+        <div className="max-w-[100px] flex ml-5 text-black my-6 " >
           <Button variant="default" onClick={() => router.back()}>
           <ChevronLeft />
           <span>Вернуться назад</span>
