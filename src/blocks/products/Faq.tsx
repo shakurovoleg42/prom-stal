@@ -11,7 +11,7 @@ import React from "react";
 
 export default function Faq() {
   return (
-    <Container className="mb-20 w-full flex items-center justify-center flex-wrap lg:justify-between font-montserrat">
+    <Container className="mb-5 w-full flex items-center justify-center flex-wrap lg:justify-between font-montserrat">
       <div id="payment" className="max-w-[416px] text-[#182F43] flex flex-col items-center justify-center text-left lg:text-left lg:items-start">
         <div>
           <h3 className="text-[29px] font-[700] leading-[46px]">Вопрос ответ</h3>

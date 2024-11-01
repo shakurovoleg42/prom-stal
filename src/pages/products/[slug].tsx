@@ -16,19 +16,21 @@ import fetchService from "@/src/services/fetch";
 
 import { Phone, Mail } from "lucide-react";
 
-interface Product {
+export interface Product {
   characteristics: any[];
   id: number;
   name: string;
   slug: string;
   image: string;
   description: string;
+  similarProduct: Product[];
 }
 
 const Product = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  const [similarProducts, setSimilarProducts] = useState<Product | null>(null);
-  console.log(similarProducts);
+  const [similarProducts, setSimilarProducts] = useState<Product[] | null>(
+    null
+  );
 
   const router = useRouter();
   const { slug } = router.query;
@@ -57,7 +59,7 @@ const Product = () => {
         <title>А-Промсталь - Продукт</title>
       </Head>
       <Container className="flex flex-col mt-6  font-montserrat">
-        <p className="text-[12px] flex flex-row px-3 text-[#999999] font-[700] leading-[20px] ml-5">
+        <div className="text-[12px] flex flex-row px-3 text-[#999999] font-[700] leading-[20px] ml-5">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
           </Link>
@@ -72,8 +74,8 @@ const Product = () => {
           <span className="ml-2">
             {product?.name?.slice(0, 35)}
             {product?.name && product.name.length > 35 ? "..." : ""}
-          </span>{" "}
-        </p>
+          </span>
+        </div>
       </Container>
       <Container className="w-full h-full flex flex-col items-center mt-5  mb-11 font-montserrat">
         {product && (
@@ -206,11 +208,11 @@ const Product = () => {
               {/* Правая сторона */}
               <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px] pl-4 ">
                 <div className="max-w-[768px] py-3 ">
-                  <p className="text-[14px] leading-[16px] font-[400] h-full pr-4 md:pr-0">
+                  <div className="text-[14px] leading-[16px] font-[400] h-full pr-4 md:pr-0">
                     <div
                       dangerouslySetInnerHTML={{ __html: product.description }}
-                    ></div>
-                  </p>
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -220,8 +222,7 @@ const Product = () => {
       <Form />
       <Payment />
       <Faq />
-      {/* similarProduct={similarProducts} */}
-      <SimilarProducts />
+      <SimilarProducts similarProduct={similarProducts} />
     </>
   );
 };
