@@ -66,7 +66,7 @@ export default function SecondHeader() {
           <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0 text-black">
             <img
               src="/catalog.svg"
-              alt="burfer munu"
+              alt="burger menu"
               className="mr-2 w-[20px] text-[14px] border-1-black bg-white p-1 rounded-[5px]"
             />
             Каталог

@@ -70,17 +70,17 @@ const Header: React.FC = () => {
     {
       name: "Русский",
       code: "ru",
-      icons: "/russia-flag.png"
+      icons: "/russia-flag.png",
     },
     {
       name: "English",
       code: "en",
-      icons: "/england-flag.png"
+      icons: "/england-flag.png",
     },
     {
       name: "Қазақ",
       code: "kk",
-      icons: "/kazakhstan-flag.png"
+      icons: "/kazakhstan-flag.png",
     },
   ];
 
@@ -146,7 +146,6 @@ const Header: React.FC = () => {
                       setLang(lang.code);
                       setFlag(lang.icons);
                     }}
-                    
                   >
                     {lang.name}
                   </b>

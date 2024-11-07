@@ -104,12 +104,12 @@ const ListProducts: React.FC<ListProductsProps> = ({
               <img
                 src={item.image || "/no-image.jpg"}
                 alt={item.name}
-                className="hidden sm:block sm:w-[50px] sm:h-[50px]"
+                className="hidden sm:block sm:w-[50px] sm:h-[50px] rounded-[5px]"
               />
               <img
                 src={item.image || "/no-image.jpg"}
                 alt={item.name}
-                className="block w-[150px] h-[150px] sm:hidden"
+                className="block w-[150px] h-[150px] sm:hidden rounded-[5px]"
               />
               <Link
                 href={{

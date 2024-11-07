@@ -84,7 +84,7 @@ const Product = () => {
               <div className="flex sm:items-start">
                 <img
                   src={product.image || "/no-image.jpg"}
-                  className="w-[250px] h-[250px]"
+                  className="w-[250px] h-[250px] rounded-[10px]"
                   alt="Фото товара"
                 />
               </div>
