@@ -27,12 +27,19 @@ const fetchService = {
     return res.data;
   },
 
-  getCategoryBySlug: async (slug) => {
+  getProductsByCategories: async (slug, page) => {
     const res = await axios.get(
-      process.env.NEXT_PUBLIC_API + "/category/" + slug
+      `${process.env.NEXT_PUBLIC_API}/category/${slug}?page=${page}`
     );
     return res.data;
   },
+
+  getCategoryBySlug: async (slug) => {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_API}/category/${slug}`
+    );
+    return res.data;
+  },  
 
   getProductsByCategory: async (slug, params) => {
     const res = await axios.get("/api/category/" + slug, { params });

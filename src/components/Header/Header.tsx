@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import { Input } from "../ui/input";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
@@ -46,6 +47,33 @@ const Header: React.FC = () => {
   const [lang, setLang] = useState("RU");
   const [flag, setFlag] = useState("/russia-flag.png");
 
+  useEffect(() => {
+    const savedLang = Cookies.get("language");
+    if (!savedLang) {
+      Cookies.set("language", "RU", { expires: 365 });
+    } else {
+      setLang(savedLang);
+
+      const selectedLang = langs.find((lang) => lang.code === savedLang);
+      if (selectedLang) {
+        setFlag(selectedLang.icons);
+      }
+    }
+  }, []);
+
+  const handleLanguageChange = (langCode: string) => {
+    Cookies.set("language", langCode, { expires: 365 });
+    setLang(langCode);
+
+    const selectedLang = langs.find((lang) => lang.code === langCode);
+    if (selectedLang) {
+      setFlag(selectedLang.icons);
+    }
+
+    // Перезагружаем страницу, чтобы применить выбранный язык
+    window.location.reload();
+};
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -69,17 +97,17 @@ const Header: React.FC = () => {
   const langs = [
     {
       name: "Русский",
-      code: "ru",
+      code: "RU",
       icons: "/russia-flag.png",
     },
     {
       name: "English",
-      code: "en",
+      code: "EN",
       icons: "/england-flag.png",
     },
     {
       name: "Қазақ",
-      code: "kk",
+      code: "KK",
       icons: "/kazakhstan-flag.png",
     },
   ];
@@ -142,10 +170,7 @@ const Header: React.FC = () => {
                 <DropdownMenuItem key={lang.code}>
                   <b
                     className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px]"
-                    onClick={() => {
-                      setLang(lang.code);
-                      setFlag(lang.icons);
-                    }}
+                    onClick={() => handleLanguageChange(lang.code)}
                   >
                     {lang.name}
                   </b>

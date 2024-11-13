@@ -27,31 +27,32 @@ interface Category {
 
 export default function Products() {
   const router = useRouter();
-  const { category } = router.query;
-const {filters} = router.query
-
+  const { category, filters } = router.query;
   const [products, setProducts] = useState<any>(null);
   const [pagination, setPagination] = useState<any>(null);
   const [characteristics, setCharacteristics] = useState<Category | any>(null);
-
   const searchParams = useSearchParams();
+  const page = searchParams.has("page") ? Number(searchParams.get("page")) : 1;
+
   const hasFilters = () => {
     if (filters) {
       return filters;
     }
     return category;
-  }
+  };
+  
   useEffect(() => {
     const fetchCategory = async () => {
       try {
         if (category) {
-          const response = await fetchService.getCategoryBySlug(hasFilters());
+          const response = await fetchService.getProductsByCategories(hasFilters(), page);
   
-          if (response.subcategories.length < 0) {
+          if (response.subcategories.length > 0) {
             router.push({
               pathname: `/catalog/${response.subcategories[0].slug}`,
             });
           }
+  
           setProducts(response.category.products);
           setPagination(response.pagination);
           setCharacteristics(response.characteristics);
@@ -62,27 +63,23 @@ const {filters} = router.query
     };
   
     fetchCategory();
-  }, [category, searchParams]);
-  
+  }, [category, filters, page]);
+
   const BackButton = () => {
     const router = useRouter();
     const { filters, category } = router.query;
-  
     if (filters || category) {
       return (
-        <div className="max-w-[100px] flex ml-5 text-black my-6 " >
+        <div className="max-w-[100px] flex ml-5 text-black my-6">
           <Button variant="default" onClick={() => router.back()}>
-          <ChevronLeft />
-          <span>Вернуться назад</span>
+            <ChevronLeft />
+            <span>Вернуться назад</span>
           </Button>
-          
         </div>
       );
     }
-  
     return null;
   };
-  
 
   return (
     <>
@@ -116,9 +113,8 @@ const {filters} = router.query
         </div>
       </Container>
       <Container className="flex flex-col justify-between">
-      <BackButton/>
+        <BackButton />
         <div className="flex flex-col gap-4 lg:flex-row">
-          
           <Filters characteristics={characteristics} category={category} />
           <ListProducts products={products} pagination={pagination} />
         </div>

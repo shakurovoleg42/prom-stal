@@ -24,8 +24,6 @@ interface Pagination {
   prev_page_url?: string;
 }
 
-
-
 interface ListProductsProps {
   products?: Product[];
   pagination?: Pagination;
@@ -41,54 +39,56 @@ const ListProducts: React.FC<ListProductsProps> = ({
   const params = new URLSearchParams(searchParams);
 
   if (!Array.isArray(products) || products.length === 0) {
-    return <>
-    <div className="">
+    return (
       <div className="">
-        Загрузка
-        <span className="dot-1">.</span>
-        <span className="dot-2">.</span>
-        <span className="dot-3">.</span>
+        <div className="">
+          Загрузка
+          <span className="dot-1">.</span>
+          <span className="dot-2">.</span>
+          <span className="dot-3">.</span>
+        </div>
+        <style jsx>{`
+          @keyframes dotAnimation {
+            0%, 100% {
+              opacity: 0;
+            }
+            25% {
+              opacity: 1;
+            }
+          }
+
+          .dot-1 {
+            animation: dotAnimation 1.5s infinite;
+          }
+
+          .dot-2 {
+            animation: dotAnimation 1.5s infinite 0.5s;
+          }
+
+          .dot-3 {
+            animation: dotAnimation 1.5s infinite 1s;
+          }
+        `}</style>
       </div>
-    </div>
-
-    <style jsx>{`
-      @keyframes dotAnimation {
-        0%, 100% {
-          opacity: 0;
-        }
-        25% {
-          opacity: 1;
-        }
-      }
-
-      .dot-1 {
-        animation: dotAnimation 1.5s infinite;
-      }
-
-      .dot-2 {
-        animation: dotAnimation 1.5s infinite 0.5s;
-      }
-
-      .dot-3 {
-        animation: dotAnimation 1.5s infinite 1s;
-      }
-    `}</style>
-  </>;
+    );
   }
+
   const totalProducts = pagination?.total || 0;
   const itemsPerPage = pagination.per_page || 1;
 
+  // Получаем текущую страницу из query параметров
   const page = +(searchParams.get("page") ?? 1);
 
   const handlePageChange = (event: any, value: number) => {
+    // Обновляем параметр "page" в URL
     params.set("page", value.toString());
     router.replace(pathname + "?" + params.toString());
+  
+    // Прокручиваем страницу вверх
+    window.scrollTo(0, 0); // Прокрутить страницу в верхнюю часть
+    event.preventDefault();
   };
-
-  const handleScroll = () => {
-    // e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);
 
@@ -155,7 +155,6 @@ const ListProducts: React.FC<ListProductsProps> = ({
               shape="rounded"
               page={page}
               onChange={handlePageChange}
-              onClick={handleScroll}
             />
           </Stack>
         </div>

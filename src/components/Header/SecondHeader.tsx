@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {
   Sheet,
-  SheetClose,
+  // SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -12,6 +13,7 @@ import {
 import Link from "next/link";
 import { Input } from "../ui/inputSearch";
 import Image from "next/image";
+import fetchService from "@/src/services/fetch";
 
 export default function SecondHeader() {
   const [search, setSearch] = useState("");
@@ -24,40 +26,54 @@ export default function SecondHeader() {
     });
   };
 
-  const pages = [
-    {
-      name: "Главная",
-      href: "/",
-    },
-    {
-      name: "О компании",
-      href: "/about",
-    },
-    {
-      name: "Преимущества",
-      href: "/#regards",
-    },
-    {
-      name: "Продукция",
-      href: "/catalog",
-    },
-    {
-      name: "Вопросы",
-      href: "/#faq",
-    },
-    {
-      name: "Оплата",
-      href: "/payment",
-    },
-    {
-      name: "Доставка",
-      href: "/delivery",
-    },
-    {
-      name: "Контакты",
-      href: "/contacts",
-    },
-  ];
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await fetchService.getAllCategories();
+      console.log(response);
+      setCategories(
+        response.flatMap((item: { subcategories: any }) => item.subcategories)
+      );
+    };
+
+    fetchCategories();
+  }, []);
+
+  // const pages = [
+  //   {
+  //     name: "Главная",
+  //     href: "/",
+  //   },
+  //   {
+  //     name: "О компании",
+  //     href: "/about",
+  //   },
+  //   {
+  //     name: "Преимущества",
+  //     href: "/#regards",
+  //   },
+  //   {
+  //     name: "Продукция",
+  //     href: "/catalog",
+  //   },
+  //   {
+  //     name: "Вопросы",
+  //     href: "/#faq",
+  //   },
+  //   {
+  //     name: "Оплата",
+  //     href: "/payment",
+  //   },
+  //   {
+  //     name: "Доставка",
+  //     href: "/delivery",
+  //   },
+  //   {
+  //     name: "Контакты",
+  //     href: "/contacts",
+  //   },
+  // ];
 
   return (
     <div className="mt-8 flex justify-between items-center py-5">
@@ -72,29 +88,25 @@ export default function SecondHeader() {
             Каталог
           </SheetTrigger>
           <SheetContent
-            side="left"
-            className="flex flex-col items-start text-left"
+            side="top"
+            className="flex flex-col items-start text-left w-full h-full"
           >
             <SheetHeader>
               <SheetTitle className="text-[2rem] border-b border-1-[#999999]">
-                Перейти к:
+                {/* Перейти к: */}
               </SheetTitle>
             </SheetHeader>
-            <div className="flex flex-col mt-12 gap-2 text-black">
-              {pages.map((page) => (
-                <SheetClose asChild key={page.name}>
-                  <Link
-                    href={page.href}
-                    className="hover:bg-[#f7f7f7] cursor-pointer p-2 rounded-[8px] text-[22px]"
-                  >
-                    <b>{page.name}</b>
-                  </Link>
-                </SheetClose>
-              ))}
+            <div className="flex flex-col text-black text-[1.4rem] bg-[#fcfcfc] h-full py-6 px-3 rounded-lg">
+              <ul className="flex flex-col gap-4">
+                {categories.map((category: any) => (
+                  <li key={category.id} className="cursor-pointer font-[600] leading-mormal ">
+                    {category.name}
+                  </li>
+                ))}
+              </ul>
             </div>
           </SheetContent>
         </Sheet>
-
         <div>
           <form
             action=""
