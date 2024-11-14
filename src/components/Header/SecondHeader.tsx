@@ -160,7 +160,7 @@ export default function SecondHeader() {
                       className="cursor-pointer font-[600] leading-normal  hover:bg-[#fdff77] gap-4"
                     >
                       <SheetClose asChild>
-                        <Link href={`/${page.href}`}>{page.name}</Link>
+                        <Link href={`${page.href}`}>{page.name}</Link>
                       </SheetClose>
                     </li>
                   ))}
