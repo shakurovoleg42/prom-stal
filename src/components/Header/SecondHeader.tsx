@@ -1,14 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import {
   Sheet,
   SheetContent,
+  SheetClose,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Input } from "../ui/inputSearch";
 import Image from "next/image";
@@ -19,6 +20,7 @@ export default function SecondHeader() {
   const router = useRouter();
   const [categories, setCategories] = useState([]);
   const [hoveredCategory, setHoveredCategory] = useState<any>(null);
+  const [hoveredSubcategory, setHoveredSubcategory] = useState<any>(null);
   const subcategoryRef = useRef<HTMLDivElement>(null);
 
   const goToProduct = (query: string) => {
@@ -42,12 +44,17 @@ export default function SecondHeader() {
     setHoveredCategory(category);
   };
 
+  const handleSubcategoryHover = (subcategory: any) => {
+    setHoveredSubcategory(subcategory);
+  };
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       subcategoryRef.current &&
       !subcategoryRef.current.contains(event.target as Node)
     ) {
       setHoveredCategory(null);
+      setHoveredSubcategory(null); // Reset subcategory hover when clicking outside
     }
   };
 
@@ -58,10 +65,45 @@ export default function SecondHeader() {
     };
   }, []);
 
+  const pages = [
+    {
+      name: "Главная",
+      href: "/",
+    },
+    {
+      name: "О компании",
+      href: "/about",
+    },
+    {
+      name: "Преимущества",
+      href: "/#regards",
+    },
+    {
+      name: "Продукция",
+      href: "/catalog",
+    },
+    {
+      name: "Вопросы",
+      href: "/#faq",
+    },
+    {
+      name: "Оплата",
+      href: "/payment",
+    },
+    {
+      name: "Доставка",
+      href: "/delivery",
+    },
+    {
+      name: "Контакты",
+      href: "/contacts",
+    },
+  ];
+
   return (
     <div className="mt-8 flex justify-between items-center py-5 relative">
-      <div className="flex flex-col sm:items-center sm:flex-row text-black">
-        <Sheet >
+      <div className="flex flex-col sm:items-center sm:flex-row text-black w-full">
+        <Sheet>
           <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0 text-black">
             <img
               src="/catalog.svg"
@@ -75,42 +117,135 @@ export default function SecondHeader() {
             className="flex flex-col items-start text-left w-full h-full"
           >
             <SheetHeader>
-              <SheetTitle className="text-[2rem] border-b border-1-[#999999]">
+              <SheetTitle className="text-[2rem] block pt-[20px] sm:mt-0 lg:hidden">
                 {/* Перейти к: */}
               </SheetTitle>
             </SheetHeader>
-            <div className="flex flex-row text-black text-[1.4rem] bg-[#fcfcfc] h-full  px-3 rounded-lg">
-              {/* Основной блок категорий */}
-              <ul className="flex flex-col gap-4 mt-6">
-                {categories.map((category: any) => (
-                  <li
-                    key={category.id}
-                    className="cursor-pointer font-[600] leading-normal"
-                    onMouseEnter={() => handleMouseEnter(category)}
-                  >
-                    {category.name}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Блок с подкатегориями, который показывается рядом */}
-              {hoveredCategory && (
-                <div
-                  ref={subcategoryRef}
-                  className="ml-8 w-[250px] h-full bg-white  p-5 rounded-lg"
-                  style={{ minHeight: "100vh" }}
+            <div>
+              <SheetClose asChild>
+                <button
+                  className=" w-[60vw] flex flex-row items-center lg:hidden text-[1.3rem]  font-bold  gap-2 bg-[#0b515a] text-white rounded-xl p-3"
+                  onClick={() => router.push("/catalog")}
                 >
-                  <h2 className="text-lg font-bold mb-4 border-b">{hoveredCategory.name}</h2>
-                  <ul className="flex flex-col gap-2 text-[1.2rem] font-[500]">
-                    {hoveredCategory.subcategories?.map((subcategory: any) => (
-                      <li key={subcategory.id} className="cursor-pointer hover:text-[#c79f32]">
-                        {subcategory.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                  <p className="">Каталог</p>
+                  <ChevronRight />
+                </button>
+              </SheetClose>
             </div>
+            <div className="flex flex-row text-black text-[1.4rem] bg-[#fcfcfc] h-full px-3 rounded-lg gap-3">
+              {/* Основной блок категорий */}
+              <div className=" w-[300px] flex-col gap-4 mt-6 ">
+                <ul className="hidden lg:block flex-col gap-4">
+                  {categories.map((category: any) => (
+                    <li
+                      key={category.id}
+                      className="cursor-pointer font-[600] leading-normal  hover:bg-[#fdff77] hover:text-[#646464] rounded-lg py-4"
+                      onMouseEnter={() => handleMouseEnter(category)}
+                    >
+                      <SheetClose asChild>
+                        <Link
+                          className="p-2"
+                          href={`/catalog/${category.slug}`}
+                        >
+                          {category.name}
+                        </Link>
+                      </SheetClose>
+                    </li>
+                  ))}
+                </ul>
+                <ul className="flex bg-[fcfcfc] w-[100vw] lg:hidden flex-col gap-4 mt-6">
+                  {pages.map((page: any) => (
+                    <li
+                      key={page.name}
+                      className="cursor-pointer font-[600] leading-normal  hover:bg-[#fdff77] gap-4"
+                    >
+                      <SheetClose asChild>
+                        <Link href={`/${page.href}`}>{page.name}</Link>
+                      </SheetClose>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Блок с подкатегориями справа */}
+              <div className="flex-grow ml-8">
+                {hoveredCategory && (
+                  <div
+                    ref={subcategoryRef}
+                    className="w-auto h-full bg-white pt-5 px-5 rounded-lg"
+                    style={{
+                      maxHeight: "calc(100vh - 100px)",
+                      overflowY: "auto",
+                    }}
+                  >
+                    <h2 className="text-lg font-bold mb-4 border-b">
+                      {hoveredCategory.name}
+                    </h2>
+                    <ul className="flex flex-col gap-4 text-[1.2rem] font-[500] w-auto">
+                      {hoveredCategory.subcategories?.map(
+                        (subcategory: any) => (
+                          <li
+                            key={subcategory.id}
+                            className=" cursor-pointer hover:bg-[#fdff77] p-2 rounded-lg"
+                            onMouseEnter={() =>
+                              handleSubcategoryHover(subcategory)
+                            } // Hover on subcategory
+                          >
+                            <SheetClose asChild>
+                              <Link
+                                href={`/catalog/${subcategory.slug}`}
+                                className="flex flex-row items-center"
+                              >
+                                <span>{subcategory.name}</span>
+                                <ChevronRight className="text-[25px]" />
+                              </Link>
+                            </SheetClose>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              <div>
+                {hoveredSubcategory &&
+                  hoveredSubcategory.subcategories?.length > 0 && (
+                    <div
+                      className=" h-full bg-white pt-5 px-5 rounded-lg"
+                      style={{
+                        maxHeight: "calc(100vh - 100px)",
+                        overflowY: "auto",
+                      }}
+                    >
+                      <h3 className="text-lg font-bold mb-4 border-b">
+                        {hoveredSubcategory.name}
+                      </h3>
+                      <ul className="flex flex-col gap-4 text-[1.2rem] font-[500] w-[300px]">
+                        {hoveredSubcategory.subcategories.map(
+                          (nestedSubcategory: any) => (
+                            <li
+                              key={nestedSubcategory.id}
+                              className="w-full cursor-pointer hover:bg-[#fdff77] p-2 rounded-lg"
+                            >
+                              <SheetClose asChild>
+                                <Link
+                                  href={`/catalog/${nestedSubcategory.slug}`}
+                                  className="flex flex-row items-center"
+                                >
+                                  <span>{nestedSubcategory.name}</span>
+                                  <ChevronRight className="text-[25px]" />
+                                </Link>
+                              </SheetClose>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                  )}
+              </div>
+            </div>
+
+            {/* Nested Subcategories Block */}
           </SheetContent>
         </Sheet>
         <div>
@@ -142,7 +277,7 @@ export default function SecondHeader() {
           </form>
         </div>
       </div>
-      <div className="hidden xl:flex items-center ">
+      <div className="hidden xl:flex items-center justify-center">
         <div className="flex">
           <Link
             href="/#regards"
