@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import {
   Sheet,
-  // SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -18,6 +17,9 @@ import fetchService from "@/src/services/fetch";
 export default function SecondHeader() {
   const [search, setSearch] = useState("");
   const router = useRouter();
+  const [categories, setCategories] = useState([]);
+  const [hoveredCategory, setHoveredCategory] = useState<any>(null);
+  const subcategoryRef = useRef<HTMLDivElement>(null);
 
   const goToProduct = (query: string) => {
     router.push({
@@ -26,59 +28,40 @@ export default function SecondHeader() {
     });
   };
 
-  const [categories, setCategories] = useState([]);
-
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await fetchService.getAllCategories();
-      console.log(response);
       setCategories(
         response.flatMap((item: { subcategories: any }) => item.subcategories)
       );
     };
-
     fetchCategories();
   }, []);
 
-  // const pages = [
-  //   {
-  //     name: "Главная",
-  //     href: "/",
-  //   },
-  //   {
-  //     name: "О компании",
-  //     href: "/about",
-  //   },
-  //   {
-  //     name: "Преимущества",
-  //     href: "/#regards",
-  //   },
-  //   {
-  //     name: "Продукция",
-  //     href: "/catalog",
-  //   },
-  //   {
-  //     name: "Вопросы",
-  //     href: "/#faq",
-  //   },
-  //   {
-  //     name: "Оплата",
-  //     href: "/payment",
-  //   },
-  //   {
-  //     name: "Доставка",
-  //     href: "/delivery",
-  //   },
-  //   {
-  //     name: "Контакты",
-  //     href: "/contacts",
-  //   },
-  // ];
+  const handleMouseEnter = (category: any) => {
+    setHoveredCategory(category);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      subcategoryRef.current &&
+      !subcategoryRef.current.contains(event.target as Node)
+    ) {
+      setHoveredCategory(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="mt-8 flex justify-between items-center py-5">
+    <div className="mt-8 flex justify-between items-center py-5 relative">
       <div className="flex flex-col sm:items-center sm:flex-row text-black">
-        <Sheet>
+        <Sheet >
           <SheetTrigger className="flex items-center font-bold uppercase text-[14px] ml-5 mb-5 sm:mb-0 text-black">
             <img
               src="/catalog.svg"
@@ -96,14 +79,37 @@ export default function SecondHeader() {
                 {/* Перейти к: */}
               </SheetTitle>
             </SheetHeader>
-            <div className="flex flex-col text-black text-[1.4rem] bg-[#fcfcfc] h-full py-6 px-3 rounded-lg">
-              <ul className="flex flex-col gap-4">
+            <div className="flex flex-row text-black text-[1.4rem] bg-[#fcfcfc] h-full  px-3 rounded-lg">
+              {/* Основной блок категорий */}
+              <ul className="flex flex-col gap-4 mt-6">
                 {categories.map((category: any) => (
-                  <li key={category.id} className="cursor-pointer font-[600] leading-mormal ">
+                  <li
+                    key={category.id}
+                    className="cursor-pointer font-[600] leading-normal"
+                    onMouseEnter={() => handleMouseEnter(category)}
+                  >
                     {category.name}
                   </li>
                 ))}
               </ul>
+
+              {/* Блок с подкатегориями, который показывается рядом */}
+              {hoveredCategory && (
+                <div
+                  ref={subcategoryRef}
+                  className="ml-8 w-[250px] h-full bg-white  p-5 rounded-lg"
+                  style={{ minHeight: "100vh" }}
+                >
+                  <h2 className="text-lg font-bold mb-4 border-b">{hoveredCategory.name}</h2>
+                  <ul className="flex flex-col gap-2 text-[1.2rem] font-[500]">
+                    {hoveredCategory.subcategories?.map((subcategory: any) => (
+                      <li key={subcategory.id} className="cursor-pointer hover:text-[#c79f32]">
+                        {subcategory.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </SheetContent>
         </Sheet>
@@ -159,9 +165,6 @@ export default function SecondHeader() {
           >
             Контакты
           </Link>
-          {/* <button className="ml-5 text-[14px] uppercase font-bold">
-            <img src="/cart.svg" alt="cart" className="mr-2 w-[30px]" />
-          </button> */}
         </div>
       </div>
     </div>

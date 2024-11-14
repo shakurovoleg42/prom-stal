@@ -76,16 +76,13 @@ const ListProducts: React.FC<ListProductsProps> = ({
   const totalProducts = pagination?.total || 0;
   const itemsPerPage = pagination.per_page || 1;
 
-  // Получаем текущую страницу из query параметров
   const page = +(searchParams.get("page") ?? 1);
 
   const handlePageChange = (event: any, value: number) => {
-    // Обновляем параметр "page" в URL
     params.set("page", value.toString());
     router.replace(pathname + "?" + params.toString());
   
-    // Прокручиваем страницу вверх
-    window.scrollTo(0, 0); // Прокрутить страницу в верхнюю часть
+    window.scrollTo(0, 0);
     event.preventDefault();
   };
   
