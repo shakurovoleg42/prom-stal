@@ -139,7 +139,7 @@ export default function SecondHeader() {
                   {categories.map((category: any) => (
                     <li
                       key={category.id}
-                      className="cursor-pointer font-[600] leading-normal  hover:bg-[#fdff77] hover:text-[#646464] rounded-lg py-4"
+                      className="cursor-pointer font-[600] leading-normal  hover:bg-[#fdff77] hover:text-[#353535] rounded-lg py-4"
                       onMouseEnter={() => handleMouseEnter(category)}
                     >
                       <SheetClose asChild>
@@ -186,7 +186,7 @@ export default function SecondHeader() {
                         (subcategory: any) => (
                           <li
                             key={subcategory.id}
-                            className=" cursor-pointer hover:bg-[#fdff77] p-2 rounded-lg"
+                            className=" cursor-pointer hover:bg-[#fdff77] hover:text-[#353535] p-2 rounded-lg"
                             onMouseEnter={() =>
                               handleSubcategoryHover(subcategory)
                             } // Hover on subcategory
@@ -194,7 +194,7 @@ export default function SecondHeader() {
                             <SheetClose asChild>
                               <Link
                                 href={`/catalog/${subcategory.slug}`}
-                                className="flex flex-row items-center"
+                                className="flex flex-row items-center justify-between"
                               >
                                 <span>{subcategory.name}</span>
                                 <ChevronRight className="text-[25px]" />
@@ -211,31 +211,39 @@ export default function SecondHeader() {
                 {hoveredSubcategory &&
                   hoveredSubcategory.subcategories?.length > 0 && (
                     <div
-                      className=" h-full bg-white pt-5 px-5 rounded-lg"
-                      style={{
-                        maxHeight: "calc(100vh - 100px)",
-                        overflowY: "auto",
-                      }}
-                    >
+                    ref={subcategoryRef}
+                    className="w-auto h-full bg-white pt-5 px-5 rounded-lg"
+                    style={{
+                      maxHeight: "calc(100vh - 100px)",
+                      overflowY: "auto",
+                    }}
+                  >
                       <h3 className="text-lg font-bold mb-4 border-b">
                         {hoveredSubcategory.name}
                       </h3>
-                      <ul className="flex flex-col gap-4 text-[1.2rem] font-[500] w-[300px]">
+                      <ul className="flex flex-col gap-4 text-[1.2rem] font-[500] w-auto">
                         {hoveredSubcategory.subcategories.map(
                           (nestedSubcategory: any) => (
                             <li
                               key={nestedSubcategory.id}
-                              className="w-full cursor-pointer hover:bg-[#fdff77] p-2 rounded-lg"
+                              className="w-full cursor-pointer hover:bg-[#fdff77] hover:text-[#353535] p-2 rounded-lg"
                             >
                               <SheetClose asChild>
-                                <Link
+                              <Link
                                   href={`/catalog/${nestedSubcategory.slug}`}
-                                  className="flex flex-row items-center"
+                                  className="flex flex-row items-center justify-between"
+                                  onMouseDown={() => {
+                                    router.push(
+                                      `/catalog/${nestedSubcategory.slug}`
+                                    )
+                                    return <SheetClose/>
+                                  }}
                                 >
                                   <span>{nestedSubcategory.name}</span>
                                   <ChevronRight className="text-[25px]" />
                                 </Link>
                               </SheetClose>
+                                
                             </li>
                           )
                         )}
@@ -244,8 +252,6 @@ export default function SecondHeader() {
                   )}
               </div>
             </div>
-
-            {/* Nested Subcategories Block */}
           </SheetContent>
         </Sheet>
         <div>
