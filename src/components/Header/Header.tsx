@@ -105,11 +105,11 @@ const Header: React.FC = () => {
       code: "EN",
       icons: "/england-flag.png",
     },
-    {
-      name: "Қазақ",
-      code: "KK",
-      icons: "/kazakhstan-flag.png",
-    },
+    // {
+    //   name: "Қазақ",
+    //   code: "KK",
+    //   icons: "/kazakhstan-flag.png",
+    // },
   ];
 
   const cities = [
