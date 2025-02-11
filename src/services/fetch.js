@@ -39,11 +39,6 @@ const fetchService = {
       `${process.env.NEXT_PUBLIC_API}/category/${slug}`
     );
     return res.data;
-  },  
-
-  getProductsByCategory: async (slug, params) => {
-    const res = await axios.get("/api/category/" + slug, { params });
-    return res.data;
   },
 
   sendRightSideMessage: async (data) => {

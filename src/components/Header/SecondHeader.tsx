@@ -98,6 +98,10 @@ export default function SecondHeader() {
       name: "Контакты",
       href: "/contacts",
     },
+    {
+      name: "Статьи",
+      href: "/posts",
+    },
   ];
 
   return (
@@ -211,13 +215,13 @@ export default function SecondHeader() {
                 {hoveredSubcategory &&
                   hoveredSubcategory.subcategories?.length > 0 && (
                     <div
-                    ref={subcategoryRef}
-                    className="w-auto h-full bg-white pt-5 px-5 rounded-lg"
-                    style={{
-                      maxHeight: "calc(100vh - 100px)",
-                      overflowY: "auto",
-                    }}
-                  >
+                      ref={subcategoryRef}
+                      className="w-auto h-full bg-white pt-5 px-5 rounded-lg"
+                      style={{
+                        maxHeight: "calc(100vh - 100px)",
+                        overflowY: "auto",
+                      }}
+                    >
                       <h3 className="text-lg font-bold mb-4 border-b">
                         {hoveredSubcategory.name}
                       </h3>
@@ -229,21 +233,20 @@ export default function SecondHeader() {
                               className="w-full cursor-pointer hover:bg-[#fdff77] hover:text-[#353535] p-2 rounded-lg"
                             >
                               <SheetClose asChild>
-                              <Link
+                                <Link
                                   href={`/catalog/${nestedSubcategory.slug}`}
                                   className="flex flex-row items-center justify-between"
                                   onMouseDown={() => {
                                     router.push(
                                       `/catalog/${nestedSubcategory.slug}`
-                                    )
-                                    return <SheetClose/>
+                                    );
+                                    return <SheetClose />;
                                   }}
                                 >
                                   <span>{nestedSubcategory.name}</span>
                                   <ChevronRight className="text-[25px]" />
                                 </Link>
                               </SheetClose>
-                                
                             </li>
                           )
                         )}
@@ -305,6 +308,9 @@ export default function SecondHeader() {
             className="ml-5 text-[14px] uppercase font-bold"
           >
             Контакты
+          </Link>
+          <Link href="/posts" className="ml-5 text-[14px] uppercase font-bold">
+            Статьи
           </Link>
         </div>
       </div>
