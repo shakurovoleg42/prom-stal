@@ -27,6 +27,27 @@ const newsItems = [
       "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
     image: "/Banner.png",
   },
+  {
+    id: 4,
+    title: "Title 4",
+    description:
+      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
+    image: "/Banner.png",
+  },
+  {
+    id: 5,
+    title: "Title 5",
+    description:
+      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
+    image: "/Banner.png",
+  },
+  {
+    id: 6,
+    title: "Title 6",
+    description:
+      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
+    image: "/Banner.png",
+  },
 ];
 
 const News = () => {
@@ -53,7 +74,7 @@ const News = () => {
               }`}
             >
               {/* Контейнер с картинкой */}
-              <div className="relative overflow-hidden w-full max-w-[550px] aspect-[550/270]">
+              <div className="relative overflow-hidden w-full max-w-[500px] aspect-[500/270]">
                 <Link
                   href={`/posts/${item.id}`}
                   className="block w-full h-full"
@@ -74,7 +95,7 @@ const News = () => {
                   <span className="text-[24px] font-[800] leading-[1.25]">
                     {item.title}
                   </span>
-                  <p className="text-[16px] font-[300] leading-[1.6]  whitespace-pre-wrap">
+                  <p className="text-[16px] font-[400] leading-[1.6]  whitespace-pre-wrap">
                     {item.description}
                   </p>
                 </div>
