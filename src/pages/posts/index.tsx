@@ -11,6 +11,7 @@ const News = () => {
     image: string;
     title: string;
     description: string;
+    short_description: string;
   }
 
   const [articles, setArticles] = useState<Article[]>([]);
@@ -33,11 +34,11 @@ const News = () => {
             важных вопросах.
           </h1>
         </div>
-        <div className="grid grid-cols-1 gap-4 w-full">
+        <div className="grid grid-cols-1 gap-4 w-full px-8">
           {articles.map((item) => (
             <div
               key={item.id}
-              className="w-full group flex flex-col md:flex-row"
+              className="w-full min-h-[325px] max-h-[603px] group flex flex-col md:flex-row"
               // ${item.id % 2 === 0 ? "md:flex-row-reverse" : ""}` Если потребуется сделать чередование с reverse по id
             >
               {/* Контейнер с картинкой */}
@@ -62,8 +63,10 @@ const News = () => {
                   <span className="text-[24px] font-[800] leading-[1.25]">
                     {item.title}
                   </span>
-                  <p className="text-[16px] font-[400] leading-[1.6]  whitespace-pre-wrap">
-                    {item.description}
+                  <p className="text-[16px] font-[400] leading-[1.6] whitespace-pre-wrap">
+                    {item.short_description.length > 180
+                      ? `${item.short_description.substring(0, 180)}...`
+                      : item.short_description}
                   </p>
                 </div>
               </Link>
