@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Skeleton } from "@/src/components/ui/skeleton";
 import Banner from "@/src/components/Banner";
+import Image from "next/image";
 
 export default function Catalog() {
   const [categories, setCategories] = useState([]);
@@ -57,14 +58,19 @@ export default function Catalog() {
                     key={item.id}
                     className="p-4 box-border flex flex-col items-center rounded-lg "
                   >
-                    <img
-                      className="w-full max-w-[120px] aspect-[4/3] object-cover rounded-lg bg-white p-2"
+                    <Image
+                      className="w-full max-w-[120px] aspect-[4/4] object-cover rounded-lg bg-white p-2"
                       src={item.image || "/no-image.jpg"}
+                      width={120}
+                      height={120}
                       alt="parts"
                     />
-                    <h3 className="text-center text-[1.2rem] leading-6 font-bold mt-3">
-                      {item.name}
-                    </h3>
+                    <div className="flex min-h-[52px] items-center mt-3">
+                      <h3 className="text-center text-[1.2rem] leading-6 font-bold ">
+                        {item.name}
+                      </h3>
+                    </div>
+
                     <div
                       className={clsx(
                         "overflow-hidden transition-all duration-700 ease-in-out text-start",

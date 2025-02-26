@@ -5,6 +5,7 @@ import { Container } from "@/src/components/Container";
 import fetchService from "@/src/services/fetch";
 import Link from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -38,9 +39,11 @@ const Categories = () => {
               className="flex p-[10px] flex-[1_1_calc(25%-20px)] box-border items-start min-w-[250px] max-w-[300px]"
             >
               <div className="rounded-[4px] mr-[10px] bg-[#F4F6F7]">
-                <img
-                  className="min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-[8px] p-1"
+                <Image
+                  className="max-w-[55px] aspect-[4/4] object-cover rounded-[8px] p-1"
                   src={item.image || "/no-image.jpg"}
+                  width={55}
+                  height={55}
                   alt="parts"
                 />
               </div>
