@@ -69,7 +69,7 @@ const fetchService = {
 
   getAllArticles: async () => {
     const res = await axios.get(process.env.NEXT_PUBLIC_API + "/article");
-    return res.data;
+    return res.data.data.list;
   },
 
   getArticleBySlug: async (id) => {

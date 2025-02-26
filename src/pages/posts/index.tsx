@@ -3,54 +3,27 @@ import Banner from "@/src/components/Banner";
 import { Container } from "@/src/components/Container";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
-
-const newsItems = [
-  {
-    id: 1,
-    title: "Title 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quo eveniet illo illum cum neque in est consequuntur quas!",
-    image: "/Banner.png",
-  },
-  {
-    id: 2,
-    title: "Title 2",
-    description:
-      "Repellendus aut veniam ipsam fugiat eum! Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    image: "/Banner.png",
-  },
-  {
-    id: 3,
-    title: "Title 3",
-    description:
-      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
-    image: "/Banner.png",
-  },
-  {
-    id: 4,
-    title: "Title 4",
-    description:
-      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
-    image: "/Banner.png",
-  },
-  {
-    id: 5,
-    title: "Title 5",
-    description:
-      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
-    image: "/Banner.png",
-  },
-  {
-    id: 6,
-    title: "Title 6",
-    description:
-      "Quo eveniet illo illum cum neque in est consequuntur quas! Repellendus aut veniam ipsam fugiat eum!",
-    image: "/Banner.png",
-  },
-];
+import { useEffect, useState } from "react";
+import fetchService from "@/src/services/fetch";
 
 const News = () => {
+  interface Article {
+    id: number;
+    image: string;
+    title: string;
+    description: string;
+  }
+
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetchService.getAllArticles();
+      setArticles(res);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Head>
@@ -65,15 +38,15 @@ const News = () => {
             важных вопросах.
           </h1>
         </div>
-        <div className="grid grid-cols-1 gap-1">
-          {newsItems.map((item) => (
+        <div className="grid grid-cols-1 gap-4 w-full">
+          {articles.map((item) => (
             <div
               key={item.id}
-              className="group flex flex-col md:flex-row"
+              className="w-full group flex flex-col md:flex-row"
               // ${item.id % 2 === 0 ? "md:flex-row-reverse" : ""}` Если потребуется сделать чередование с reverse по id
             >
               {/* Контейнер с картинкой */}
-              <div className="relative overflow-hidden w-full max-w-[500px] aspect-[500/270]">
+              <div className="relative overflow-hidden w-full max-w-[500px] aspect-[500/270] rounded-l-lg">
                 <Link
                   href={`/posts/${item.id}`}
                   className="block w-full h-full"
@@ -88,7 +61,7 @@ const News = () => {
               {/* Контейнер с текстом */}
               <Link
                 href={`/posts/${item.id}`}
-                className="block bg-[#0A8C99] w-full max-w-[550px] md:max-w-[800px] aspect-[550/270]"
+                className="block bg-[#11545a] w-full max-w-[550px] md:max-w-[800px] aspect-[550/270]"
               >
                 <div className="flex flex-col gap-5 justify-center items-center p-8 text-white">
                   <span className="text-[24px] font-[800] leading-[1.25]">
