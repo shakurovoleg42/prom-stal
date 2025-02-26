@@ -34,7 +34,6 @@ const Product = () => {
 
   const router = useRouter();
   const { slug } = router.query;
-  console.log(slug);
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {

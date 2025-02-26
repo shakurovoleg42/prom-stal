@@ -17,19 +17,17 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const getCleanSlug = (url: string) => {
-      return new URL(url, "http://localhost").pathname; // Убираем query параметры
+      return new URL(url, "https://apromstal.kz/").pathname;
     };
 
     const fetchSeoData = async (url: string) => {
       const cleanSlug = getCleanSlug(url);
-      console.log("🔍 Отправляем запрос на SEO:", cleanSlug);
 
       try {
         const res = await fetch(
-          `https://api.apromstal.kz/api/seo?slug=${cleanSlug}`
+          `${process.env.NEXT_PUBLIC_API}/seo?slug=${cleanSlug}`
         );
         const json = await res.json();
-        console.log("✅ Получены данные SEO:", json);
 
         if (json.statusCode === 200) {
           setSeo(json.data);
@@ -39,11 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
       }
     };
 
-    console.log("📌 Текущий маршрут:", getCleanSlug(router.asPath));
     fetchSeoData(router.asPath);
 
     const handleRouteChange = (url: string) => {
-      console.log("➡️ Новый маршрут:", getCleanSlug(url));
       fetchSeoData(url);
     };
 
