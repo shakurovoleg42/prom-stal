@@ -15,6 +15,7 @@ import fetchService from "@/src/services/fetch";
 
 import { Phone, Mail } from "lucide-react";
 import Head from "next/head";
+import QuickOrderSheet from "@/src/components/QuickOrderSheet";
 
 export interface Product {
   characteristics: any[];
@@ -146,12 +147,7 @@ const Product = () => {
                   </div>
                   <span className="max-h-1 flex-grow border-b border-[#d2d3d3] mx-2"></span>
                   <div className="flex justify-around flex-wrap gap-2 mt-2">
-                    <Button
-                      variant="contact"
-                      className="text-[#FFD66C] uppercase text-[12px] font-bold"
-                    >
-                      Узнать цену
-                    </Button>
+                    <QuickOrderSheet type="product" />
                     <Link href="tel:8(708)001-68-68">
                       <Button className="bg-[#F5F7F8] hover:bg-black  text-[#FFD66C]">
                         <Phone size={16} />

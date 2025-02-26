@@ -1,14 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { FormEvent, useEffect, useState } from "react";
-// import Cookies from "js-cookie";
-import { Input } from "../ui/input";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/src/components/ui/button";
-import { Label } from "@/src/components/ui/label";
+
 import { ChevronDown } from "lucide-react";
 import { Container } from "../Container";
-import fetchService from "../../services/fetch";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,33 +12,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/src/components/ui/sheet";
-import MaskedInput from "react-text-mask";
-import Image from "next/image";
 import SecondHeader from "./SecondHeader";
-
-interface FormData {
-  product: string;
-  count: string | number;
-  phone: string;
-  email: string;
-}
+import QuickOrderSheet from "../QuickOrderSheet";
 
 const Header: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    product: "",
-    count: 0,
-    phone: "",
-    email: "",
-  });
   const [region, setRegion] = useState("Астана");
   // const [lang, setLang] = useState("RU");
   // const [flag, setFlag] = useState("/russia-flag.png");
@@ -59,26 +32,6 @@ const Header: React.FC = () => {
     //   }
     // }
   }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    const updatedValue = name === "count" ? parseInt(value, 10) : value;
-
-    setFormData({ ...formData, [name]: updatedValue });
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await fetchService.sendRightSideMessage(formData);
-
-      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
-    } catch (error) {
-      console.log(error);
-      toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время!");
-    }
-  };
 
   // const langs = [
   // {
@@ -186,118 +139,7 @@ const Header: React.FC = () => {
           </div>
         </div>
         <div className="mt-6 sm:mt-4 lg:mt-0">
-          <Sheet>
-            <SheetTrigger
-              asChild
-              className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px] text-black"
-            >
-              <button>
-                <Image
-                  src="/request.svg"
-                  alt="Request"
-                  width={20}
-                  height={20}
-                  className="mr-2"
-                />
-                Оставить заявку
-              </button>
-            </SheetTrigger>
-            <SheetContent className="flex flex-col items-center text-left sm:items-center">
-              <SheetHeader>
-                <SheetTitle className="text-[2rem]">Заказ в 1 клик</SheetTitle>
-              </SheetHeader>
-              <form onSubmit={handleSubmit}>
-                <div className="flex flex-col items-left gap-8 py-4 px-2 text-black">
-                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
-                    <Label htmlFor="product" className="text-left font-bold">
-                      Товар
-                    </Label>
-                    <Input
-                      id="product"
-                      name="product"
-                      placeholder="Кабель силовой медный"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
-                    <Label htmlFor="count" className="text-left font-bold">
-                      Количество
-                    </Label>
-                    <Input
-                      id="count"
-                      name="count"
-                      placeholder="20"
-                      type="number"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
-                    <Label
-                      htmlFor="phonenumber"
-                      className="text-left font-bold"
-                    >
-                      Номер телефона
-                    </Label>
-                    <MaskedInput
-                      mask={[
-                        "+",
-                        "7",
-                        " ",
-                        "(",
-                        /[1-9]/,
-                        /\d/,
-                        /\d/,
-                        ")",
-                        " ",
-                        /\d/,
-                        /\d/,
-                        /\d/,
-                        "-",
-                        /\d/,
-                        /\d/,
-                        "-",
-                        /\d/,
-                        /\d/,
-                      ]}
-                      className="flex h-10 w-full rounded-md   bg-background text-sm ring-offset-background  file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-1-[#000] focus:border-none col-span-3 py-7 px-2"
-                      placeholder="+7 (___) ___-__-__"
-                      guide={false}
-                      type="text"
-                      id="phonenumber"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="flex flex-col items-center gap-4 sm:grid sm:grid-cols-4">
-                    <Label htmlFor="email" className="text-left font-bold">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="example@gmail.com"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <SheetFooter className="w-full flex items-center justify-center">
-                  <SheetClose asChild>
-                    <Button
-                      className="w-full flex items-center justify-center rounded-[25px]"
-                      type="submit"
-                    >
-                      Отправить
-                    </Button>
-                  </SheetClose>
-                </SheetFooter>
-              </form>
-            </SheetContent>
-          </Sheet>
+          <QuickOrderSheet type="header" />
         </div>
       </div>
 
