@@ -49,7 +49,8 @@ const ListProducts: React.FC<ListProductsProps> = ({
         </div>
         <style jsx>{`
           @keyframes dotAnimation {
-            0%, 100% {
+            0%,
+            100% {
               opacity: 0;
             }
             25% {
@@ -81,11 +82,10 @@ const ListProducts: React.FC<ListProductsProps> = ({
   const handlePageChange = (event: any, value: number) => {
     params.set("page", value.toString());
     router.replace(pathname + "?" + params.toString());
-  
+
     window.scrollTo(0, 0);
     event.preventDefault();
   };
-  
 
   const totalPages = Math.ceil(totalProducts / itemsPerPage);
 
@@ -109,10 +109,7 @@ const ListProducts: React.FC<ListProductsProps> = ({
                 className="block w-[150px] h-[150px] sm:hidden rounded-[5px]"
               />
               <Link
-                href={{
-                  pathname: `/products/${item.slug}`,
-                  query: { category: item.slug },
-                }}
+                href={`/products/${item.slug}`}
                 className="max-w-[550px] mt-6 sm:mt-0 ml-2 md:ml-3 text-[12px] text-[#6F727B] font-[700] leading-[14px] hover:underline hover:underline-offset-2 hover:text-[#0A8C99]"
               >
                 {item.name}

@@ -9,7 +9,6 @@ import Partners from "@/src/components/Partners";
 import Link from "next/link";
 import ContactForm from "@/src/components/ContactForm";
 import Image from "next/image";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import fetchService from "@/src/services/fetch";
 import { useSearchParams } from "next/navigation";
@@ -40,19 +39,22 @@ export default function Products() {
     }
     return category;
   };
-  
+
   useEffect(() => {
     const fetchCategory = async () => {
       try {
         if (category) {
-          const response = await fetchService.getProductsByCategories(hasFilters(), page);
-  
+          const response = await fetchService.getProductsByCategories(
+            hasFilters(),
+            page
+          );
+
           if (response.subcategories.length > 0) {
             router.push({
               pathname: `/catalog/${response.subcategories[0].slug}`,
             });
           }
-  
+
           setProducts(response.category.products);
           setPagination(response.pagination);
           setCharacteristics(response.characteristics);
@@ -61,7 +63,7 @@ export default function Products() {
         console.error("Ошибка при загрузке:", error);
       }
     };
-  
+
     fetchCategory();
   }, [category, filters, page]);
 
@@ -83,9 +85,6 @@ export default function Products() {
 
   return (
     <>
-      <Head>
-        <title>А-Промсталь - Каталог</title>
-      </Head>
       <Banner />
       <Container className="flex flex-col mt-6 font-montserrat">
         <p className="text-[#0A8C99] font-[700] leading-[20px] ml-5">

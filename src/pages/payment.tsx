@@ -2,13 +2,9 @@ import React from "react";
 import Banner from "../components/Banner";
 import { Container } from "../components/Container";
 import Form from "../components/Form/Form";
-import Head from "next/head";
 export default function payment() {
   return (
     <>
-      <Head>
-        <title>А-Промсталь - Оплата</title>
-      </Head>
       <Banner />
       <Container>
         <div className="text-left text-[1rem] font-[700] my-20 px-2 font-montserrat">

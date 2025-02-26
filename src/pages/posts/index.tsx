@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Banner from "@/src/components/Banner";
 import { Container } from "@/src/components/Container";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import fetchService from "@/src/services/fetch";
@@ -26,10 +25,6 @@ const News = () => {
 
   return (
     <>
-      <Head>
-        <title>Статьи</title>
-        <meta name="description" content="Статьи" />
-      </Head>
       <Banner />
       <Container className="py-10 flex flex-col items-center">
         <div className="mb-8 text-center md:text-left">

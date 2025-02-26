@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,6 +14,7 @@ import { Button } from "@/src/components/ui/button";
 import fetchService from "@/src/services/fetch";
 
 import { Phone, Mail } from "lucide-react";
+import Head from "next/head";
 
 export interface Product {
   characteristics: any[];
@@ -34,7 +34,7 @@ const Product = () => {
 
   const router = useRouter();
   const { slug } = router.query;
-
+  console.log(slug);
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
@@ -56,7 +56,8 @@ const Product = () => {
   return (
     <>
       <Head>
-        <title>А-Промсталь - Продукт</title>
+        <title>{product?.name}</title>
+        <meta name="description" content={product?.description} />
       </Head>
       <Container className="flex flex-col mt-6  font-montserrat">
         <div className="text-[12px] flex flex-row px-3 text-[#999999] font-[700] leading-[20px] ml-5">

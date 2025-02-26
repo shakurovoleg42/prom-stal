@@ -72,10 +72,10 @@ const fetchService = {
     return res.data.data.list;
   },
 
-  getArticleBySlug: async (id) => {
-    const res = await axios.get(process.env.NEXT_PUBLIC_API + "/article/" + id);
-    return res.data;
-  },
+  // getArticleBySlug: async (id) => {
+  //   const res = await axios.get(process.env.NEXT_PUBLIC_API + "/article/" + id);
+  //   return res.data;
+  // },
 
   // SEO Service
 

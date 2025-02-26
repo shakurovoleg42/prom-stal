@@ -7,14 +7,10 @@ import Parts from "../blocks/about/Parts/Parts";
 import Partners from "../components/Partners";
 import ContactForm from "../components/ContactForm";
 import Banner from "../components/Banner";
-import Head from "next/head";
 
 export default function about() {
   return (
     <>
-      <Head>
-        <title>А-Промсталь - О компании</title>
-      </Head>
       <Banner />
       <Container className="mt-20 flex px-4 font-montserrat">
         <div className="flex flex-col text-left h-auto w-full">

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Container } from "@/src/components/Container";
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
-import Head from "next/head";
 import { Skeleton } from "@/src/components/ui/skeleton";
 import Banner from "@/src/components/Banner";
 
@@ -33,9 +32,6 @@ export default function Catalog() {
 
   return (
     <>
-      <Head>
-        <title>Каталог металлопроката</title>
-      </Head>
       <Banner />
       <Container>
         <div className="text-[10px] leading-[10px] text-center my-8 font-inter">

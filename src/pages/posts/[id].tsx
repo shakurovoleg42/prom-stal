@@ -19,7 +19,7 @@ const SingleNews = ({
   return (
     <>
       <div
-        className="flex w-full h-auto min-h-[35vh] lg:min-h-[589px] bg-cover bg-center text-white mt-5 font-montserrat"
+        className="flex w-full h-auto min-h-[35vh] lg:min-h-[589px] bg-cover bg-center text-white mt-5 font-montserrat rounded-b-sm"
         style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}
       >
         <Container className="items-left py-[100px] flex flex-col gap-8 text-center ">
@@ -51,11 +51,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   }
 
   const jsonResponse = await response.json();
-  const news = jsonResponse.data; // ✅ Данные внутри `data`
+  const news = jsonResponse.data;
 
   return {
     props: {
-      id: news.id ?? null, // ✅ Проверка на undefined
+      id: news.id ?? null,
       title: news.title ?? "",
       shortDescription: news.short_description ?? "",
       description: news.description ?? "",

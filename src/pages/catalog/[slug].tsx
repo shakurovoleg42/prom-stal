@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { CircleArrowLeft } from "lucide-react";
-import Head from "next/head";
 import Loading from "@/src/components/ui/loading";
 
 const Catalog = () => {
@@ -64,9 +63,6 @@ const Catalog = () => {
 
   return (
     <>
-      <Head>
-        <title>Каталог - {name}</title>
-      </Head>
       <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[20%]">
         <p className="w-full text-[#999999] font-[700] leading-[20px] sm:ml-5 sm:flex sm:flex-row text-start">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
