@@ -5,7 +5,7 @@ import About from "../blocks/home/About/About";
 import Regards from "../components/Regards";
 import Form from "../components/Form/Form";
 import Parts from "../components/Parts/Parts";
-import Partners from "../components/Partners";
+import Partners from "../blocks/home/Partners/Partners";
 import Faq from "../blocks/home/FAQ/Faq";
 
 export default function Home() {

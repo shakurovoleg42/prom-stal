@@ -14,7 +14,9 @@ interface FiltersProps {
 }
 
 export default function Filters({ characteristics, category }: FiltersProps) {
-  const [selectedValues, setSelectedValues] = useState<{ [key: string]: string[] }>({});
+  const [selectedValues, setSelectedValues] = useState<{
+    [key: string]: string[];
+  }>({});
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
@@ -45,16 +47,16 @@ export default function Filters({ characteristics, category }: FiltersProps) {
 
   const searchByFilters = () => {
     const filtersQuery = new URLSearchParams();
-  
+
     Object.entries(selectedValues).forEach(([key, values]) => {
       values.forEach((value) => {
         filtersQuery.append(`filters[${key}][]`, value);
       });
     });
-  
+
     // Формируем URL вручную с первым параметром category и остальными фильтрами
     const queryString = `category=${category}?${filtersQuery.toString()}`;
-  
+
     router.push(`/products?${queryString}`);
   };
 
@@ -99,7 +101,7 @@ export default function Filters({ characteristics, category }: FiltersProps) {
           </div>
         )}
         {Array.isArray(characteristics) && characteristics.length > 0 ? (
-          <div className="w-full flex flex-row items-center justify-center">
+          <div className="w-full flex flex-row items-start">
             <Button className="gap-1" onClick={searchByFilters}>
               <Search size={15} />
               <span>Найти</span>

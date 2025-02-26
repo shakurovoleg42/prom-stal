@@ -7,7 +7,13 @@ export default function About() {
   return (
     <Container className="mt-20 flex flex-row items-center font-montserrat">
       <div className="">
-        <Image src="/guy.png" width={561} height={565} alt="guy" className="hidden xl:block"/>
+        <Image
+          src="/guy.png"
+          width={561}
+          height={565}
+          alt="guy"
+          className="hidden xl:block"
+        />
       </div>
       <div className="flex flex-col max-w-[545px] text-left h-auto md:ml-[54px] px-4 sm:px-0">
         <h2 className="text-[2rem] font-[700] leading-[60px] text-[#FFBC01] sm:text-[60px]">
@@ -31,8 +37,10 @@ export default function About() {
             резке металлопроката по индивидуальным потребностям клиента.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center sm:items-start">
-        <Button variant="contact" className="w-[141px] mt-9"><Link href="/about">Подробнее</Link></Button>
+        <div className="w-full flex justify-end pr-5">
+          <Button variant="contact" className="w-[141px] mt-9">
+            <Link href="/about">Подробнее</Link>
+          </Button>
         </div>
       </div>
     </Container>

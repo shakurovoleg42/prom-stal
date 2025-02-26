@@ -69,9 +69,8 @@ const News = () => {
           {newsItems.map((item) => (
             <div
               key={item.id}
-              className={`group flex flex-col md:flex-row ${
-                item.id % 2 === 0 ? "md:flex-row-reverse" : ""
-              }`}
+              className="group flex flex-col md:flex-row"
+              // ${item.id % 2 === 0 ? "md:flex-row-reverse" : ""}` Если потребуется сделать чередование с reverse по id
             >
               {/* Контейнер с картинкой */}
               <div className="relative overflow-hidden w-full max-w-[500px] aspect-[500/270]">

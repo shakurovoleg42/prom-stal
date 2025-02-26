@@ -11,13 +11,15 @@ interface SimilarProductsProps {
   similarProduct: Product[] | null; // Define the type for similar products
 }
 
-const SimilarProducts: React.FC<SimilarProductsProps> = ({ similarProduct }) => {
+const SimilarProducts: React.FC<SimilarProductsProps> = ({
+  similarProduct,
+}) => {
   // Placeholder text when there are no products
   const placeholderText = "К сожалению, нет рекомендуемых товаров.";
 
   return (
-    <Container className="flex items-center flex-col mb-20 font-montserrat">
-      <h3 className="text-[#FFBC01] text-center text-[2rem] leading-[60px] font-bold sm:text-[60px]">
+    <Container className="flex items-center flex-col mb-20 font-poppins">
+      <h3 className="text-[#FFBC01] text-center text-[1rem] leading-[60px] font-bold sm:text-[50px]">
         Рекомендуемые товары
       </h3>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-20 w-full">

@@ -27,9 +27,9 @@ const Banner: React.FC = () => {
   };
 
   return (
-    <div className="flex w-full h-auto min-h-[589px] bg-[url('/Banner.png')] bg-cover bg-center text-white mt-5 font-montserrat">
+    <div className="flex w-full h-auto min-h-[589px] bg-[url('/Banner.png')] bg-cover bg-center mt-5 font-montserrat">
       <Container className="items-left py-[100px] flex items-center text-center">
-        <span className="text-white text-[2rem] leading-normal font-[700] lg:text-[56px] flex text-center">
+        <span className="text-[#dedede] text-[2rem] leading-normal font-[700] lg:text-[56px] flex text-center">
           {whatPageBanner()}
         </span>
       </Container>

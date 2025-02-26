@@ -64,6 +64,27 @@ const fetchService = {
     );
     return res.data;
   },
+
+  // Articles Service
+
+  getAllArticles: async () => {
+    const res = await axios.get(process.env.NEXT_PUBLIC_API + "/article");
+    return res.data;
+  },
+
+  getArticleBySlug: async (id) => {
+    const res = await axios.get(process.env.NEXT_PUBLIC_API + "/article/" + id);
+    return res.data;
+  },
+
+  // SEO Service
+
+  // getProductSeo: async (slug) => {
+  //   const res = await axios.get(
+  //     process.env.NEXT_PUBLIC_API + "/seo/products/" + slug
+  //   );
+  //   return res.data;
+  // },
 };
 
 export default fetchService;

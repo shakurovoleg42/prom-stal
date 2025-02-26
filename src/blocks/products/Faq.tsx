@@ -12,9 +12,14 @@ import React from "react";
 export default function Faq() {
   return (
     <Container className="mb-5 w-full flex items-center justify-center flex-wrap lg:justify-between font-montserrat">
-      <div id="payment" className="max-w-[416px] text-[#182F43] flex flex-col items-center justify-center text-left lg:text-left lg:items-start">
+      <div
+        id="payment"
+        className="max-w-[416px] text-[#182F43] flex flex-col items-center justify-center text-left lg:text-left lg:items-start"
+      >
         <div>
-          <h3 className="text-[29px] font-[700] leading-[46px]">Вопрос ответ</h3>
+          <h3 className="text-[29px] font-[700] leading-[46px]">
+            Вопрос ответ
+          </h3>
         </div>
         <div>
           <p className="text-[17px] font-[300] leading-[27px] mt-[4]">
@@ -23,14 +28,16 @@ export default function Faq() {
           </p>
         </div>
         <div className="mt-2">
-          <Button
-            type="submit"
-            variant="contact"
-            className="items-center flex flex-row text-[14px] text-[#FFD66C]"
-          >
-            <span>Свяжитесь с нами!</span>
-            <ArrowRight size={20} className="ml-[10px]" />
-          </Button>
+          <a href="#form">
+            <Button
+              type="submit"
+              variant="contact"
+              className="items-center flex flex-row text-[14px] text-[#FFD66C]"
+            >
+              <span>Свяжитесь с нами!</span>
+              <ArrowRight size={20} className="ml-[10px]" />
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -44,7 +51,9 @@ export default function Faq() {
             <AccordionTrigger className="text-xl font-[600] text-black text-[19px]">
               {item.title}
             </AccordionTrigger>
-            <AccordionContent className="max-w-[600px] text-black text-[17px] font-[500] mt-6">{item.text}</AccordionContent>
+            <AccordionContent className="max-w-[600px] text-black text-[17px] font-[500] mt-6">
+              {item.text}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

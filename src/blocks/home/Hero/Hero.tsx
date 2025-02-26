@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="flex w-full h-auto bg-[url('/Banner.png')] bg-cover bg-center justify-center items-center text-white mt-5 font-montserrat">
+    <div className="flex w-full h-auto bg-[url('/Banner.png')] bg-cover bg-center justify-center items-center text-white mt-5 font-roboto">
       <div className="flex py-[100px] justify-between items-center ">
         <div className="max-w-[1073px]">
           <h1 className="text-white text-left text-[1rem] px-5 leading-normal font-bold xl:text-[3.6rem] lg:text-[2.3rem] md:text-[2rem] sm:text-[1.6rem]">

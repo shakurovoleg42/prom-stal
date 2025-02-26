@@ -208,7 +208,7 @@ const Product = () => {
               {/* Правая сторона */}
               <div className="w-full h-full bg-[#0A8C99] text-white rounded-[10px] ml-0 z-50 lg:ml-[11px] pl-4 ">
                 <div className="max-w-[768px] py-3 ">
-                  <div className="text-[14px] leading-[16px] font-[400] h-full pr-4 md:pr-0">
+                  <div className="text-[18px] leading-[26px] font-[400] h-full pr-4 md:pr-0 font-poppins ">
                     <div
                       dangerouslySetInnerHTML={{ __html: product.description }}
                     />

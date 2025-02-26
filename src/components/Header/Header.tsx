@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { FormEvent, useEffect, useState } from "react";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { Input } from "../ui/input";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
@@ -44,35 +44,21 @@ const Header: React.FC = () => {
     email: "",
   });
   const [region, setRegion] = useState("Астана");
-  const [lang, setLang] = useState("RU");
-  const [flag, setFlag] = useState("/russia-flag.png");
+  // const [lang, setLang] = useState("RU");
+  // const [flag, setFlag] = useState("/russia-flag.png");
 
   useEffect(() => {
-    const savedLang = Cookies.get("language");
-    if (!savedLang) {
-      Cookies.set("language", "RU", { expires: 365 });
-    } else {
-      setLang(savedLang);
-
-      const selectedLang = langs.find((lang) => lang.code === savedLang);
-      if (selectedLang) {
-        setFlag(selectedLang.icons);
-      }
-    }
+    // const savedLang = Cookies.get("language");
+    // if (!savedLang) {
+    //   Cookies.set("language", "RU", { expires: 365 });
+    // } else {
+    //   setLang(savedLang);
+    //   const selectedLang = langs.find((lang) => lang.code === savedLang);
+    //   if (selectedLang) {
+    //     setFlag(selectedLang.icons);
+    //   }
+    // }
   }, []);
-
-  const handleLanguageChange = (langCode: string) => {
-    Cookies.set("language", langCode, { expires: 365 });
-    setLang(langCode);
-
-    const selectedLang = langs.find((lang) => lang.code === langCode);
-    if (selectedLang) {
-      setFlag(selectedLang.icons);
-    }
-
-    // Перезагружаем страницу, чтобы применить выбранный язык
-    window.location.reload();
-};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -94,23 +80,23 @@ const Header: React.FC = () => {
     }
   };
 
-  const langs = [
-    {
-      name: "Русский",
-      code: "RU",
-      icons: "/russia-flag.png",
-    },
-    {
-      name: "English",
-      code: "EN",
-      icons: "/england-flag.png",
-    },
-    // {
-    //   name: "Қазақ",
-    //   code: "KK",
-    //   icons: "/kazakhstan-flag.png",
-    // },
-  ];
+  // const langs = [
+  // {
+  //   name: "Русский",
+  //   code: "RU",
+  //   icons: "/russia-flag.png",
+  // },
+  // {
+  //   name: "English",
+  //   code: "EN",
+  //   icons: "/england-flag.png",
+  // },
+  // {
+  //   name: "Қазақ",
+  //   code: "KK",
+  //   icons: "/kazakhstan-flag.png",
+  // },
+  // ];
 
   const cities = [
     {
@@ -131,7 +117,7 @@ const Header: React.FC = () => {
     <Container className="font-inter">
       <Toaster position="top-center" reverseOrder={false} />
       <div className="flex flex-col justify-between items-center py-5 lg:flex-row">
-        <div className="flex items-center">
+        <div className="flex items-center gap-10">
           <Link href="/">
             <img src="/logo.svg" alt="Логотип" className="w-[100px] mr-2" />
           </Link>
@@ -159,7 +145,7 @@ const Header: React.FC = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="flex border-none cursor-pointer bg-transparent justify-center items-center uppercase font-inter-bold font-bold mr-12 text-[13px]">
               <img src={flag} alt="flag" className="mr-2 w-[23px]" /> {lang}
               <ChevronDown />
@@ -177,7 +163,7 @@ const Header: React.FC = () => {
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
         <div className="hidden sm:flex items-center sm:mt-5 lg:mt-0">
           <div>
