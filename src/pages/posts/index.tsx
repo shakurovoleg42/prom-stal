@@ -4,6 +4,7 @@ import { Container } from "@/src/components/Container";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import fetchService from "@/src/services/fetch";
+import Image from "next/image";
 
 const News = () => {
   interface Article {
@@ -38,17 +39,19 @@ const News = () => {
           {articles.map((item) => (
             <div
               key={item.id}
-              className="w-full min-h-[325px] max-h-[603px] group flex flex-col md:flex-row"
+              className="w-full min-h-[325px] h-[100%] md:max-h-[603px] group flex flex-col md:flex-row"
               // ${item.id % 2 === 0 ? "md:flex-row-reverse" : ""}` Если потребуется сделать чередование с reverse по id
             >
               {/* Контейнер с картинкой */}
-              <div className="relative overflow-hidden w-full max-w-[500px] aspect-[500/270] rounded-l-lg">
+              <div className="relative overflow-hidden w-full  md:max-w-[500px] aspect-[500/270] rounded-l-lg">
                 <Link
                   href={`/posts/${item.id}`}
                   className="block w-full h-full"
                 >
-                  <img
+                  <Image
                     src={item.image}
+                    width={500}
+                    height={270}
                     alt="banner"
                     className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"
                   />
@@ -57,13 +60,13 @@ const News = () => {
               {/* Контейнер с текстом */}
               <Link
                 href={`/posts/${item.id}`}
-                className="block bg-[#11545a] w-full max-w-[550px] md:max-w-[800px] aspect-[550/270]"
+                className="block bg-[#11545a] w-full md:max-w-[800px] md:aspect-[550/270]"
               >
-                <div className="flex flex-col gap-5 justify-center items-center p-8 text-white">
-                  <span className="text-[24px] font-[800] leading-[1.25]">
+                <div className="flex flex-col gap-5 justify-center items-center p-4 sm:p-6 md:p-8 text-white">
+                  <span className="text-[18px] sm:text-[20px] md:text-[24px] font-[800] leading-[1.25] text-center md:text-left">
                     {item.title}
                   </span>
-                  <p className="text-[16px] font-[400] leading-[1.6] whitespace-pre-wrap">
+                  <p className="text-[14px] sm:text-[16px] md:text-[18px] font-[400] leading-[1.6] whitespace-pre-wrap text-center md:text-left">
                     {item.short_description.length > 180
                       ? `${item.short_description.substring(0, 180)}...`
                       : item.short_description}

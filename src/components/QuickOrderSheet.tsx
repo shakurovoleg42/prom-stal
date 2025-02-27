@@ -16,7 +16,15 @@ import MaskedInput from "react-text-mask";
 import fetchService from "@/src/services/fetch";
 import toast from "react-hot-toast";
 
-const QuickOrderSheet: React.FC<{ type: string }> = ({ type }) => {
+interface QuickOrderSheetProps {
+  type: string;
+  productTitle?: string;
+}
+
+const QuickOrderSheet: React.FC<QuickOrderSheetProps> = ({
+  type,
+  productTitle,
+}) => {
   const [formData, setFormData] = useState({
     product: "",
     count: 0,
@@ -41,28 +49,35 @@ const QuickOrderSheet: React.FC<{ type: string }> = ({ type }) => {
   };
 
   const buttonType = () => {
-    if (type === "header") {
-      return (
-        <button className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px] text-black">
-          <Image
-            src="/request.svg"
-            alt="Request"
-            width={20}
-            height={20}
-            className="mr-2"
-          />
-          Оставить заявку
-        </button>
-      );
-    } else if (type === "product") {
-      return (
-        <Button
-          variant="contact"
-          className="text-[#FFD66C] uppercase text-[12px] font-bold"
-        >
-          Узнать цену
-        </Button>
-      );
+    switch (type) {
+      case "product":
+        return (
+          <Button
+            variant="contact"
+            className="text-[#FFD66C] uppercase text-[12px] font-bold"
+          >
+            Узнать цену
+          </Button>
+        );
+      case "header":
+        return (
+          <button className="mr-[50px] text-[12px] flex items-center font-bold py-1 px-5 bg-[#F5F7F8] rounded-[6px] text-black">
+            <Image
+              src="/request.svg"
+              alt="Request"
+              width={20}
+              height={20}
+              className="mr-2"
+            />
+            Оставить заявку
+          </button>
+        );
+      case "productList":
+        return (
+          <Button variant="seePrice" className="mt-2 sm:mt-0">
+            узнать цену
+          </Button>
+        );
     }
   };
 
@@ -84,6 +99,7 @@ const QuickOrderSheet: React.FC<{ type: string }> = ({ type }) => {
                 name="product"
                 placeholder="Кабель силовой медный"
                 onChange={handleChange}
+                value={productTitle}
                 required
               />
             </div>
