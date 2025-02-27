@@ -10,7 +10,7 @@ import Loading from "@/src/components/ui/loading";
 
 const Catalog = () => {
   const router = useRouter();
-  const { slug, name } = router.query;
+  const { slug } = router.query;
 
   const [subcategory, setSubcategory] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -76,12 +76,14 @@ const Catalog = () => {
             Каталог
           </Link>
           <span className="mx-2"> / </span>
-          <span className="">Категория {name}</span>
+          <span className="">Категория {subcategory[0].name}</span>
         </p>
 
         <div className="w-full flex flex-col mt-9">
           <div className="w-full">
-            <h1 className="text-[2rem] font-[800] text-center px-3">{name}</h1>
+            <h1 className="text-[2rem] font-[800] text-center px-3">
+              {subcategory[0].name}
+            </h1>
           </div>
           <div className="w-full flex flex-wrap justify-center gap-24 mt-5">
             {subcategory.map((category: any) => (

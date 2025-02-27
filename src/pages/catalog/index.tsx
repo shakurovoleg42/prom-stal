@@ -89,13 +89,7 @@ export default function Catalog() {
                           className="mt-4 text-[0.8rem] leading-3"
                         >
                           <Link
-                            href={{
-                              pathname: `/catalog/${subItem.slug}`,
-                              query: {
-                                category: subItem.slug,
-                                name: subItem.name,
-                              },
-                            }}
+                            href={`/catalog/${subItem.slug}`}
                             className="text-[#000000] font-bold hover:text-[#707070]"
                           >
                             {subItem.name}
