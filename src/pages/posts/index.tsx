@@ -63,14 +63,19 @@ const News = () => {
                 className="block bg-[#11545a] w-full md:max-w-[800px] md:aspect-[550/270]"
               >
                 <div className="flex flex-col gap-5 justify-center items-center p-4 sm:p-6 md:p-8 text-white">
-                  <span className="text-[18px] sm:text-[20px] md:text-[24px] font-[800] leading-[1.25] text-center md:text-left">
-                    {item.title}
-                  </span>
-                  <p className="text-[14px] sm:text-[16px] md:text-[18px] font-[400] leading-[1.6] whitespace-pre-wrap text-center md:text-left">
-                    {item.short_description.length > 180
-                      ? `${item.short_description.substring(0, 180)}...`
-                      : item.short_description}
-                  </p>
+                  <span
+                    className="text-[18px] sm:text-[20px] md:text-[24px] font-[800] leading-[1.25] text-center md:text-left"
+                    dangerouslySetInnerHTML={{ __html: item.title }}
+                  ></span>
+                  <p
+                    className="text-[14px] sm:text-[16px] md:text-[18px] font-[400] leading-[1.6] whitespace-pre-wrap text-center md:text-left"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        item.short_description.length > 180
+                          ? `${item.short_description.substring(0, 180)}...`
+                          : item.short_description,
+                    }}
+                  ></p>
                 </div>
               </Link>
             </div>

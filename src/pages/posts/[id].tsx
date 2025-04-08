@@ -26,15 +26,13 @@ const SingleNews = ({
           <h1
             className="text-[2rem] leading-normal font-[700] lg:text-[56px] text-white stroke-black"
             style={{ WebkitTextStroke: "1px black" }}
-          >
-            {title}
-          </h1>
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <span
             className="text-[1.5rem] leading-normal font-[800] lg:text-[22px] text-white stroke-black "
             style={{ WebkitTextStroke: "0.65px black" }}
-          >
-            {shortDescription}
-          </span>
+            dangerouslySetInnerHTML={{ __html: shortDescription }}
+          />
         </Container>
       </div>
       <Container className="py-10 px-4">
@@ -42,10 +40,6 @@ const SingleNews = ({
           className="flex flex-col gap-8"
           dangerouslySetInnerHTML={{ __html: description }}
         />
-
-        {/* <p className="text-[1rem] leading-normal font-[700] lg:text-[22px] text-center">
-            {description}
-          </p> */}
       </Container>
     </>
   );

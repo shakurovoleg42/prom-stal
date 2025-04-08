@@ -53,8 +53,23 @@ export default function App({ Component, pageProps }: AppProps) {
     <Layout>
       <NextTopLoader color="#fbff00" height={2} showSpinner={false} />
       <Head>
-        <title>{seo?.meta_title || "A-promstal"}</title>
+        <title>{seo?.meta_title || "А-промсталь"}</title>
         <meta name="description" content={seo?.meta_description || ""} />
+        <meta property="og:title" content={seo?.meta_title || "А-промсталь"} />
+        <meta property="og:description" content={seo?.meta_description || ""} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={typeof window !== "undefined" ? window.location.href : ""}
+        />
+        <meta property="og:image" content="https://apromstal.kz/logo.svg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo?.meta_title || "А-промсталь"} />
+        <meta
+          name="twitter:description"
+          content={seo?.meta_description || ""}
+        />
+        <meta name="twitter:image" content="https://apromstal.kz/logo.svg" />
       </Head>
       <Component {...pageProps} />
     </Layout>

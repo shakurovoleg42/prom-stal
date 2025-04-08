@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { CircleArrowLeft } from "lucide-react";
 import Loading from "@/src/components/ui/loading";
+import Head from "next/head";
 
 const Catalog = () => {
   const router = useRouter();
@@ -15,12 +16,18 @@ const Catalog = () => {
   const [subcategory, setSubcategory] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDescription, setMetaDescription] = useState("");
+
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
         setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
+          console.log(response);
+          setMetaTitle(response.category.meta_title);
+          setMetaDescription(response.category.meta_description);
           const subcategories = response.subcategories;
 
           if (subcategories.length > 0) {
@@ -40,7 +47,7 @@ const Catalog = () => {
     };
 
     fetchCategory();
-  }, [slug]);
+  }, [router, slug]);
 
   if (isLoading) {
     // Проверка состояния загрузки
@@ -63,6 +70,14 @@ const Catalog = () => {
 
   return (
     <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content="https://apromstal.kz/favicon.ico" />
+        <meta property="og:url" content={`https://apromstal.kz/${slug}`} />
+      </Head>
       <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[20%]">
         <p className="w-full text-[#999999] font-[700] leading-[20px] sm:ml-5 sm:flex sm:flex-row text-start">
           <Link href="/" className="hover:border-b hover:border-[#999999]">

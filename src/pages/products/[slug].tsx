@@ -40,6 +40,7 @@ const Product = () => {
       if (slug) {
         try {
           const response = await fetchService.getSingleProduct(slug);
+          console.log("response", response);
           setProduct(response.product);
           setSimilarProducts(response.similar_products);
         } catch (error) {

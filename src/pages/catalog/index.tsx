@@ -8,16 +8,28 @@ import clsx from "clsx";
 import { Skeleton } from "@/src/components/ui/skeleton";
 import Banner from "@/src/components/Banner";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Catalog() {
   const [categories, setCategories] = useState([]);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDescription, setMetaDescription] = useState("");
 
   useEffect(() => {
     const fetchCategories = async () => {
       setLoading(true);
       const response = await fetchService.getAllCategories();
+      console.log(response);
+      setMetaTitle(
+        response.flatMap((item: { meta_title: any }) => item.meta_title)
+      );
+      setMetaDescription(
+        response.flatMap(
+          (item: { meta_description: any }) => item.meta_description
+        )
+      );
       setCategories(
         response.flatMap((item: { subcategories: any }) => item.subcategories)
       );
@@ -33,6 +45,14 @@ export default function Catalog() {
 
   return (
     <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content="https://apromstal.kz/favicon.ico" />
+        <meta property="og:url" content={`https://apromstal.kz/$catalog`} />
+      </Head>
       <Banner />
       <Container>
         <div className="text-[10px] leading-[10px] text-center my-8 font-inter">
