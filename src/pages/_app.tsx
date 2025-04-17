@@ -72,6 +72,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="https://apromstal.kz/logo.svg" />
       </Head>
       <Component {...pageProps} />
+      <div className="fixed bottom-4 right-4">
+        <a
+          href="https://api.whatsapp.com/send?phone=77714258484"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/whatsapp2.svg" alt="WhatsApp" className="w-12 h-12" />
+        </a>
+      </div>
     </Layout>
   );
 }

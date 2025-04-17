@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "@/src/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -32,19 +33,33 @@ export default function Hero() {
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
           <div className="flex items-center mb-[13px] flex-row">
             <img src="/phone-icon.svg" alt="Телефон" className="mr-[10px]" />
-            <b>+7 (771) 425-84-84</b>
+            <a href="tel:+77714258484">
+              <b>+7 (771) 425-84-84</b>
+            </a>
           </div>
-          <div className="flex items-center mb-[13px] flex-row">
-            <img
-              src="/whatsapp-icon.svg"
-              alt="WhatsApp"
-              className="mr-[10px]"
-            />
-            <b>WhatsApp</b>
+          <div className="flex items-center mb-[13px]">
+            <a
+              href="https://api.whatsapp.com/send?phone=77714258484"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center mb-[13px] flex-row"
+            >
+              <img
+                src="/whatsapp-icon.svg"
+                alt="WhatsApp"
+                className="mr-[10px]"
+              />
+              <b>WhatsApp</b>
+            </a>
           </div>
-          <div className="flex items-center mb-[13px] flex-row">
-            <img src="/email-icon.svg" alt="Email" className="mr-[10px]" />
-            <b>APS168@yandex.kz</b>
+          <div className="flex items-center mb-[13px]">
+            <a
+              href="mailto:APS168@yandex.kz"
+              className="flex items-center mb-[13px] flex-row"
+            >
+              <img src="/email-icon.svg" alt="Email" className="mr-[10px]" />
+              <b>APS168@yandex.kz</b>
+            </a>
           </div>
         </div>
       </div>
