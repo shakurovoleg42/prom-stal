@@ -54,7 +54,7 @@ const ContactForm: React.FC = () => {
           <div className="mt-[10px] flex flex-col w-[50%] text-[26px] text-center font-[600] text-black">
             <p>Телефон:</p>
 
-            <p className="text-[1rem] md:text-[1.4rem]">8(708)001-68-68</p>
+            <p className="text-[1rem] md:text-[1.4rem]">+7 771 425 8484</p>
 
             <p>Email:</p>
 
@@ -103,35 +103,35 @@ const ContactForm: React.FC = () => {
                   required
                 />
                 <MaskedInput
-      mask={[
-        "+",
-        "7",
-        " ",
-        "(",
-        /[1-9]/,
-        /\d/,
-        /\d/,
-        ")",
-        " ",
-        /\d/,
-        /\d/,
-        /\d/,
-        "-",
-        /\d/,
-        /\d/,
-        "-",
-        /\d/,
-        /\d/,
-      ]}
-      className="border border-1-gray p-1"
-      placeholder="+7 (___) ___-__-__"
-      guide={false}
-      type="text"
-      id="phone"
-      name="phone"
-      value={formData.phone} // Привязка значения к состоянию
-      onChange={handleChange} // Обработчик изменений
-    />
+                  mask={[
+                    "+",
+                    "7",
+                    " ",
+                    "(",
+                    /[1-9]/,
+                    /\d/,
+                    /\d/,
+                    ")",
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    "-",
+                    /\d/,
+                    /\d/,
+                    "-",
+                    /\d/,
+                    /\d/,
+                  ]}
+                  className="border border-1-gray p-1"
+                  placeholder="+7 (___) ___-__-__"
+                  guide={false}
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone} // Привязка значения к состоянию
+                  onChange={handleChange} // Обработчик изменений
+                />
               </div>
 
               <textarea

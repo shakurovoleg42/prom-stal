@@ -32,7 +32,7 @@ export default function Hero() {
           <h3 className="font-bold text-[1.6rem] mb-[10px]">Наши контакты</h3>
           <div className="flex items-center mb-[13px] flex-row">
             <img src="/phone-icon.svg" alt="Телефон" className="mr-[10px]" />
-            <b>8(708)001-68-68</b>
+            <b>+7 (771) 425-84-84</b>
           </div>
           <div className="flex items-center mb-[13px] flex-row">
             <img
