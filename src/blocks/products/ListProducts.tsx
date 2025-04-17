@@ -120,8 +120,8 @@ const ListProducts: React.FC<ListProductsProps> = ({
             </Link>
             <div className="flex flex-row gap-3">
               <QuickOrderSheet type="productList" productTitle={item.name} />
-
-              <Link href="tel:8(708)001-68-68">
+              {/* tel:8(708)001-68-68 */}
+              <Link href="tel:+7 771 425 8484">
                 <Button
                   variant="contact"
                   className="text-[#FFD66C] mt-2 sm:mt-0"

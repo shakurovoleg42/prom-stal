@@ -41,10 +41,16 @@ export default function Footer() {
             APS168@yandex.kz
           </Link>
           <Link
-            href="tel:87080016868"
+            href="tel:+7 771 425 8484"
             className="mt-2 font-[500] text-[24px] leading-[36px] hover:underline"
           >
-            8(708)001-68-68
+            +7 771 425 8484
+          </Link>
+          <Link
+            href="tel:+7 747 227 7906"
+            className="mt-2 font-[500] text-[24px] leading-[36px] hover:underline"
+          >
+            +7 747 227 7906
           </Link>
         </div>
       </div>

@@ -25,6 +25,8 @@ export interface Product {
   image: string;
   description: string;
   similarProduct: Product[];
+  meta_titile: string;
+  meta_description: string;
 }
 
 const Product = () => {
@@ -40,7 +42,6 @@ const Product = () => {
       if (slug) {
         try {
           const response = await fetchService.getSingleProduct(slug);
-          console.log("response", response);
           setProduct(response.product);
           setSimilarProducts(response.similar_products);
         } catch (error) {
@@ -57,8 +58,11 @@ const Product = () => {
   return (
     <>
       <Head>
-        <title>{product?.name}</title>
-        <meta name="description" content={product?.description} />
+        <title>{product?.meta_titile}</title>
+        <meta property="og:title" content={product?.meta_titile} />
+        <meta name="description" content={product?.meta_description} />
+        <meta property="og:description" content={product?.meta_description} />
+        <meta property="og:image" content="https://apromstal.kz/favicon.ico" />
       </Head>
       <Container className="flex flex-col mt-6  font-montserrat">
         <div className="text-[12px] flex flex-row px-3 text-[#999999] font-[700] leading-[20px] ml-5">
@@ -152,7 +156,7 @@ const Product = () => {
                       type="product"
                       productTitle={product.name}
                     />
-                    <Link href="tel:8(708)001-68-68">
+                    <Link href="tel:+7 771 425 8484">
                       <Button className="bg-[#F5F7F8] hover:bg-black  text-[#FFD66C]">
                         <Phone size={16} />
                       </Button>

@@ -21,7 +21,6 @@ export default function Catalog() {
     const fetchCategories = async () => {
       setLoading(true);
       const response = await fetchService.getAllCategories();
-      console.log(response);
       setMetaTitle(
         response.flatMap((item: { meta_title: any }) => item.meta_title)
       );
@@ -51,7 +50,7 @@ export default function Catalog() {
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content="https://apromstal.kz/favicon.ico" />
-        <meta property="og:url" content={`https://apromstal.kz/$catalog`} />
+        <meta property="og:url" content={`https://apromstal.kz/catalog`} />
       </Head>
       <Banner />
       <Container>

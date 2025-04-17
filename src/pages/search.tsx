@@ -10,7 +10,6 @@ import Link from "next/link";
 import ContactForm from "../components/ContactForm";
 import toast from "react-hot-toast";
 
-
 interface Product {
   id: number;
   name: string;
@@ -30,12 +29,12 @@ const Search = () => {
         try {
           const response = await fetchService.getProductsBySearch(query);
           setProducts(response.data);
-          
-          toast.dismiss(toastId); 
+
+          toast.dismiss(toastId);
           toast.success("Продукты по Вашему запросу найдены!");
         } catch (error) {
           console.error("Ошибка при загрузке категории:", error);
-          
+
           toast.dismiss(toastId);
           toast.error("Ошибка при поиске продуктов!");
         }
@@ -43,10 +42,9 @@ const Search = () => {
         return <div>Нет продуктов по такому названию</div>;
       }
     };
-  
+
     fetchCategory();
   }, [query]);
-  
 
   return (
     <Container>
@@ -79,7 +77,7 @@ const Search = () => {
                     className="block w-[150px] h-[150px] sm:hidden"
                   />
                   <Link
-                     href={{
+                    href={{
                       pathname: `/products/${item.slug}`,
                       query: { category: item.slug },
                     }}
@@ -91,7 +89,7 @@ const Search = () => {
                 <Button variant="seePrice" className="mt-2 sm:mt-0">
                   узнать цену
                 </Button>
-                <Link href="tel:8(708)001-68-68">
+                <Link href="tel:+7 771 425 8484">
                   <Button
                     variant="contact"
                     className="text-[#FFD66C] mt-2 sm:mt-0"

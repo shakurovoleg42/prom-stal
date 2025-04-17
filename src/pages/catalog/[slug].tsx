@@ -25,7 +25,6 @@ const Catalog = () => {
         setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
-          console.log(response);
           setMetaTitle(response.category.meta_title);
           setMetaDescription(response.category.meta_description);
           const subcategories = response.subcategories;

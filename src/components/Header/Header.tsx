@@ -121,11 +121,18 @@ const Header: React.FC = () => {
         <div className="hidden sm:flex items-center sm:mt-5 lg:mt-0">
           <div>
             <Link
-              href="tel:87080016868"
+              href="tel:+7 771 425 8484"
               className="mr-[50px] text-[12px] flex items-center"
             >
               <img src="/phone.svg" alt="phone" className="w-[20px] mr-2" />
-              <b>8(708)001-68-68</b>
+              <b>+7 771 425 8484</b>
+            </Link>
+            <Link
+              href="tel:+7 747 227 7906"
+              className="mr-[50px] text-[12px] flex items-center"
+            >
+              <img src="/phone.svg" alt="phone" className="w-[20px] mr-2" />
+              <b>+7 747 227 7906</b>
             </Link>
           </div>
           <div>

@@ -56,8 +56,11 @@ export default function contacts() {
             <h2 className="text-darkMain text-xl mb-4 font-semibold font-body">
               Телефоны
             </h2>
-            <Link href="tel:+8708001-68-68" className=" leading-7">
-              +8 (708) 001-68-68
+            <Link href="tel:+7 771 425 8484" className=" leading-7">
+              +7 771 425 8484
+            </Link>
+            <Link href="tel:+7 747 227 7906" className=" leading-7">
+              +7 747 227 7906
             </Link>
           </div>
           <div
