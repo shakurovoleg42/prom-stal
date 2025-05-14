@@ -30,6 +30,7 @@ export default function Products() {
   const [products, setProducts] = useState<any>(null);
   const [pagination, setPagination] = useState<any>(null);
   const [characteristics, setCharacteristics] = useState<Category | any>(null);
+  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
   const searchParams = useSearchParams();
   const page = searchParams.has("page") ? Number(searchParams.get("page")) : 1;
@@ -55,6 +56,7 @@ export default function Products() {
               pathname: `/catalog/${response.subcategories[0].slug}`,
             });
           }
+          setShortDescription(response.category.short_description);
           setDescription(response.category.description);
           setProducts(response.category.products);
           setPagination(response.pagination);
@@ -111,7 +113,7 @@ export default function Products() {
         <div className="relative w-full h-[3px] bg-transparent my-7">
           <div className="absolute top-[-1px] left-0 right-0 h-[8px] bg-gradient-to-r from-transparent via-[#0A8C99] to-transparent"></div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: shortDescription }} />
       </Container>
       <Container className="flex flex-col justify-between">
         <BackButton />
@@ -119,7 +121,12 @@ export default function Products() {
           <Filters characteristics={characteristics} category={category} />
           <ListProducts products={products} pagination={pagination} />
         </div>
+        <div
+          className="text-center"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </Container>
+
       <Container className="flex flex-col items-center justify-center mb-24 font-montserrat">
         <Partners />
         <h2 className="text-[#FFBC01] text-center text-[1.7rem] font-[700]">

@@ -19,6 +19,7 @@ const Catalog = () => {
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
 
+  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
 
   useEffect(() => {
@@ -27,6 +28,8 @@ const Catalog = () => {
         setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
+          console.log("response", response);
+          setShortDescription(response.category.short_description);
           setDescription(response.category.description);
           setMetaTitle(response.category.meta_title);
           setMetaDescription(response.category.meta_description);
@@ -80,7 +83,7 @@ const Catalog = () => {
         <meta property="og:image" content="https://apromstal.kz/favicon.ico" />
         <meta property="og:url" content={`https://apromstal.kz/${slug}`} />
       </Head>
-      <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[20%]">
+      <Container className="flex flex-col justify-between items-center text-center font-montserrat mb-[50px]">
         <p className="w-full text-[#999999] font-[700] leading-[20px] sm:ml-5 sm:flex sm:flex-row text-start">
           <Link href="/" className="hover:border-b hover:border-[#999999]">
             Главная
@@ -101,7 +104,8 @@ const Catalog = () => {
               {subcategory[0].name}
             </h1>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          <div dangerouslySetInnerHTML={{ __html: shortDescription }} />
+
           <div className="w-full flex flex-wrap justify-center gap-24 mt-5">
             {subcategory.map((category: any) => (
               <div
@@ -138,6 +142,10 @@ const Catalog = () => {
               </div>
             ))}
           </div>
+          <div
+            className="mt-10"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         </div>
       </Container>
     </>

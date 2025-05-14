@@ -16,12 +16,18 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
   const [description, setDescription] = useState("");
 
   useEffect(() => {
     const fetchCategories = async () => {
       setLoading(true);
       const response = await fetchService.getAllCategories();
+      setShortDescription(
+        response.flatMap(
+          (item: { short_description: string }) => item.short_description
+        )
+      );
       setDescription(
         response.flatMap((item: { description: string }) => item.description)
       );
@@ -62,7 +68,8 @@ export default function Catalog() {
           <h1 className="text-[#FFBC01] text-[1rem] leading-[60px] font-[600] sm:text-[3rem]">
             Каталог металлопроката
           </h1>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+          <div dangerouslySetInnerHTML={{ __html: shortDescription }} />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8">
             {loading
               ? Array.from({ length: 9 }).map((_, index) => (
@@ -133,6 +140,7 @@ export default function Catalog() {
                   </div>
                 ))}
           </div>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </Container>
     </>
