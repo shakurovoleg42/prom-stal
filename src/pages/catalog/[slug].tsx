@@ -28,7 +28,6 @@ const Catalog = () => {
         setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
-          console.log("response", response);
           setShortDescription(response.category.short_description);
           setDescription(response.category.description);
           setMetaTitle(response.category.meta_title);
