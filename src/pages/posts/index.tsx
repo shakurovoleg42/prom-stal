@@ -49,7 +49,7 @@ const News = () => {
                   className="block w-full h-full"
                 >
                   <Image
-                    src={item.image}
+                    src={item.image ? item.image : "/no-image.jpg"}
                     width={500}
                     height={270}
                     alt="banner"

@@ -20,7 +20,10 @@ const SingleNews = ({
     <>
       <div
         className="flex w-full h-auto min-h-[35vh] lg:min-h-[589px] bg-cover bg-center text-white mt-5 font-montserrat rounded-b-sm"
-        style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}
+        style={{
+          backgroundImage: `url(${image ? image : "/no-image.jpg"})`,
+          backgroundSize: "cover",
+        }}
       >
         <Container className="items-left py-[100px] flex flex-col gap-8 text-center px-6">
           <h1
