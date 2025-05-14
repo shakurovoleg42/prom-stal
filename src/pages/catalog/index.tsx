@@ -25,7 +25,6 @@ export default function Catalog() {
       setDescription(
         response.flatMap((item: { description: string }) => item.description)
       );
-      console.log("response", response);
       setMetaTitle(
         response.flatMap((item: { meta_title: any }) => item.meta_title)
       );
