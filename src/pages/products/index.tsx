@@ -30,6 +30,7 @@ export default function Products() {
   const [products, setProducts] = useState<any>(null);
   const [pagination, setPagination] = useState<any>(null);
   const [characteristics, setCharacteristics] = useState<Category | any>(null);
+  const [description, setDescription] = useState("");
   const searchParams = useSearchParams();
   const page = searchParams.has("page") ? Number(searchParams.get("page")) : 1;
 
@@ -54,7 +55,7 @@ export default function Products() {
               pathname: `/catalog/${response.subcategories[0].slug}`,
             });
           }
-
+          setDescription(response.category.description);
           setProducts(response.category.products);
           setPagination(response.pagination);
           setCharacteristics(response.characteristics);
@@ -110,6 +111,7 @@ export default function Products() {
         <div className="relative w-full h-[3px] bg-transparent my-7">
           <div className="absolute top-[-1px] left-0 right-0 h-[8px] bg-gradient-to-r from-transparent via-[#0A8C99] to-transparent"></div>
         </div>
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </Container>
       <Container className="flex flex-col justify-between">
         <BackButton />

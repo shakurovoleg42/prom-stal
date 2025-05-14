@@ -19,12 +19,15 @@ const Catalog = () => {
   const [metaTitle, setMetaTitle] = useState("");
   const [metaDescription, setMetaDescription] = useState("");
 
+  const [description, setDescription] = useState("");
+
   useEffect(() => {
     const fetchCategory = async () => {
       if (slug) {
         setIsLoading(true);
         try {
           const response = await fetchService.getCategoryBySlug(slug);
+          setDescription(response.category.description);
           setMetaTitle(response.category.meta_title);
           setMetaDescription(response.category.meta_description);
           const subcategories = response.subcategories;
@@ -92,13 +95,13 @@ const Catalog = () => {
           <span className="mx-2"> / </span>
           <span className="">Категория {subcategory[0].name}</span>
         </p>
-
         <div className="w-full flex flex-col mt-9">
           <div className="w-full">
             <h1 className="text-[2rem] font-[800] text-center px-3">
               {subcategory[0].name}
             </h1>
           </div>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
           <div className="w-full flex flex-wrap justify-center gap-24 mt-5">
             {subcategory.map((category: any) => (
               <div
