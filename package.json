@@ -2,11 +2,29 @@
   "name": "prom-stal",
   "version": "0.1.0",
   "private": true,
+  "description": "Промышленные металлоконструкции и стальные изделия",
+  "author": {
+    "name": "Oleg Shakurov",
+    "linkedin": "https://www.linkedin.com/in/oleg-shakurov-9550ba258/",
+    "url": "https://github.com/shakurovoleg42"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shakurovoleg42/prom-stal.git"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "metal structures",
+    "industrial"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "next start"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -56,5 +74,9 @@
     "tailwindcss": "^3.4.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
